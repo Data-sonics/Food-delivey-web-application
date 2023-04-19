@@ -4,7 +4,7 @@ import { FaShoppingBag } from "react-icons/fa";
 export default function Navbar() {
   return (
     <nav>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 bg-slate-400">
         <div className="flex justify-evenly cursor-pointer">
           <Logo />
           <div className="items-center flex justify-between w-full">
