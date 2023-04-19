@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+import React from "react";
+
+function Logo() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="180"
+      height="40"
+      viewBox="0 0 163 38"
+    >
+      <g id="Logo-w" transform="translate(-260 -51)">
+        <g id="Logo-2-w" data-name="Logo-w" transform="translate(260 51)">
+          <g id="Elements-w">
+            <path
+              id="Path_2429"
+              data-name="Path 2429"
+=======
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
 export default function Logo() {
   return (
     <svg
@@ -12,18 +33,53 @@ export default function Logo() {
             <path
               id="Path_1429"
               data-name="Path 1429"
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               d="M315.086,140.507H275.222v-.894c0-11.325,8.941-20.538,19.933-20.538s19.931,9.213,19.931,20.538Z"
               transform="translate(-270.155 -115.396)"
               fill="#f29f05"
             ></path>
             <path
+<<<<<<< HEAD
+<<<<<<< HEAD
+              id="Path_2430"
+              data-name="Path 2430"
+=======
               id="Path_1430"
               data-name="Path 1430"
+>>>>>>> main
+=======
+              id="Path_1430"
+              data-name="Path 1430"
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               d="M301.13,133.517a1.488,1.488,0,0,1-1.394-.994,11.361,11.361,0,0,0-10.583-7.54,1.528,1.528,0,0,1,0-3.055,14.353,14.353,0,0,1,13.37,9.527,1.541,1.541,0,0,1-.875,1.966A1.444,1.444,0,0,1,301.13,133.517Z"
               transform="translate(-264.176 -113.935)"
               fill="#fff"
             ></path>
             <path
+<<<<<<< HEAD
+<<<<<<< HEAD
+              id="Path_2431"
+              data-name="Path 2431"
+              d="M297.343,146.544a14.043,14.043,0,0,1-13.837-14.211h2.975a10.865,10.865,0,1,0,21.723,0h2.975A14.043,14.043,0,0,1,297.343,146.544Z"
+              transform="translate(-266.247 -108.544)"
+              fill="#fff"
+            ></path>
+            <path
+              id="Path_2432"
+              data-name="Path 2432"
+              d="M302.183,132.519a7.064,7.064,0,1,1-14.122,0Z"
+              transform="translate(-264.027 -108.446)"
+              fill="#fff"
+            ></path>
+            <path
+              id="Path_2433"
+              data-name="Path 2433"
+=======
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               id="Path_1431"
               data-name="Path 1431"
               d="M297.343,146.544a14.043,14.043,0,0,1-13.837-14.211h2.975a10.865,10.865,0,1,0,21.723,0h2.975A14.043,14.043,0,0,1,297.343,146.544Z"
@@ -40,18 +96,49 @@ export default function Logo() {
             <path
               id="Path_1433"
               data-name="Path 1433"
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               d="M320.332,134.575H273.3a1.528,1.528,0,0,1,0-3.055h47.033a1.528,1.528,0,0,1,0,3.055Z"
               transform="translate(-271.815 -108.923)"
               fill="#f29f05"
             ></path>
             <path
+<<<<<<< HEAD
+<<<<<<< HEAD
+              id="Path_2434"
+              data-name="Path 2434"
+=======
               id="Path_1434"
               data-name="Path 1434"
+>>>>>>> main
+=======
+              id="Path_1434"
+              data-name="Path 1434"
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               d="M289.154,123.4a1.507,1.507,0,0,1-1.487-1.528v-3.678a1.488,1.488,0,1,1,2.975,0v3.678A1.508,1.508,0,0,1,289.154,123.4Z"
               transform="translate(-264.154 -116.667)"
               fill="#f29f05"
             ></path>
             <path
+<<<<<<< HEAD
+<<<<<<< HEAD
+              id="Path_2435"
+              data-name="Path 2435"
+              d="M284.777,138.133H275.3a1.528,1.528,0,0,1,0-3.055h9.474a1.528,1.528,0,0,1,0,3.055Z"
+              transform="translate(-270.84 -107.068)"
+              fill="#fff"
+            ></path>
+            <path
+              id="Path_2436"
+              data-name="Path 2436"
+              d="M284.8,141.691h-6.5a1.528,1.528,0,0,1,0-3.055h6.5a1.528,1.528,0,0,1,0,3.055Z"
+              transform="translate(-269.379 -105.218)"
+              fill="#fff"
+=======
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
               id="Path_1435"
               data-name="Path 1435"
               d="M284.777,138.133H275.3a1.528,1.528,0,0,1,0-3.055h9.474a1.528,1.528,0,0,1,0,3.055Z"
@@ -64,13 +151,29 @@ export default function Logo() {
               d="M284.8,141.691h-6.5a1.528,1.528,0,0,1,0-3.055h6.5a1.528,1.528,0,0,1,0,3.055Z"
               transform="translate(-269.379 -105.218)"
               fill="#363636"
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
             ></path>
           </g>
         </g>
         <text
+<<<<<<< HEAD
+<<<<<<< HEAD
+          id="Quickeat-w"
+          transform="translate(320 77)"
+          fill="#fff"
+=======
           id="Quickeat"
           transform="translate(320 77)"
           fill="#363636"
+>>>>>>> main
+=======
+          id="Quickeat"
+          transform="translate(320 77)"
+          fill="#363636"
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
           font-size="20"
           font-family="Poppins"
           font-weight="700"
@@ -86,3 +189,11 @@ export default function Logo() {
     </svg>
   );
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+export default Logo;
+=======
+>>>>>>> main
+=======
+>>>>>>> a78088542a61a6a3ebe24147ab0300b8cf616915
