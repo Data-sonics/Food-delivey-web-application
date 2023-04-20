@@ -3,8 +3,8 @@ import { FaShoppingBag } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <nav>
-      <div className="container mx-auto p-4">
+    <nav className="bg-gradient">
+      <div className="container mx-auto py-4">
         <div className="flex justify-evenly cursor-pointer">
           <Logo />
           <div className="items-center flex justify-between w-full">
@@ -40,7 +40,7 @@ export default function Navbar() {
             <span className="text-amber-500 mt-4 mx-10">
               <FaShoppingBag />
             </span>
-            <button className="bg-amber-500 rounded-lg text-white w-[150px] h-12 hover:bg-white hover:text-black hover:border-amber-500 hover:border-2 duration-200">
+            <button className="bg-amber-500 rounded-lg text-white w-[150px] h-12 hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-200">
               ORDER NOW
             </button>
           </div>

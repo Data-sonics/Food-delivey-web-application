@@ -7,3 +7,14 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.bg-gradient {
+  background: rgb(238, 238, 218);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 238, 218, 1) 4%,
+    rgba(240, 230, 237, 1) 31%,
+    rgba(245, 245, 245, 1) 49%,
+    rgba(237, 221, 237, 1) 74%,
+    rgba(246, 244, 222, 1) 93%
+  );
+}
