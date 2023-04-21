@@ -1,6 +1,6 @@
 import React from "react";
 
-function Logo() {
+function Flogo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ function Logo() {
               data-name="Path 2431"
               d="M297.343,146.544a14.043,14.043,0,0,1-13.837-14.211h2.975a10.865,10.865,0,1,0,21.723,0h2.975A14.043,14.043,0,0,1,297.343,146.544Z"
               transform="translate(-266.247 -108.544)"
-              fill="#000
+              fill="#fff
               "
             ></path>
             <path
@@ -38,7 +38,7 @@ function Logo() {
               data-name="Path 2432"
               d="M302.183,132.519a7.064,7.064,0,1,1-14.122,0Z"
               transform="translate(-264.027 -108.446)"
-              fill="#000"
+              fill="#fff"
             ></path>
             <path
               id="Path_2433"
@@ -59,14 +59,14 @@ function Logo() {
               data-name="Path 2435"
               d="M284.777,138.133H275.3a1.528,1.528,0,0,1,0-3.055h9.474a1.528,1.528,0,0,1,0,3.055Z"
               transform="translate(-270.84 -107.068)"
-              fill="#000"
+              fill="#fff"
             ></path>
             <path
               id="Path_2436"
               data-name="Path 2436"
               d="M284.8,141.691h-6.5a1.528,1.528,0,0,1,0-3.055h6.5a1.528,1.528,0,0,1,0,3.055Z"
               transform="translate(-269.379 -105.218)"
-              fill="#000"
+              fill="#fff"
             ></path>
           </g>
         </g>
@@ -78,7 +78,7 @@ function Logo() {
           font-family="Poppins"
           font-weight="700"
         >
-          <tspan x="0" y="0" fill="#000000">
+          <tspan x="0" y="0">
             QUICK
           </tspan>
           <tspan y="0" fill="#f29f05">
@@ -90,4 +90,4 @@ function Logo() {
   );
 }
 
-export default Logo;
+export default Flogo;
