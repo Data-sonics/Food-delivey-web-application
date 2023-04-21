@@ -3,6 +3,7 @@ import Howitworks from "../components/Howitwork";
 import Mainsection from "../components/Mainsection";
 import Navbar from "../components/Navbar";
 import Partnership from "../components/Partnership";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Howitworks />
       <Bestrestaurants />
       <Partnership />
+      <Footer />
     </>
   );
 }
