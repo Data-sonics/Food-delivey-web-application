@@ -1,5 +1,5 @@
 import Location from "./Location";
-import Logo from "./Logo";
+import Flogo from "./Flogo";
 import Message from "./Message";
 import Phone from "./Phone";
 const names = [
@@ -11,12 +11,12 @@ const names = [
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#363636] dark:bg-gray-900     ">
+      <footer className="bg-[#363636]">
         <div className="mx-auto w-full  ">
           <div className="flex gap-8 px-4 py-20 justify-around container mx-auto   ">
             <div className="w-[403px]">
               <a href="/">
-                <Logo />
+                <Flogo />
               </a>
               <p className="text-6xl text-white font-bold  py-10">
                 The Best Restaurants in Your Home
@@ -28,7 +28,7 @@ export default function Footer() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase dark:text-white">
+              <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
                 Menu
               </h2>
               <ul className=" dark:text-gray-400 font-medium text-[#cfcfcf] ">
@@ -47,7 +47,7 @@ export default function Footer() {
               </ul>
             </div>
             <div className="w-[420px]">
-              <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase dark:text-white">
+              <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
                 Contacts
               </h2>
               <ul className=" dark:text-gray-400 font-medium text-[#cfcfcf]">
@@ -82,7 +82,7 @@ export default function Footer() {
             <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
               <a
                 href="https://Facebook.com"
-                className="text-gray-400 hover:text-[#f29f05] dark:hover:text-white"
+                className="text-gray-400 hover:text-[#f29f05]"
               >
                 <svg
                   className="w-5 h-5"
@@ -98,10 +98,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Facebook page</span>
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#f29f05] dark:hover:text-white"
-              >
+              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -116,10 +113,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Instagram page</span>
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#f29f05] dark:hover:text-white"
-              >
+              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -130,10 +124,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Twitter page</span>
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#f29f05] dark:hover:text-white"
-              >
+              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -148,10 +139,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">GitHub account</span>
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-[#f29f05] dark:hover:text-white"
-              >
+              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
