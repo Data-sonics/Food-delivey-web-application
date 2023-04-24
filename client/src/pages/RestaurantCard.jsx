@@ -4,13 +4,17 @@ import React from "react";
 import Navbar from "../components/unify/Navbar";
 import Footer from "../components/unify/Footer";
 
-function Restaurants() {
+// /components/restaurantCard hawtsn dotor bga
+import CardMainSection from "../components/restaurantsCard/CardMainSection";
+
+function RestaurantCard() {
   return (
     <>
       <Navbar />
+      <CardMainSection />
       <Footer />
     </>
   );
 }
 
-export default Restaurants;
+export default RestaurantCard;

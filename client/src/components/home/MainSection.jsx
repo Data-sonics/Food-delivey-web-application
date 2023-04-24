@@ -1,4 +1,4 @@
-export default function Mainsection() {
+export default function MainSection() {
   return (
     <div className="bg-gradient">
       <section className="container mx-auto">

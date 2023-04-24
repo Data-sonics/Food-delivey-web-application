@@ -1,8 +1,11 @@
-export default function Emailmenu() {
+export default function EmailMenu() {
   return (
     <section className="flex justify-center gap-16 bg-[#fcfcfc] py-16">
       <div>
-        <img src="https://bslthemes.com/html/quickeat/assets/img/illustration-4.png" />
+        <img
+          src="https://bslthemes.com/html/quickeat/assets/img/illustration-4.png"
+          alt=""
+        />
       </div>
       <div className="">
         <h1 className="text-5xl w-[500px] font-extrabold">
