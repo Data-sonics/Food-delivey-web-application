@@ -4,7 +4,7 @@ export default function Mainsection() {
       <section className="container mx-auto">
         <div className=" align-middle flex justify-between">
           <div>
-            <h1 className="text-6xl w-[20rem] leading-snug col-span-5 font-bold pt-10">
+            <h1 className="text-6xl w-[20rem] leading-snug col-span-5 font-bold pt-10 ">
               The Best Restaurants In Your Home
             </h1>
             <p className="text-gray-600 w-[29rem] pt-8">

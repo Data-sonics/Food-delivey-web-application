@@ -1,18 +1,18 @@
-import Bestrestaurants from "../components/Bestrestaurants";
-import Howitworks from "../components/Howitwork";
-import Mainsection from "../components/Mainsection";
 import Navbar from "../components/Navbar";
 import Partnership from "../components/Partnership";
 import Footer from "../components/Footer";
 import Emailmenu from "../components/Emailmenu";
+import MainSection from "../components/home/MainSection";
+import HowItWorks from "../components/home/HowItWork";
+import BestRestaurants from "../components/home/BestRestaurants";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Mainsection />
-      <Howitworks />
-      <Bestrestaurants />
+      <MainSection />
+      <HowItWorks />
+      <BestRestaurants />
       <Partnership />
       <Emailmenu />
       <Footer />
