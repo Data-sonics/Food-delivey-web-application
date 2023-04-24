@@ -16,7 +16,7 @@ export default function Mainsection() {
               className="w-[400px] h-[50px] rounded-lg ps-1 shadow-xl"
               placeholder="Choose a Restaurant"
             />
-            <button className="bg-amber-500 text-white mt-10 w-[100px] h-[50px] rounded-lg font-thin ms-10">
+            <button className="bg-amber-500 text-white mt-10 w-[140px] h-[50px] rounded-lg font-thin ms-10 hover:bg-transparent hover:border-amber-500 border-2 hover:text-amber-500 duration-200 ">
               ORDER NOW
             </button>
           </div>
