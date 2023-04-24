@@ -1,7 +1,7 @@
-import Location from "./Location";
-import Flogo from "./Flogo";
-import Message from "./Message";
-import Phone from "./Phone";
+import Location from "../home/Location";
+import Flogo from "../home/Flogo";
+import Message from "../home/Message";
+import Phone from "../home/Phone";
 const names = [
   { title: "Home", to: "/" },
   { title: "About Us", to: "/" },
