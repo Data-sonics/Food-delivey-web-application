@@ -1,4 +1,4 @@
-import Logo from "../home/Logo";
+import Logo from "../logo/Logo";
 import { FaShoppingBag } from "react-icons/fa";
 
 export default function Navbar() {
