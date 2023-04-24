@@ -14,7 +14,7 @@ export default function Partnership() {
             />
             <div className="absolute top-[65%] left-[10%]">
               <p className="text-white text-5xl">Join Courier</p>
-              <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5">
+              <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5 hover:bg-transparent hover:border-amber-500 hover:border-2 hover:text-amber-500 font-thin">
                 LEARN MORE→
               </button>
             </div>
@@ -27,7 +27,7 @@ export default function Partnership() {
             />
             <div className="absolute top-[65%] left-[10%]">
               <p className="text-white text-5xl">Join Merchant</p>
-              <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5">
+              <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5 hover:bg-transparent hover:border-amber-500 hover:border-2 hover:text-amber-500 font-thin">
                 LEARN MORE→
               </button>
             </div>

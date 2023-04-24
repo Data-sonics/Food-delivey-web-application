@@ -53,7 +53,7 @@ export default function Footer() {
               <ul className=" dark:text-gray-400 font-medium text-[#cfcfcf]">
                 <li className=" mb-3 ">
                   <a
-                    href="#"
+                    href="/"
                     className="flex hover:text-[#F29F05] hover:ease-in duration-300 "
                   >
                     <Location /> &nbsp; 1717 Harrison St, San Francisco, CA
@@ -98,7 +98,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Facebook page</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
+              <a href="/" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -113,7 +113,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Instagram page</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
+              <a href="/" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -124,7 +124,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Twitter page</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
+              <a href="/" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -139,7 +139,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">GitHub account</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#f29f05]">
+              <a href="/" className="text-gray-400 hover:text-[#f29f05]">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"

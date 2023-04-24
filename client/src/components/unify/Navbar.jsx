@@ -23,7 +23,7 @@ export default function Navbar() {
             <span className="text-amber-500 mt-4 mx-10">
               <FaShoppingBag />
             </span>
-            <button className="bg-amber-500 rounded-lg text-white w-[150px] h-12 hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-200">
+            <button className="bg-amber-500 rounded-lg text-white w-[150px] h-12 hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-200 hover:bg-transparent">
               ORDER NOW
             </button>
           </div>
