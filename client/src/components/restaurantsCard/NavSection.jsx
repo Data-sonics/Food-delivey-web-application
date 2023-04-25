@@ -1,137 +1,313 @@
-import React from "react";
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
+import GenresButton from "../unify/Genresbutton";
+import {
+  AiFillHeart,
+  AiOutlineInfoCircle,
+  AiOutlineClose,
+} from "react-icons/ai";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function NavSection() {
+  const [info, setInfo] = useState(false);
+
+  function Reverse() {}
+  let [FoodCategory] = useState({
+    Breakfast: [
+      {
+        id: 1,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
+        imgAlt: "food",
+        title: "Egg, kiwi and sauce chilli",
+        price: "599$",
+        button: "Add to cart",
+      },
+      {
+        id: 2,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Potatoes with pork and dried fruits",
+        imgAlt: "food",
+        price: "99$",
+        button: "Add to cart",
+      },
+      {
+        id: 3,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Rice with shrimps and kiwi",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+      {
+        id: 4,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Spaghetti with mushrooms and...",
+        imgAlt: "food",
+        price: "923$",
+        button: "Add to cart",
+      },
+      {
+        id: 5,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Sliced pork, avocado and...",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+      {
+        id: 6,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Veal meat, tomatoes and...",
+        imgAlt: "food",
+        price: "923$",
+        button: "Add to cart",
+      },
+    ],
+    Lunch: [
+      {
+        id: 1,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
+        imgAlt: "food",
+        title: "Egg, kiwi and sauce chilli",
+        price: "599$",
+        button: "Add to cart",
+      },
+      {
+        id: 2,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Potatoes with pork and dried fruits",
+        imgAlt: "food",
+        price: "99$",
+        button: "Add to cart",
+      },
+      {
+        id: 3,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Rice with shrimps and kiwi",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+      {
+        id: 4,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Spaghetti with mushrooms and...",
+        imgAlt: "food",
+        price: "923$",
+        button: "Add to cart",
+      },
+      {
+        id: 5,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Sliced pork, avocado and...",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+    ],
+    Dinner: [
+      {
+        id: 1,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
+        imgAlt: "food",
+        title: "Egg, kiwi and sauce chilli",
+        price: "599$",
+        button: "Add to cart",
+      },
+      {
+        id: 2,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Potatoes with pork and dried fruits",
+        imgAlt: "food",
+        price: "99$",
+        button: "Add to cart",
+      },
+      {
+        id: 3,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Rice with shrimps and kiwi",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+      {
+        id: 4,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Spaghetti with mushrooms and...",
+        imgAlt: "food",
+        price: "923$",
+        button: "Add to cart",
+      },
+    ],
+    StreetFood: [
+      {
+        id: 1,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
+        imgAlt: "food",
+        title: "Egg, kiwi and sauce chilli",
+        price: "599$",
+        button: "Add to cart",
+      },
+      {
+        id: 2,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
+        title: "Potatoes with pork and dried fruits",
+        imgAlt: "food",
+        price: "99$",
+        button: "Add to cart",
+      },
+      {
+        id: 3,
+        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
+        title: "Rice with shrimps and kiwi",
+        imgAlt: "food",
+        price: "911$",
+        button: "Add to cart",
+      },
+    ],
+  });
+
   return (
-    <div className="">
-      <div class="mb-4 border-b border-gray-200 dark:border-gray-700 container">
-        <ul
-          class="flex flex-wrap -mb-px text-sm font-medium text-center"
-          id="myTab"
-          data-tabs-toggle="#myTabContent"
-          role="tablist"
-        >
-          <li class="mr-2" role="presentation">
-            <button
-              class="inline-block p-4 border-b-2 rounded-t-lg"
-              id="profile-tab"
-              data-tabs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
+    <div className="w-full container mx-auto my-20 ">
+      <Tab.Group>
+        <Tab.List className="flex gap-4 shadow-xl ">
+          {Object.keys(FoodCategory).map((genres) => (
+            <Tab
+              key={genres}
+              className={({ selected }) =>
+                classNames(
+                  "w-full rounded-lg py-2.5  font-medium     duration-300   text-amber-500   ",
+                  "ring-white  ring-offset-2 ring-offset-amber-500  focus:outline-none focus:ring-2 uppercase",
+                  selected
+                    ? "bg-white shadow"
+                    : "text-black/50   hover:bg-dark hover:text-amber-500"
+                )
+              }
             >
-              Profile
-            </button>
-          </li>
-          <li class="mr-2" role="presentation">
-            <button
-              class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="dashboard-tab"
-              data-tabs-target="#dashboard"
-              type="button"
-              role="tab"
-              aria-controls="dashboard"
-              aria-selected="false"
+              {genres}
+            </Tab>
+          ))}
+        </Tab.List>
+        <Tab.Panels className="mt-2 p-10">
+          {Object.values(FoodCategory).map((FoodCard, idx) => (
+            <Tab.Panel
+              key={idx}
+              className={classNames(
+                "rounded-xl bg-white p-3 ",
+                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+              )}
             >
-              Dashboard
-            </button>
-          </li>
-          <li class="mr-2" role="presentation">
-            <button
-              class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="settings-tab"
-              data-tabs-target="#settings"
-              type="button"
-              role="tab"
-              aria-controls="settings"
-              aria-selected="false"
-            >
-              Settings
-            </button>
-          </li>
-          <li role="presentation">
-            <button
-              class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="contacts-tab"
-              data-tabs-target="#contacts"
-              type="button"
-              role="tab"
-              aria-controls="contacts"
-              aria-selected="false"
-            >
-              Contacts
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div id="myTabContent">
-        <div
-          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-          id="profile"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong class="font-medium text-gray-800 dark:text-white">
-              Profile tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-        <div
-          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-          id="dashboard"
-          role="tabpanel"
-          aria-labelledby="dashboard-tab"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong class="font-medium text-gray-800 dark:text-white">
-              Dashboard tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-        <div
-          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-          id="settings"
-          role="tabpanel"
-          aria-labelledby="settings-tab"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong class="font-medium text-gray-800 dark:text-white">
-              Settings tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-        <div
-          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-          id="contacts"
-          role="tabpanel"
-          aria-labelledby="contacts-tab"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            This is some placeholder content the{" "}
-            <strong class="font-medium text-gray-800 dark:text-white">
-              Contacts tab's associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-      </div>
+              <ul className="flex gap-10 flex-wrap ">
+                {FoodCard.map((food) => (
+                  <li key={food.id}>
+                    <div className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                      <a href="/">
+                        <img
+                          className="p-8 rounded-t-lg"
+                          src={food.imageUrl}
+                          alt={food.imgAlt}
+                        />
+                      </a>
+                      {/* front */}
+                      <div
+                        className="px-10 py-10"
+                        style={{ display: info ? "none" : "block" }}
+                      >
+                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                          {food.title}
+                        </h5>
+
+                        <div className="flex justify-between gap-2 items-center  my-5">
+                          <GenresButton />
+                          <button>
+                            <AiOutlineInfoCircle
+                              className=" fill-amber-500 "
+                              onClick={() => setInfo(true)}
+                            />
+                          </button>
+                          <a href="/">
+                            <AiFillHeart className="fill-amber-500 h-[50px] active:fill-amber-500" />
+                          </a>
+                        </div>
+                        <hr />
+                        <div className="flex my-5 justify-between ">
+                          <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                            {food.price}
+                          </p>
+                          <div className="flex gap-2 ">
+                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                              <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
+                                -
+                              </span>
+                            </button>
+                            <input
+                              className="  rounded-lg  w-20 text-center  border-gray-200 border "
+                              defaultValue="1"
+                              type="number"
+                              min="0"
+                            />
+
+                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                              <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
+                                +
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+
+                        <p className="">
+                          <button
+                            href="/"
+                            className="bg-amber-500 rounded-lg w-full text-white p-2  hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-300 hover:bg-transparent"
+                          >
+                            {food.button}
+                          </button>
+                        </p>
+                      </div>
+
+                      {/* back */}
+                      <div
+                        className="px-10 py-10"
+                        style={{ display: info ? "block" : "none" }}
+                      >
+                        <div className="flex justify-end">
+                          <button className="" onClick={() => setInfo(false)}>
+                            <AiOutlineClose className="fill-amber-500 " />
+                          </button>
+                        </div>
+                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                          Potatoes with pork and dried fruits
+                        </h5>
+
+                        <div className="   my-5">
+                          <GenresButton />
+                        </div>
+                        <div className="text-lg ">
+                          <p className="text-gray-400 my-2 ">
+                            In egestas erat imperdiet sed euismod nisi porta.
+                            Ultrices sagittis orci a scelerisque. Diam quam
+                            nulla porttitor.
+                          </p>
+
+                          <ul className="list-disc mx-4  ">
+                            <li>Nulla porttitor massa id;</li>
+                            <li>Aliquam vestibulum morbi;</li>
+                            <li>Blandit donec adipiscing;</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
     </div>
   );
 }
-
 export default NavSection;
