@@ -1,5 +1,7 @@
 import Logo from "../logo/Logo";
 import { FaShoppingBag } from "react-icons/fa";
+import Button from "./Button";
+
 import { useState } from "react";
 
 function FoodList({ foods }) {
@@ -118,6 +120,7 @@ function Sidebar({ isSidebarVisible, closeSidebar }) {
   );
 }
 
+
 export default function Navbar() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
@@ -147,6 +150,13 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
+
+          <div className="flex p-2 w-80">
+            <span className="text-amber-500 mt-4 mx-10">
+              <FaShoppingBag />
+            </span>
+            <Button className="" />
+
           <div className="flex p-2">
             <span className="mt-4 mx-10">
               <div>
