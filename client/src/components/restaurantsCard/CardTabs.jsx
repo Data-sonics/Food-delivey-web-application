@@ -195,11 +195,11 @@ function CardTabs() {
             <Tab.Panel
               key={idx}
               className={classNames(
-                "rounded-xl bg-white p-3 ",
-                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                "rounded-xl bg-white p-3  ",
+                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none "
               )}
             >
-              <ul className="flex gap-10 flex-wrap ">
+              <ul className="flex gap-10 flex-wrap focus:outline-0 ">
                 {FoodCard.map((food) => (
                   <li key={food.id}>
                     <div className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
