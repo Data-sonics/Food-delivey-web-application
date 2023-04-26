@@ -6,14 +6,14 @@ import Footer from "../components/unify/Footer";
 
 // /components/restaurantCard hawtsn dotor bga
 import CardMainSection from "../components/restaurantsCard/CardMainSection";
-import NavSection from "../components/restaurantsCard/NavSection";
+import CardTabs from "../components/restaurantsCard/CardTabs";
 
 function RestaurantCard() {
   return (
     <>
       <Navbar />
       <CardMainSection />
-      <NavSection />
+      <CardTabs />
       <Footer />
     </>
   );

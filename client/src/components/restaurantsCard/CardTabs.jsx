@@ -11,10 +11,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function NavSection() {
+function CardTabs() {
   const [info, setInfo] = useState(false);
 
-  function Reverse() {}
   let [FoodCategory] = useState({
     Breakfast: [
       {
@@ -310,4 +309,4 @@ function NavSection() {
     </div>
   );
 }
-export default NavSection;
+export default CardTabs;
