@@ -2,8 +2,9 @@ import "./styles/index.css";
 import { Route, Routes } from "react-router-dom";
 
 // route elements
-import Home from "./pages/Home";
+
 import Restaurants from "./pages/Restaurants";
+import Home from "./pages/Home";
 
 function App() {
   return (
