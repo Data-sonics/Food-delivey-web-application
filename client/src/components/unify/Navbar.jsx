@@ -120,7 +120,6 @@ function Sidebar({ isSidebarVisible, closeSidebar }) {
   );
 }
 
-
 export default function Navbar() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
@@ -152,12 +151,6 @@ export default function Navbar() {
           </div>
 
           <div className="flex p-2 w-80">
-            <span className="text-amber-500 mt-4 mx-10">
-              <FaShoppingBag />
-            </span>
-            <Button className="" />
-
-          <div className="flex p-2">
             <span className="mt-4 mx-10">
               <div>
                 <button onClick={toggleSidebar} className="text-amber-500">
@@ -171,9 +164,7 @@ export default function Navbar() {
                 </div>
               </div>
             </span>
-            <button className="bg-amber-500 rounded-lg text-white w-[150px] h-12 hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-200 hover:bg-transparent">
-              ORDER NOW
-            </button>
+            <Button className="" />
           </div>
         </div>
       </div>
