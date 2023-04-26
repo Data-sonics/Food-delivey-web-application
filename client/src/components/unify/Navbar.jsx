@@ -30,23 +30,26 @@ function FoodList({ foods }) {
             <div className="text-4xl font-bold text-amber-500">
               {food.price}
             </div>
-            <div className="flex">
+            <div className="flex gap-2 ">
               <button
-                className=" flex items-center justify-center p-0.5 mb-1 mr-1    text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
                 onClick={handleSubstract}
+                className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     "
               >
                 <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                   -
                 </span>
               </button>
-              <button className=" flex items-center justify-center p-0.5 mb-1 mr-1 rounded-lg  group border-gray-200 border ">
-                <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
-                  {quantity}
-                </span>
-              </button>
+              <input
+                className="  rounded-lg  w-20 text-center  border-gray-200 border "
+                defaultValue="1"
+                type="number"
+                min="0"
+                value={quantity}
+              />
+
               <button
-                className=" flex items-center justify-center p-0.5 mb-1 mr-1    text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
                 onClick={handleAdd}
+                className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     "
               >
                 <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                   +
