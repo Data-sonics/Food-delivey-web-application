@@ -1,4 +1,4 @@
-import Logo from "../home/Logo";
+import Logo from "../logo/Logo";
 import { FaShoppingBag } from "react-icons/fa";
 import { useState } from "react";
 
@@ -134,10 +134,10 @@ export default function Navbar() {
   return (
     <nav className="bg-gradient">
       <div className="container mx-auto py-4">
-        <div className="flex justify-evenly cursor-pointer">
+        <div className="flex justify-evenly cursor-pointer ">
           <Logo />
           <div className="items-center flex justify-between w-full">
-            <ul className="flex ms-16 font-thin p-4 md:p-0rounded-lg  mt-0 border-0 space-x-8 text-xl">
+            <ul className="flex ms-16 font-thin p-4 md:p-0rounded-lg  mt-0 border-0 space-x-8 text-xl ">
               {topchoices.map((item, index) => (
                 <li key={index}>
                   <a href="/" className="hover:text-amber-500 duration-300">

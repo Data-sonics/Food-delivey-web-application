@@ -1,10 +1,14 @@
 import React from "react";
-import Restaurant from "../components/restaurants/Restaurant";
+
+// /components/unify hawtsn dotor bga
+import Navbar from "../components/unify/Navbar";
+import Footer from "../components/unify/Footer";
 
 function Restaurants() {
   return (
     <>
-      <Restaurant />
+      <Navbar />
+      <Footer />
     </>
   );
 }

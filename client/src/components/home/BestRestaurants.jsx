@@ -1,75 +1,7 @@
 import RatingStars from "react-rating-stars-component";
+import GenresButton from "../unify/Genresbutton";
 
 export default function Bestrestaurants() {
-  const restaurants = [
-    "Italian",
-    "Mexican",
-    "Chinese",
-    "Japanese",
-    "Indian",
-    "Thai",
-    "Mediterranean",
-    "French",
-    "Greek",
-    "Vietnamese",
-    "Korean",
-    "American",
-    "Middle Eastern",
-    "Spanish",
-    "Peruvian",
-    "Brazilian",
-    "Turkish",
-    "Moroccan",
-    "Ethiopian",
-    "Russian",
-    "German",
-    "Swedish",
-    "British",
-    "Irish",
-    "Scottish",
-    "Australian",
-    "Canadian",
-    "South African",
-    "Argentinian",
-    "Chilean",
-    "Colombian",
-    "Venezuelan",
-    "Cuban",
-    "Puerto Rican",
-    "Dominican",
-    "Jamaican",
-    "Trinidadian",
-    "Haitian",
-    "American BBQ",
-    "Steakhouse",
-    "Seafood",
-    "Vegetarian",
-    "Vegan",
-    "Gluten-free",
-    "Farm-to-table",
-    "Food trucks",
-    "Café",
-    "Bakery",
-    "Dessert",
-    "Ice cream",
-    "Juice bar",
-    "Wine bar",
-    "Brewery",
-    "Pub",
-    "Sports bar",
-    "Nightclub",
-  ];
-
-  const randomRestaurants = [];
-
-  while (randomRestaurants.length < 3) {
-    const randomIndex = Math.floor(Math.random() * restaurants.length);
-    const randomRestaurant = restaurants[randomIndex];
-
-    if (!randomRestaurants.includes(randomRestaurant)) {
-      randomRestaurants.push(randomRestaurant);
-    }
-  }
   return (
     <div className="bg-slate-50">
       <section className="mx-auto container pt-16 justify-center flex">
@@ -103,14 +35,7 @@ export default function Bestrestaurants() {
                   activeColor="#FFA500"
                 />
                 <div>
-                  {randomRestaurants.map((item, index) => (
-                    <p
-                      key={index}
-                      className="border border-orange-500 inline-block px-2 py-1 mr-2 rounded-lg text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer font-thin mt-1"
-                    >
-                      {item}
-                    </p>
-                  ))}
+                  <GenresButton />
                   <p className="font-thin pt-5">
                     Non enim praesent elementum facilisis leo vel fringilla.
                     Lectus proin nibh nisl condimentum id. Quis varius quam
@@ -140,14 +65,7 @@ export default function Bestrestaurants() {
                   activeColor="#FFA500"
                 />
                 <div>
-                  {randomRestaurants.map((item, index) => (
-                    <p
-                      key={index}
-                      className="border border-orange-500 inline-block px-2 py-1 mr-2 rounded-lg text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer font-thin mt-1"
-                    >
-                      {item}
-                    </p>
-                  ))}
+                  <GenresButton />
                   <p className="font-thin pt-5">
                     Non enim praesent elementum facilisis leo vel fringilla.
                     Lectus proin nibh nisl condimentum id. Quis varius quam
@@ -175,14 +93,7 @@ export default function Bestrestaurants() {
                   activeColor="#FFA500"
                 />
                 <div>
-                  {randomRestaurants.map((item, index) => (
-                    <p
-                      key={index}
-                      className="border border-orange-500 inline-block px-2 py-1 mr-2 rounded-lg text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer font-thin mt-1"
-                    >
-                      {item}
-                    </p>
-                  ))}
+                  <GenresButton />
                   <p className="font-thin pt-5">
                     Vulputate enim nulla aliquet porttitor lacus luctus.
                     Suscipit adipiscing bibendum est ultricies integer. Sed
