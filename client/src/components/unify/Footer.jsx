@@ -75,7 +75,7 @@ export default function Footer() {
             </div>
           </div>
           <hr />
-          <div className="px-40  py-6  dark:bg-gray-700 md:flex md:items-center md:justify-between    ">
+          <div className="px-40  py-6 md:flex md:items-center md:justify-between    ">
             <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
               Copyright © 2023. All rights reserved.
             </span>

@@ -1,6 +1,3 @@
-// /components/unify hawtsn dotor bga
-import Navbar from "../components/unify/Navbar";
-import Footer from "../components/unify/Footer";
 // /components/home hawtsn dotor bga
 import BestRestaurants from "../components/home/BestRestaurants";
 import HowItWorks from "../components/home/HowItWork";
@@ -11,13 +8,11 @@ import Emailmenu from "../components/home/Emailmenu";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <MainSection />
       <HowItWorks />
       <BestRestaurants />
       <Partnership />
       <Emailmenu />
-      <Footer />
     </>
   );
 }
