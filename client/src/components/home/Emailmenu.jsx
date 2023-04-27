@@ -1,6 +1,6 @@
 export default function EmailMenu() {
   return (
-    <section className="flex justify-center gap-16 bg-[#fcfcfc] py-16">
+    <section className="flex justify-evenly container mx-auto   py-16">
       <div>
         <img
           src="https://bslthemes.com/html/quickeat/assets/img/illustration-4.png"

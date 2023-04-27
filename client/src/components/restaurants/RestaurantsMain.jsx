@@ -28,7 +28,7 @@ export default function RestaurantsMain() {
 
   return (
     <div className="bg-gradient">
-      <section className="container mx-auto">
+      <section className="container mx-auto py-8">
         <div className=" align-middle flex justify-around items-center  ">
           <div className="grid gap-5">
             {/* breadcrumbs */}
