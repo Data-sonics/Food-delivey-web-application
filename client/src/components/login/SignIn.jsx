@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import SignUp from "./SignUp";
 
-function SignIn() {
+function SignIn({ setType }) {
+  // const [type, setType] = useState("signUp");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -64,12 +66,9 @@ function SignIn() {
             </label>
           </div>
         </div>
-        <a
-          href="#"
-          className="text-sm font-medium text-primary-600 hover:underline "
-        >
+        <button className="text-sm font-medium text-primary-600 hover:underline ">
           Forgot password?
-        </a>
+        </button>
       </div>
       <button
         type="submit"
@@ -81,9 +80,14 @@ function SignIn() {
         <p className="text-sm font-light text-gray-500 ">
           Don’t have an account yet?
         </p>
-        <a href="#" className="font-sm text-primary-600 hover:underline ">
+        <button
+          onClick={() => {
+            setType("signUp");
+          }}
+          className="font-sm text-primary-600 hover:underline "
+        >
           Sign up
-        </a>
+        </button>
       </div>
     </form>
   );

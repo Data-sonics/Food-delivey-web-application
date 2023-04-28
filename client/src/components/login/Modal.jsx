@@ -72,8 +72,8 @@ export default function LoginModal() {
                         : "Sign up your account"}
                     </Dialog.Title>
                   </div>
-                  {type === "signIn" && <SignIn />}
-                  {type === "signUp" && <SignUp />}
+                  {type === "signIn" && <SignIn setType={setType} />}
+                  {type === "signUp" && <SignUp setType={setType} />}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
