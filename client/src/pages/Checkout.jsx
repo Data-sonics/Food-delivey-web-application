@@ -1,6 +1,20 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BackgroundContext } from "../contexts/BackgroundProvider";
+import { Fragment } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Tab } from "@headlessui/react";
+import Banks from "../components/icon/Banks";
+
+const disctrict = [
+  { name: "Хан-Уул" },
+  { name: "Сүхбаатар" },
+  { name: "Сонгинохайрхан" },
+  { name: "Баянгол" },
+  { name: "Чингэлтэй" },
+  { name: "Баянзүрх" },
+];
 
 function FoodList() {
   const foods = [
@@ -147,7 +161,7 @@ export default function Checkout() {
                 ></path>
               </svg>
               <Link
-                to="/restaurants"
+                to="/restaurantsCard"
                 className="ml-1 text-sm font-medium text-gray-700 md:ml-2"
               >
                 Restaurants Card
@@ -191,11 +205,11 @@ export default function Checkout() {
               <h1 className="text-5xl font-bold">Your order:</h1>
               <p className="text-amber-500 text-5xl font-bold">{Number}</p>
             </div>
-            <div>
+            <div className="mb-16">
               <FoodList />
             </div>
           </div>
-          <div className="w-[636px] h-[1051px] rounded-lg shadow-2xl mt-5 mb-16">
+          <div className="w-[636px] rounded-lg shadow-2xl mt-5 mb-16">
             <div className="p-8">
               <div>
                 <h1 className="text-2xl font-bold">Buyer information</h1>
@@ -203,20 +217,106 @@ export default function Checkout() {
                   <input
                     type="text"
                     placeholder="Full Name"
-                    className="w-full border h-14 ps-2 rounded-lg font-thin mt-4 focus:outline-0"
+                    className="w-full border h-14 ps-2 rounded-lg font-thin mt-4 focus:outline-0 border-gray-400"
                   />
-                  <div className="flex mt-5 gap-14">
+                  <div className="flex mt-5 gap-10  ">
                     <input
                       type="text"
                       placeholder="E-mail"
-                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14"
+                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
                     />
                     <input
                       type="number"
                       placeholder="Phone"
-                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14"
+                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
                     />
                   </div>
+                  <h1 className="text-2xl font-bold mt-7 mb-4">
+                    Delivery address
+                  </h1>
+                  <Disctrict />
+                  <input
+                    type="text"
+                    placeholder="Street"
+                    className="rounded-lg font-thin focus:outline-0 border ps-2 border-gray-400 w-full h-14 mt-4"
+                  />
+                  <div className="flex mt-5 gap-10  ">
+                    <input
+                      type="text"
+                      placeholder="House number"
+                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Apartment number"
+                      className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h1 className="text-2xl font-extrabold pt-5 mb-2">
+                    Payment method
+                  </h1>
+                  <Tab.Group>
+                    <Tab.List className={"text-xl font-extrabold"}>
+                      <Tab
+                        className={
+                          "hover:text-amber-500 duration-300 ps-10 active:ring-white outline-none"
+                        }
+                      >
+                        Card
+                      </Tab>
+                      <Tab
+                        className={
+                          "hover:text-amber-500 duration-300 ps-10 outline-none"
+                        }
+                      >
+                        Cash
+                      </Tab>
+                    </Tab.List>
+                    <Tab.Panels>
+                      <Tab.Panel>
+                        <Banks />
+                        <input
+                          type="number"
+                          placeholder="Card number"
+                          className="rounded-lg font-thin focus:outline-0 border ps-2 w-full mt-2 h-14 border-gray-400"
+                        />
+                        <div className="flex mt-5 gap-10  ">
+                          <input
+                            type="number"
+                            placeholder="Expiration Date"
+                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
+                          />
+                          <input
+                            type="number"
+                            placeholder="CVV"
+                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
+                          />
+                        </div>
+                        <button className="bg-amber-500 w-full h-14 rounded-lg text-white hover:bg-transparent hover:border-2 border-amber-500 hover:text-amber-500 duration-300 font-thin mt-6">
+                          Send
+                        </button>
+                      </Tab.Panel>
+                      <Tab.Panel>
+                        <button className="bg-amber-500 w-full h-14 rounded-lg text-white hover:bg-transparent hover:border-2 border-amber-500 hover:text-amber-500 duration-300 font-thin mt-16">
+                          Send
+                        </button>
+                        <div className="flex mt-5 gap-10  ">
+                          <input
+                            type="text"
+                            placeholder="House number"
+                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Apartment number"
+                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
+                          />
+                        </div>
+                      </Tab.Panel>
+                    </Tab.Panels>
+                  </Tab.Group>
                 </div>
               </div>
             </div>
@@ -224,5 +324,64 @@ export default function Checkout() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Disctrict() {
+  const [selected, setSelected] = useState(disctrict[0]);
+
+  return (
+    <div className="w-full">
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative mt-1">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left border border-gray-400 text-gray-500 h-14 font-bold focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+            <span className="block truncate">{selected.name}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {disctrict.map((person, personIdx) => (
+                <Listbox.Option
+                  key={personIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                    }`
+                  }
+                  value={person}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-medium" : "font-normal"
+                        }`}
+                      >
+                        {person.name}
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
+    </div>
   );
 }
