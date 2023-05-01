@@ -2,10 +2,13 @@ import Logo from "../logo/Logo";
 import { FaShoppingBag } from "react-icons/fa";
 import Button from "./Button";
 
+import LoginModal from "../login/Modal";
+
 import { useState } from "react";
 
 function FoodList({ foods }) {
   const [quantity, setQuantity] = useState(1);
+
   const handleAdd = () => {
     setQuantity(quantity + 1);
   };
@@ -153,12 +156,18 @@ export default function Navbar({ background }) {
             </ul>
           </div>
 
-          <div className="flex p-2 w-80">
-            <span className="mt-4 mx-10">
+          <div className="flex p-2 w-[450px] items-center justify-around">
+            <div>
+              <LoginModal />
+            </div>
+            <span className=" ">
               <div>
-                <button onClick={toggleSidebar} className="text-amber-500">
-                  <FaShoppingBag />
-                </button>
+                <FaShoppingBag
+                  onClick={toggleSidebar}
+                  size="20"
+                  className="text-amber-500"
+                />
+
                 <div className="relative flex-none">
                   <Sidebar
                     isSidebarVisible={isSidebarVisible}

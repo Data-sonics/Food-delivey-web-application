@@ -1,13 +1,12 @@
 import React from "react";
-
-// /components/unify folder dotor bga
-// /components/restaurants   folder dotor bga
 import RestaurantsMain from "../components/restaurants/RestaurantsMain";
+import RestaurantsCategory from "../components/unify/RestaurantsCategory";
 
 function Restaurants() {
   return (
     <>
       <RestaurantsMain />
+      <RestaurantsCategory />
     </>
   );
 }
