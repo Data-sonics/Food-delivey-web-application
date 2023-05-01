@@ -126,7 +126,7 @@ function Sidebar({ isSidebarVisible, closeSidebar }) {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ background }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   const toggleSidebar = () => {
@@ -140,7 +140,7 @@ export default function Navbar() {
   const topchoices = ["Home", "About us", "Restaurants", "Pages", "Contacts"];
 
   return (
-    <nav className="bg-gradient">
+    <nav className={background}>
       <div className="container mx-auto py-4">
         <div className="flex justify-evenly cursor-pointer ">
           <Logo />

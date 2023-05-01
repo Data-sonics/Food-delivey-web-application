@@ -39,10 +39,10 @@ export default function MainSection() {
             </p>
             <div className="my-10">
               <Combobox value={selected} onChange={setSelected}>
-                <div className="relative mt-1 flex gap-5  ">
+                <div className="relative mt-1 flex gap-5">
                   <div className="relative w-96 cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
                     <Combobox.Input
-                      className="w-full border-none p-3 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:outline-none"
+                      className="w-full border-none pt-4 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:outline-none"
                       displayValue={(person) => person.name}
                       onChange={(event) => setQuery(event.target.value)}
                     />
