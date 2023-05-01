@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SignUp from "./SignUp";
 
 function SignIn({ setType }) {
   // const [type, setType] = useState("signUp");

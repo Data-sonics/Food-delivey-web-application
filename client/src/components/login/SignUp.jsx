@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import SignIn from "./SignIn";
 
 function SignUp({ setType }) {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
