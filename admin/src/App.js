@@ -1,9 +1,9 @@
 import { useCurrentUser } from "./hooks/useCurrentUser";
 import { Routes, Route } from "react-router";
 import { NotFoundScreen } from "./screens/NotFoundScreen";
-import { LoginScreen } from "./screens/LoginScreen";
 import { RegisterScreen } from "./screens/RegisterScreen";
 import { OrdersScreen } from "./screens/OrdersScreen";
+import { LoginScreen } from "./screens/LoginScreen";
 
 function App() {
   const { currentUser } = useCurrentUser();

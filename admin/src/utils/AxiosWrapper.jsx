@@ -6,7 +6,8 @@ export const AxiosWrapper = ({ children }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  axios.defaults.baseURL = process.env.PUBLIC_API_URL || "";
+  axios.defaults.baseURL =
+    process.env.REACT_APP_CALLBACK_URL || "http://localhost:8080";
 
   axios.interceptors.request.use(
     (config) => {

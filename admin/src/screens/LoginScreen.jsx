@@ -14,7 +14,7 @@ export const LoginScreen = () => {
   const { setCurrentUser } = useCurrentUser();
 
   const submitSignIn = () => {
-    axios.post("/login", { email, password }).then((res) => {
+    axios.post("/api/login", { email, password }).then((res) => {
       const { body } = res.data;
       localStorage.setItem("token", body.token);
       setCurrentUser(body.user);

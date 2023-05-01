@@ -14,7 +14,7 @@ export const RegisterScreen = () => {
 
   const submitRegister = () => {
     const body = { email, password, repassword };
-    axios.post("/register", body).then(() => {
+    axios.post("/api/register", body).then(() => {
       toast.success("Бүртгэл амжилттай");
       navigate("/login");
     });
