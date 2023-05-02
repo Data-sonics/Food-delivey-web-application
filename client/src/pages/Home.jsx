@@ -11,7 +11,7 @@ export default function Home() {
       <HowItWorks />
       <RestaurantsCategory />
       <Partnership />
-      <Emailmenu />
+      <EmailMenu />
     </>
   );
 }
