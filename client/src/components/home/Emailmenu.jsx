@@ -14,9 +14,9 @@ export default function EmailMenu() {
         <input
           type="text"
           placeholder="Enter email address"
-          className="rounded-lg w-[70%] h-14 shadow-lg ps-2"
+          className="rounded-lg w-[70%] h-14 shadow-lg ps-2 focus:outline-0"
         />
-        <button className="bg-amber-500 mt-10 h-14 text-white rounded-lg font-thin ms-2 w-[25%]">
+        <button className="bg-amber-500 mt-10 h-14 text-white rounded-lg font-thin ms-2 w-[25%] hover:bg-transparent duration-300 hover:text-amber-500 hover:border hover:border-amber-500">
           SUBSCRIBE
         </button>
       </div>
