@@ -2,11 +2,12 @@ import Location from "../icon/Location";
 import Flogo from "../logo/Flogo";
 import Message from "../icon/Message";
 import Phone from "../icon/Phone";
+import { Link } from "react-router-dom";
 const names = [
   { title: "Home", to: "/" },
-  { title: "About Us", to: "/" },
-  { title: "Restaurants", to: "/" },
-  { title: "Contact Us", to: "/" },
+  { title: "Restaurants", to: "/restaurants" },
+  { title: "Restaurants card", to: "/restaurantsCard" },
+  { title: "Contacts", to: "/contactus" },
 ];
 export default function Footer() {
   return (
@@ -35,12 +36,12 @@ export default function Footer() {
                 {names.map((name) => {
                   return (
                     <li className="mb-4" key={name}>
-                      <a
-                        href={name.to}
+                      <Link
+                        to={name.to}
                         className="hover:text-[#F29F05] hover:ease-in duration-300 "
                       >
                         {name.title} &nbsp;&rarr;
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}

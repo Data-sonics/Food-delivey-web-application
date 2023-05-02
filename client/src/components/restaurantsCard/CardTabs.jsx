@@ -202,7 +202,7 @@ function CardTabs() {
               <ul className="flex gap-10 flex-wrap focus:outline-0 ">
                 {FoodCard.map((food) => (
                   <li key={food.id}>
-                    <div className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow">
                       <a href="/">
                         <img
                           className="p-8 rounded-t-lg"
@@ -215,7 +215,7 @@ function CardTabs() {
                         className="px-10 py-10"
                         style={{ display: info ? "none" : "block" }}
                       >
-                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900">
                           {food.title}
                         </h5>
 
@@ -233,7 +233,7 @@ function CardTabs() {
                         </div>
                         <hr />
                         <div className="flex my-5 justify-between ">
-                          <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                          <p className="text-3xl font-bold text-gray-900">
                             {food.price}
                           </p>
                           <div className="flex gap-2 ">
@@ -277,7 +277,7 @@ function CardTabs() {
                             <AiOutlineClose className="fill-amber-500 " />
                           </button>
                         </div>
-                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className="text-4xl font-semibold tracking-tight text-gray-900">
                           Potatoes with pork and dried fruits
                         </h5>
 

@@ -1,93 +1,3 @@
-// import { useState } from "react";
-
-// export default function Banks() {
-//   const [isChecked, setIsChecked] = useState();
-//   const handleBoxChange = () => {
-//     setIsChecked(!isChecked);
-//   };
-//   return (
-//     <div>
-//       <div className="flex gap-1">
-//         <label
-//           className={`flex items-center border ${
-//             isChecked ? "border-amber-500" : "border-gray-400"
-//           }`}
-//         >
-//           <input
-//             type="radio"
-//             name="test"
-//             value="small"
-//             className="invisible"
-//             checked={isChecked}
-//             onChange={handleBoxChange}
-//           />
-//           <img
-//             src="https://play-lh.googleusercontent.com/Aw4bwCDJgAzu6AFAbbcfCFpheVMB6ZKiEM3JlrJ3cAM65fK-1QaTZZs_Vk4UFBzykQ"
-//             alt="Khan Bank"
-//             className="w-10"
-//           />
-//         </label>
-//         <label
-//           className={`flex items-center border ${
-//             isChecked ? "" : "border-amber-500"
-//           }`}
-//         >
-//           <input
-//             type="radio"
-//             name="test"
-//             value="small"
-//             className="invisible"
-//             checked={isChecked}
-//             onChange={handleBoxChange}
-//           />
-//           <img
-//             src="https://play-lh.googleusercontent.com/9tUBesUsI4UIkpgO1MPIMLFvhDa_4vZE75TrVAUHFA7a0bJ7IIgeyh2r1QXs9VlmXmkX"
-//             alt="Golomt Bank"
-//             className="w-10"
-//           />
-//         </label>
-//         <label
-//           className={`flex items-center border ${
-//             isChecked ? "border-amber-500" : "border-gray-400"
-//           }`}
-//         >
-//           <input
-//             type="radio"
-//             name="test"
-//             value="small"
-//             className="invisible"
-//             checked={isChecked}
-//             onChange={handleBoxChange}
-//           />
-//           <img
-//             src="https://play-lh.googleusercontent.com/oLKxnYGEgAyoxZ4rG6ogqzoLQMIUC7wrAuE7tca9PKWZubIev1t3CvvnJvpvj7KhKL4"
-//             alt="Golomt Bank"
-//             className="w-10"
-//           />
-//         </label>
-//         <label
-//           className={`flex items-center border ${
-//             isChecked ? "border-amber-500" : "border-gray-400"
-//           }`}
-//         >
-//           <input
-//             type="radio"
-//             name="test"
-//             value="small"
-//             className="invisible"
-//             checked={isChecked}
-//             onChange={handleBoxChange}
-//           />
-//           <img
-//             src="https://play-lh.googleusercontent.com/vHTV4z9QgeW9tPT2uIQtFIFA1Y_i2se3mrc98h4XvUJFhvQGgLRlCdl4oHF3YZXI4qcG"
-//             alt="XAC Bank"
-//             className="w-10"
-//           />
-//         </label>
-//       </div>
-//     </div>
-//   );
-// }
 import { useState } from "react";
 
 export default function Banks() {
@@ -99,14 +9,14 @@ export default function Banks() {
 
   const getLabelClass = (optionValue) => {
     if (selectedOption === optionValue) {
-      return "border border-amber-500";
+      return "border border-amber-500 rounded-lg";
     } else {
       return "";
     }
   };
 
   return (
-    <div className="flex space-y-2 gap-12 mt-2">
+    <div className="flex space-y-2 gap-12 mt-2 justify-center">
       <label className={`flex items-center ${getLabelClass("option1")}`}>
         <input
           type="radio"
