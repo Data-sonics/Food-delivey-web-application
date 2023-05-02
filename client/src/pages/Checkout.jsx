@@ -302,18 +302,6 @@ export default function Checkout() {
                         <button className="bg-amber-500 w-full h-14 rounded-lg text-white hover:bg-transparent hover:border-2 border-amber-500 hover:text-amber-500 duration-300 font-thin mt-16">
                           Send
                         </button>
-                        <div className="flex mt-5 gap-10  ">
-                          <input
-                            type="text"
-                            placeholder="House number"
-                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
-                          />
-                          <input
-                            type="text"
-                            placeholder="Apartment number"
-                            className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
-                          />
-                        </div>
                       </Tab.Panel>
                     </Tab.Panels>
                   </Tab.Group>

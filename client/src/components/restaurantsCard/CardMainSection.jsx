@@ -37,7 +37,7 @@ export default function CardMainSection() {
                     ></path>
                   </svg>
                   <Link
-                    to="/restaurant"
+                    to="/restaurants"
                     class="ml-1 text-sm font-medium text-gray-700 hover:text-amber-500 md:ml-2 "
                   >
                     Restaurants

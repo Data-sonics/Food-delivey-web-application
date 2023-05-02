@@ -50,7 +50,7 @@ export default function RestaurantsCategory() {
                 />
               </div>
               <div className="mx-7">
-                <h1 className="text-3xl font-bold hover:text-amber-500 duration-300">
+                <h1 className="text-3xl font-bold hover:text-amber-500 duration-300 cursor-pointer">
                   {restaurant.title}
                 </h1>
                 <RatingStars
@@ -69,9 +69,11 @@ export default function RestaurantsCategory() {
         })}
       </section>
       <div className="text-center ">
-        <button className="hover:bg-amber-500 border-2 border-amber-500 text-amber-500 hover:text-white w-[100px] h-[50px] rounded-xl">
-          SEE ALL →
-        </button>
+        <a href="/restaurants">
+          <button className="hover:bg-amber-500 border-2 border-amber-500 text-amber-500 hover:text-white w-[100px] h-[50px] rounded-xl">
+            SEE ALL →
+          </button>
+        </a>
       </div>
     </div>
   );

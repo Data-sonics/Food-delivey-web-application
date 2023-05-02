@@ -5,6 +5,7 @@ import Button from "./Button";
 import LoginModal from "../login/Modal";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function FoodList({ foods }) {
   const [quantity, setQuantity] = useState(1);
@@ -137,7 +138,33 @@ export default function Navbar({ background }) {
     setIsSidebarVisible(false);
   };
 
-  const topchoices = ["Home", "About us", "Restaurants", "Pages", "Contacts"];
+  const topchoices = [
+    {
+      id: "1",
+      to: "/",
+      title: "Home",
+    },
+    {
+      id: "2",
+      to: "/restaurants",
+      title: "Restaurants",
+    },
+    {
+      id: "3",
+      to: "/restaurantsCard",
+      title: "Restaurants Card",
+    },
+    {
+      id: "4",
+      to: "/contactus",
+      title: "Contacts",
+    },
+    {
+      id: "5",
+      to: "/checkout",
+      title: "Checkout",
+    },
+  ];
 
   return (
     <nav className={background}>
@@ -146,11 +173,14 @@ export default function Navbar({ background }) {
           <Logo />
           <div className="items-center flex justify-between w-full">
             <ul className="flex ms-16 font-thin p-4 md:p-0rounded-lg  mt-0 border-0 space-x-8 text-xl ">
-              {topchoices.map((item, index) => (
-                <li key={index}>
-                  <a href="/" className="hover:text-amber-500 duration-300">
-                    {item}
-                  </a>
+              {topchoices.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to={item.to}
+                    className="hover:text-amber-500 duration-300"
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>

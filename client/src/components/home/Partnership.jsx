@@ -3,7 +3,7 @@ const ship = [
     id: "1",
     imageUrl: "https://bslthemes.com/html/quickeat/assets/img/photo-6.jpg",
     imageAlt: "",
-    title: "Join Merchan",
+    title: "Join Courier",
   },
   {
     id: "2",
@@ -33,9 +33,11 @@ export default function Partnership() {
                 />
                 <div className="absolute top-[65%] left-[10%]">
                   <p className="text-white text-5xl">{partner.title}</p>
-                  <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5 hover:bg-transparent hover:border-amber-500 hover:border-2 hover:text-amber-500 font-thin">
-                    LEARN MORE→
-                  </button>
+                  <a href="/contactus">
+                    <button className="text-white bg-amber-500 w-[150px] h-[50px] rounded-xl mt-5 hover:bg-transparent hover:border-amber-500 hover:border-2 hover:text-amber-500 font-thin">
+                      LEARN MORE→
+                    </button>
+                  </a>
                 </div>
               </div>
             );
