@@ -3,12 +3,33 @@ import RatingStars from "react-rating-stars-component";
 // /components/unify/genresbutton
 import GenresButton from "../unify/Genresbutton";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import Aos from "aos";
 
 export default function CardMainSection() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <div className="bg-gradient">
       <section className="container mx-auto py-20">
-        <div className="  items-center flex justify-around ">
+        <div className="  items-center flex justify-around " data-aos="fade-up">
           {/* restaurant about */}
           <div>
             {/* breadcrumb */}

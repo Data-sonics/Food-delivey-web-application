@@ -2,7 +2,6 @@ import Location from "../icon/Location";
 import Flogo from "../logo/Flogo";
 import Message from "../icon/Message";
 import Phone from "../icon/Phone";
-import { Link } from "react-router-dom";
 const names = [
   { title: "Home", to: "/" },
   { title: "Restaurants", to: "/restaurants" },
@@ -36,12 +35,12 @@ export default function Footer() {
                 {names.map((name) => {
                   return (
                     <li className="mb-4" key={name}>
-                      <Link
-                        to={name.to}
+                      <a
+                        href={name.to}
                         className="hover:text-[#F29F05] hover:ease-in duration-300 "
                       >
                         {name.title} &nbsp;&rarr;
-                      </Link>
+                      </a>
                     </li>
                   );
                 })}

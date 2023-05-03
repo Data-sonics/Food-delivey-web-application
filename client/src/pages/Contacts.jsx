@@ -1,18 +1,38 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BackgroundContext } from "../contexts/BackgroundProvider";
 import { IoLocationSharp, IoCall } from "react-icons/io5";
 import { IoIosMail, IoMdMail } from "react-icons/io";
 import { FaUserAlt } from "react-icons/fa";
 import EmailMenu from "../components/home/Emailmenu";
+import Aos from "aos";
 
 export default function Contacts() {
   const { setColor } = useContext(BackgroundContext);
   setColor("bg-transparent");
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <section className="container mx-auto">
       <div className="flex">
-        <div className="my-16">
+        <div className="my-16" data-aos="fade-up">
           <ol className="flex items-center my-9">
             <li className="inline-flex items-center">
               <Link
@@ -78,7 +98,7 @@ export default function Contacts() {
             </div>
           </div>
         </div>
-        <div className="mt-[2%]">
+        <div className="mt-[2%]" data-aos="fade-up">
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/contacts-1.png"
             alt="callme"
@@ -86,7 +106,10 @@ export default function Contacts() {
           />
         </div>
       </div>
-      <div className="flex gap-16 my-10 shadow-2xl p-8 rounded-lg">
+      <div
+        className="flex gap-16 my-10 shadow-2xl p-8 rounded-lg"
+        data-aos="fade-up"
+      >
         <div className="w-[50%]">
           <h1 className="text-4xl font-bold my-2">Get in touch with us</h1>
           <p className="text-gray-400 font-thin text-lg my-8">

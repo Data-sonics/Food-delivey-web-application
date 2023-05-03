@@ -1,3 +1,5 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import RatingStars from "react-rating-stars-component";
 import GenresButton from "./Genresbutton";
 
@@ -33,14 +35,34 @@ const resCategory = [
 ];
 
 export default function RestaurantsCategory() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: false,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <div className="grid gap-8 py-10 bg-gray-100">
-      <section className="mx-auto container flex gap-16 flex-wrap  pt-16 ">
+      <section className="mx-auto container flex gap-16 flex-wrap  pt-16">
         {resCategory.map((restaurant) => {
           return (
             <div
               key={restaurant.id}
               className="flex w-[46rem]  rounded-xl bg-white p-10 shadow-xl"
+              data-aos="flip-down"
             >
               <div className="">
                 <img

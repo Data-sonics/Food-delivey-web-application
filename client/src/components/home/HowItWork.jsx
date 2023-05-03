@@ -1,4 +1,26 @@
+import Aos from "aos";
+import { useEffect } from "react";
+
 export default function Howitworks() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: false,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <section className="mb-10">
       <div className="text-center pt-16">
@@ -9,7 +31,7 @@ export default function Howitworks() {
         </p>
       </div>
       <div className="flex justify-center pt-10 gap-[150px]">
-        <div className="">
+        <div data-aos="flip-up">
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/illustration-1.png"
             alt="select"
@@ -24,7 +46,7 @@ export default function Howitworks() {
             vel.
           </p>
         </div>
-        <div>
+        <div data-aos="flip-up">
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/illustration-2.png"
             alt="menu"
@@ -37,7 +59,7 @@ export default function Howitworks() {
             voluptate quibusdam ex eius eaque voluptatem voluptatum doloremque!
           </p>
         </div>
-        <div>
+        <div data-aos="flip-up">
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/illustration-3.png"
             alt=""
