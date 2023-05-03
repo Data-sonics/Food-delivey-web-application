@@ -26,9 +26,9 @@ export default function Banks() {
           onChange={handleOptionChange}
         />
         <img
-          src="https://play-lh.googleusercontent.com/Aw4bwCDJgAzu6AFAbbcfCFpheVMB6ZKiEM3JlrJ3cAM65fK-1QaTZZs_Vk4UFBzykQ"
+          src="https://www.khanbank.com/uploaded/media/2022/Oct/LogoText.svg?imwidth=640"
           alt="Khan bank"
-          className="w-14 p-1"
+          className="w-36 p-1"
         />
       </label>
       <label className={`flex items-center ${getLabelClass("option2")}`}>
@@ -54,9 +54,9 @@ export default function Banks() {
           onChange={handleOptionChange}
         />
         <img
-          src="https://play-lh.googleusercontent.com/vHTV4z9QgeW9tPT2uIQtFIFA1Y_i2se3mrc98h4XvUJFhvQGgLRlCdl4oHF3YZXI4qcG"
+          src="https://www.xacbank.mn/img/xacbank_en.png"
           alt="XAC Bank"
-          className="w-14 p-1"
+          className="w-28 p-1"
         />
       </label>
       <label className={`flex items-center ${getLabelClass("option4")}`}>
@@ -68,9 +68,9 @@ export default function Banks() {
           onChange={handleOptionChange}
         />
         <img
-          src="https://play-lh.googleusercontent.com/oLKxnYGEgAyoxZ4rG6ogqzoLQMIUC7wrAuE7tca9PKWZubIev1t3CvvnJvpvj7KhKL4"
+          src="https://tdbm.mn/bundles/tdbm/img/logo.png"
           alt="Golomt Bank"
-          className="w-14 p-1"
+          className="w-20 p-1"
         />
       </label>
     </div>

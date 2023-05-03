@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BackgroundContext } from "../contexts/BackgroundProvider";
 import { Fragment } from "react";
@@ -6,6 +6,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Tab } from "@headlessui/react";
 import Banks from "../components/icon/Banks";
+import Aos from "aos";
 
 const disctrict = [
   { name: "Хан-Уул" },
@@ -17,6 +18,25 @@ const disctrict = [
 ];
 
 function FoodList() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   const foods = [
     {
       id: 1,
@@ -113,7 +133,7 @@ export default function Checkout() {
   return (
     <section className="container mx-auto">
       <div className="text-center my-16 grid gap-10">
-        <ol className="flex items-center justify-center">
+        <ol className="flex items-center justify-center" data-aos="fade-up">
           <li className="inline-flex items-center">
             <Link
               to="/"
@@ -192,15 +212,17 @@ export default function Checkout() {
             </div>
           </li>
         </ol>
-        <h1 className="text-5xl font-bold">Checkout</h1>
-        <p className="text-md text-gray-500 font-thin">
+        <h1 className="text-5xl font-bold" data-aos="fade-up">
+          Checkout
+        </h1>
+        <p className="text-md text-gray-500 font-thin" data-aos="fade-up">
           Sit amet nisl purus in mollis nunc sed id semper. Condimentum id
           venenatis a condimentum vitae sapien pellentesque.
         </p>
       </div>
       <div className="container mx-auto">
         <div className="flex justify-center gap-[10%]">
-          <div className="w-[500px]">
+          <div className="w-[500px]" data-aos="flip-down">
             <div className="flex justify-between my-10">
               <h1 className="text-5xl font-bold">Your order:</h1>
               <p className="text-amber-500 text-5xl font-bold">{Number}</p>
@@ -209,7 +231,10 @@ export default function Checkout() {
               <FoodList />
             </div>
           </div>
-          <div className="w-[636px] rounded-lg shadow-2xl mt-5 mb-16">
+          <div
+            className="w-[636px] rounded-lg shadow-2xl mt-5 mb-16"
+            data-aos="flip-down"
+          >
             <div className="p-8">
               <div>
                 <h1 className="text-2xl font-bold">Buyer information</h1>

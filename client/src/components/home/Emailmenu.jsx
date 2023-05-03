@@ -1,13 +1,35 @@
+import Aos from "aos";
+import { useEffect } from "react";
+
 export default function EmailMenu() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <section className="flex justify-evenly container mx-auto   py-16">
-      <div>
+      <div data-aos="flip-up">
         <img
           src="https://bslthemes.com/html/quickeat/assets/img/illustration-4.png"
           alt=""
         />
       </div>
-      <div className="">
+      <div data-aos="flip-up">
         <h1 className="text-5xl w-[500px] font-extrabold">
           Get the menu of your favorite restaurants every day
         </h1>

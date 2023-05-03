@@ -2,6 +2,9 @@ import { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
 import Button from "../unify/Button";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const people = [
   { id: 1, name: "Choose a Restaurant" },
@@ -11,6 +14,7 @@ const people = [
   { id: 5, name: "Tanya Fox" },
   { id: 6, name: "Hellen Schmidt" },
 ];
+
 export default function MainSection() {
   const [selected, setSelected] = useState(people[0]);
   const [query, setQuery] = useState("");
@@ -25,10 +29,33 @@ export default function MainSection() {
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
 
+  useEffect(() => {
+    AOS.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: false,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
+
   return (
     <div className="bg-gradient">
       <section className="container mx-auto">
-        <div className=" align-middle flex justify-between">
+        <div
+          className=" align-middle flex justify-between py-10"
+          data-aos="fade-up"
+        >
           <div>
             <h1 className="text-6xl w-[20rem] leading-snug  font-bold pt-10 ">
               The Best Restaurants In Your Home
@@ -116,6 +143,7 @@ export default function MainSection() {
             <img
               src="https://bslthemes.com/html/quickeat/assets/img/photo-1.png"
               alt="courierman"
+              data-aos="fade-up"
             />
           </div>
         </div>

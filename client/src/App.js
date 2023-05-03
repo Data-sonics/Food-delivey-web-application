@@ -1,4 +1,5 @@
 import "./styles/index.css";
+
 import { Route, Routes } from "react-router-dom";
 
 // route elements
@@ -14,7 +15,6 @@ import { useContext } from "react";
 import { BackgroundContext } from "./contexts/BackgroundProvider";
 import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
-
 function App() {
   const { color } = useContext(BackgroundContext);
   return (

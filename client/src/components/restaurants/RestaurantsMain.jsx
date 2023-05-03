@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
+import Aos from "aos";
 
 const people = [
   { id: 1, name: "Choose a Restaurant" },
@@ -25,11 +26,32 @@ export default function RestaurantsMain() {
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
-
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <div className="bg-gradient">
       <section className="container mx-auto py-8">
-        <div className=" align-middle flex justify-around items-center  ">
+        <div
+          className=" align-middle flex justify-around items-center"
+          data-aos="fade-up"
+        >
           <div className="grid gap-5">
             {/* breadcrumbs */}
             <div>

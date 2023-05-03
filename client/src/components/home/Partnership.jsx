@@ -1,3 +1,6 @@
+import Aos from "aos";
+import { useEffect } from "react";
+
 const ship = [
   {
     id: "1",
@@ -13,6 +16,25 @@ const ship = [
   },
 ];
 export default function Partnership() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 700,
+      easing: "ease",
+      once: true,
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
   return (
     <section className="bg-[#363636] py-16">
       <div className="container mx-auto grid gap-10">
@@ -25,6 +47,9 @@ export default function Partnership() {
               <div
                 key={partner.id}
                 className="border-4  rounded-lg border-amber-500 relative"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
               >
                 <img
                   src={partner.imageUrl}

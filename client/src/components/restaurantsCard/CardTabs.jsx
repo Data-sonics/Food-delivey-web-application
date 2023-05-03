@@ -202,7 +202,10 @@ function CardTabs() {
               <ul className="flex gap-10 flex-wrap focus:outline-0 ">
                 {FoodCard.map((food) => (
                   <li key={food.id}>
-                    <div className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow">
+                    <div
+                      className="w-full  max-w-md  bg-white border border-gray-200 rounded-lg shadow"
+                      data-aos="flip-up"
+                    >
                       <a href="/">
                         <img
                           className="p-8 rounded-t-lg"
