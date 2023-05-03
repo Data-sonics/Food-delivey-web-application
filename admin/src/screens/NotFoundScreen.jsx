@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { useCurrentUser } from "../hooks/useCurrentUser";
+import { useCurrentUser } from "../hooks";
 
 export const NotFoundScreen = () => {
   const { currentUser } = useCurrentUser();
   console.log("currentUser:", currentUser);
 
   return (
-    <div className="bg-gray-100 h-screen justify-center">
-      <center className="pt-24 m-auto">
+    <div className="h-screen justify-center bg-gray-100">
+      <center className="m-auto pt-24">
         <svg
           className="emoji-404 "
           enableBackground="new 0 0 226 249.135"
@@ -98,11 +98,11 @@ export const NotFoundScreen = () => {
             strokeWidth="8"
           />
         </svg>
-        <div className=" tracking-widest mt-5">
-          <span className="text-gray-500 text-6xl block">
+        <div className=" mt-5 tracking-widest">
+          <span className="block text-6xl text-gray-500">
             <span>4 0 4</span>
           </span>
-          <span className="text-gray-500 text-xl">Хуудас олдсонгүй</span>
+          <span className="text-xl text-gray-500">Хуудас олдсонгүй</span>
         </div>
       </center>
       <center className="mt-6">
@@ -110,13 +110,13 @@ export const NotFoundScreen = () => {
           <>
             <Link
               to={"/login"}
-              className="text-gray-500 font-mono text-xl bg-gray-200 p-3 rounded-md hover:shadow-md mr-4"
+              className="mr-4 rounded-md bg-gray-200 p-3 font-mono text-xl text-gray-500 hover:shadow-md"
             >
               Нэвтрэх
             </Link>
             <Link
               to={"/register"}
-              className="text-gray-700 font-mono text-xl bg-gray-500 p-3 rounded-md hover:shadow-md"
+              className="rounded-md bg-gray-500 p-3 font-mono text-xl text-gray-700 hover:shadow-md"
             >
               Бүртгүүлэх
             </Link>
@@ -124,7 +124,7 @@ export const NotFoundScreen = () => {
         ) : (
           <Link
             to={"/"}
-            className="text-gray-700 font-mono text-xl bg-gray-500 p-3 rounded-md hover:shadow-md"
+            className="rounded-md bg-gray-500 p-3 font-mono text-xl text-gray-700 hover:shadow-md"
           >
             Нүүр
           </Link>
