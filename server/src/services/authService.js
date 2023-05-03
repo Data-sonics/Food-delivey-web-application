@@ -5,8 +5,12 @@ import { userModel } from "../models/userModel";
 import { env } from "../configs/env";
 
 export const registerUser = async ({ email, password }) => {
-  password = await bcrypt.hash(password, 10);
-  const user = await createUser({ email, password, name: email.split("@")[0] });
+  const hashed_password = await bcrypt.hash(password, 10);
+  const user = await createUser({
+    email,
+    password: hashed_password,
+    name: email.split("@")[0],
+  });
   return user;
 };
 
@@ -16,15 +20,21 @@ export const loginUser = async ({ email, password }) => {
   }
   const user = await userModel.findOne({ email });
   if (!user) {
-    return { success: false, status: 400, message: "User not found" };
+    console.log("user oldoogui");
+    return { success: false, status: 404, message: "User not found" };
   }
   const passwordMatch = await bcrypt.compare(password, user.password);
   if (!passwordMatch) {
+    console.log("password mismatch");
     return { success: false, status: 400, message: "Password not matching" };
   }
-  const token = jwt.sign({ _id: user._id, email: user.email }, JWT_SECRET, {
-    expiresIn: "2h",
-  });
+  const token = jwt.sign(
+    { _id: user._id, email: user.email },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: "2h",
+    }
+  );
 
   return {
     success: true,

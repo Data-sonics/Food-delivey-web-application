@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button } from "../components/Button";
-import { InputGroup } from "../components/InputGroup";
+import Button from "components/button";
+import InputGroup from "components/buttonLink";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -39,7 +39,7 @@ export const OrdersScreen = () => {
   return (
     <div className="">
       <form
-        className="p-5 max-w-sm"
+        className="max-w-sm p-5"
         onSubmit={(e) => {
           e.preventDefault();
           newOrder();
