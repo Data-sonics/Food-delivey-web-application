@@ -52,9 +52,9 @@ export default function Contacts() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
                 <Link
@@ -146,6 +146,7 @@ export default function Contacts() {
         </div>
         <div className="mt-6">
           <iframe
+            title="locationFrame"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d666.8676028654205!2d106.93400347248576!3d47.92397649373824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDfCsDU1JzI2LjgiTiAxMDbCsDU2JzAzLjYiRQ!5e0!3m2!1smn!2smn!4v1683012245725!5m2!1smn!2smn"
             className="w-[600px] h-[100%] rounded-xl"
           ></iframe>
