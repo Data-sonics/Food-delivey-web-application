@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { createUser } from "../services/usersService";
+import { createUser } from "./usersService";
 import { userModel } from "../models/userModel";
 import { env } from "../configs/env";
 

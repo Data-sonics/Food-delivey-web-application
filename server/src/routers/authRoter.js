@@ -22,7 +22,7 @@ authRouter.post("/api/register", async (req, res) => {
     .json({ success: true, message: "Register successful" });
 });
 
-authRouter.post("/api/login", async (req, res) => {
+authRouter.post("/api/signIn", async (req, res) => {
   const { email, password } = req.body;
   const response = await loginUser({ email, password });
   res.status(response.status).json(response);
