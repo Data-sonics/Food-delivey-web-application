@@ -146,6 +146,7 @@ export default function Contacts() {
         </div>
         <div className="mt-6">
           <iframe
+            title="myTitle"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d666.8676028654205!2d106.93400347248576!3d47.92397649373824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDfCsDU1JzI2LjgiTiAxMDbCsDU2JzAzLjYiRQ!5e0!3m2!1smn!2smn!4v1683012245725!5m2!1smn!2smn"
             className="w-[600px] h-[100%] rounded-xl"
           ></iframe>
