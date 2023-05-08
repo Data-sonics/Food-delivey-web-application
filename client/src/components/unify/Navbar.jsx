@@ -19,7 +19,7 @@ function FoodList({ foods }) {
   return (
     <div className="px-[40px]">
       {foods.map((food) => (
-        <div className="my-2">
+        <div className="my-2" key={food.id}>
           <div className="flex align-middle">
             <img src={food.respic} alt="" className="rounded-xl" />
             <h1 className="font-bold  text-xl p-3">{food.resname}</h1>
@@ -45,7 +45,6 @@ function FoodList({ foods }) {
               </button>
               <input
                 className="  rounded-lg  w-20 text-center  border-gray-200 border "
-                defaultValue="1"
                 type="number"
                 min="0"
                 value={quantity}

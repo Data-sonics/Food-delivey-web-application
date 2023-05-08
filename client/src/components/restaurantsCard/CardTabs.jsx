@@ -175,7 +175,7 @@ function CardTabs() {
         <Tab.List className="flex gap-4 shadow-xl ">
           {Object.keys(FoodCategory).map((genres) => (
             <Tab
-              key={genres}
+              key={genres.id}
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5  font-medium     duration-300   text-amber-500   ",

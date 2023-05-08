@@ -74,9 +74,9 @@ function Logo() {
           id="Quickeat-w"
           transform="translate(320 77)"
           fill="#fff"
-          font-size="20"
-          font-family="Poppins"
-          font-weight="700"
+          fontSize="20"
+          fontFamily="Poppins"
+          fontWeight="700"
         >
           <tspan x="0" y="0" fill="#000000">
             QUICK

@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { CurrentUserProvider } from "./contexts/CurrentUserProvider";
+import CurrentUserProvider from "./contexts";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
-import { AxiosWrapper } from "./utils/AxiosWrapper";
+import AxiosWrapper from "./utils";
 import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
