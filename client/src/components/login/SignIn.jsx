@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useCurrentUser from "../../hooks/useCurrentUser";
 import axios from "axios";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function SignIn({ setType }) {
@@ -10,24 +10,22 @@ function SignIn({ setType }) {
   const [password, setPassword] = useState("");
   const { setCurrentUser } = useCurrentUser();
   const submitSignIn = () => {
-    axios
-      .post("http://localhost:8080/api/signIn", { email, password })
-      .then((res) => {
-        const { body } = res.data;
-        console.log(body);
-        localStorage.setItem("token", body.token);
-        setCurrentUser(body.user);
-        toast.success("🦄Амжилттай нэвтэрлээ", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+    axios.post("/api/signIn", { email, password }).then((res) => {
+      const { body } = res.data;
+      console.log(body);
+      localStorage.setItem("token", body.token);
+      setCurrentUser(body.user);
+      toast.success("🦄Амжилттай нэвтэрлээ", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
       });
+    });
   };
 
   return (
@@ -49,7 +47,6 @@ function SignIn({ setType }) {
           </label>
           <input
             type="email"
-            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
@@ -117,18 +114,6 @@ function SignIn({ setType }) {
             Sign up
           </button>
         </div>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover={false}
-          theme="light"
-        />
       </form>
     </>
   );

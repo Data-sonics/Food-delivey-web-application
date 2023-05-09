@@ -1,15 +1,37 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function SignUp({ setType }) {
   const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [repassword, setRepassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle form submission
+  const submitRegister = () => {
+    const body = { email, password, repassword };
+    axios.post("/api/register", body).then(() => {
+      toast.success("🦄Амжилттай бүртгэлээ.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    });
   };
+
   return (
-    <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} action="#">
+    <form
+      className="space-y-4 md:space-y-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+        submitRegister();
+      }}
+      action="#"
+    >
       <div>
         <label
           for="email"
@@ -19,13 +41,11 @@ function SignUp({ setType }) {
         </label>
         <input
           type="email"
-          name="email"
-          id="email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
           placeholder="name@company.com"
-          required=""
+          required={true}
         />
       </div>
       <div>
@@ -37,11 +57,13 @@ function SignUp({ setType }) {
         </label>
         <input
           type="password"
-          name="password"
-          id="password"
+          value={password}
           placeholder="••••••••"
           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-          required=""
+          required={true}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         />
       </div>
       <div>
@@ -53,11 +75,13 @@ function SignUp({ setType }) {
         </label>
         <input
           type="password"
-          name="password"
-          id="password"
+          value={repassword}
           placeholder="••••••••"
           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-          required=""
+          required={true}
+          onChange={(e) => {
+            setRepassword(e.target.value);
+          }}
         />
       </div>
 

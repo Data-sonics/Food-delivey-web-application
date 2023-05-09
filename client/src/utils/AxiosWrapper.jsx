@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const AxiosWrapper = ({ children }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-
+  console.log("callback:", process.env.REACT_APP_CALLBACK_URL);
   axios.defaults.baseURL =
     process.env.REACT_APP_CALLBACK_URL || "http://localhost:8080";
 
@@ -50,6 +50,24 @@ const AxiosWrapper = ({ children }) => {
       return Promise.reject(error);
     }
   );
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="light"
+        />
+      </div>
+    </>
+  );
 };
 export default AxiosWrapper;

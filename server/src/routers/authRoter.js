@@ -9,7 +9,7 @@ authRouter.post("/api/register", async (req, res) => {
   if (password !== repassword) {
     return res
       .status(400)
-      .json({ success: false, message: "Password did not match" });
+      .json({ success: false, message: "Password таарахгүй байнав" });
   }
   try {
     await registerUser({ email, password });
