@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { loginUser, registerUser } from "../services/authService";
-
+import verifyToken from "../middlewares/verifyToken";
 const authRouter = Router();
 
 authRouter.post("/api/register", async (req, res) => {
@@ -26,6 +26,11 @@ authRouter.post("/api/signIn", async (req, res) => {
   const { email, password } = req.body;
   const response = await loginUser({ email, password });
   res.status(response.status).json(response);
+});
+
+authRouter.get("/api/currentUser", verifyToken, async (req, res) => {
+  console.log(req.user);
+  return await res.status(200).json(req.user);
 });
 
 export default authRouter;

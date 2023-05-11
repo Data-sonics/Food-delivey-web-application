@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 const AxiosWrapper = ({ children }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  console.log("callback:", process.env.REACT_APP_CALLBACK_URL);
   axios.defaults.baseURL =
     process.env.REACT_APP_CALLBACK_URL || "http://localhost:8080";
 
@@ -26,10 +25,6 @@ const AxiosWrapper = ({ children }) => {
       const { status } = error.response;
       switch (status) {
         case 401:
-          toast.error("Нэвтрээгүй байна!");
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-          navigate("/signin");
           break;
         case 403:
           toast.error("Эрх хүрэлцэхгүй байна!");
