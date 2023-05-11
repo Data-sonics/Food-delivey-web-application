@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { loginUser, registerUser } from "../services/authService";
-
+import verifyToken from "../middlewares/verifyToken";
 const authRouter = Router();
 
 authRouter.post("/api/register", async (req, res) => {
@@ -9,7 +9,7 @@ authRouter.post("/api/register", async (req, res) => {
   if (password !== repassword) {
     return res
       .status(400)
-      .json({ success: false, message: "Password did not match" });
+      .json({ success: false, message: "Password таарахгүй байнав" });
   }
   try {
     await registerUser({ email, password });
@@ -22,10 +22,15 @@ authRouter.post("/api/register", async (req, res) => {
     .json({ success: true, message: "Register successful" });
 });
 
-authRouter.post("/api/login", async (req, res) => {
+authRouter.post("/api/signIn", async (req, res) => {
   const { email, password } = req.body;
   const response = await loginUser({ email, password });
   res.status(response.status).json(response);
+});
+
+authRouter.get("/api/currentUser", verifyToken, async (req, res) => {
+  console.log(req.user);
+  return await res.status(200).json(req.user);
 });
 
 export default authRouter;

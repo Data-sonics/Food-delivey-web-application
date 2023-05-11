@@ -37,7 +37,7 @@ export const OrdersScreen = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <form
         className="max-w-sm p-5"
         onSubmit={(e) => {

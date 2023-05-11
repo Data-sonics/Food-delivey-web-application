@@ -6,6 +6,8 @@ import LoginModal from "../login/Modal";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useCurrentUser from "../../hooks/useCurrentUser";
+import Profile from "../login/Profile";
 
 function FoodList({ foods }) {
   const [quantity, setQuantity] = useState(1);
@@ -128,6 +130,7 @@ function Sidebar({ isSidebarVisible, closeSidebar }) {
 
 export default function Navbar({ background }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const { currentUser, setCurrentUser } = useCurrentUser();
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -186,10 +189,9 @@ export default function Navbar({ background }) {
           </div>
 
           <div className="flex p-2 w-[450px] items-center justify-around">
-            <div>
-              <LoginModal />
-            </div>
-            <span className=" ">
+            <div>{!currentUser ? <LoginModal /> : <Profile />}</div>
+
+            <span>
               <div>
                 <FaShoppingBag
                   onClick={toggleSidebar}
@@ -205,7 +207,7 @@ export default function Navbar({ background }) {
                 </div>
               </div>
             </span>
-            <Button className="" />
+            <Button />
           </div>
         </div>
       </div>

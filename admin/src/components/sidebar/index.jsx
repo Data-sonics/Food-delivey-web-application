@@ -26,7 +26,7 @@ const Sidebar = ({ open, onClose, darkmode }) => {
           {darkmode ? <Flogo /> : <Logo />}
         </div>
       </div>
-      <div class="mt-[20px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
+      <div className="mt-[20px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
 
       <ul className="mb-auto pt-1">
         <Links routes={routes} />

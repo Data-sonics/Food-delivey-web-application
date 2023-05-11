@@ -260,7 +260,7 @@ function CardTabs() {
                           </div>
                         </div>
 
-                        <p className="">
+                        <p>
                           <button
                             href="/"
                             className="bg-amber-500 rounded-lg w-full text-white p-2  hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-300 hover:bg-transparent"

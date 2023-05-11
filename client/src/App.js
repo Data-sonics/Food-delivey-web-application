@@ -15,8 +15,11 @@ import { useContext } from "react";
 import { BackgroundContext } from "./contexts/BackgroundProvider";
 import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
+import useCurrentUser from "./hooks/useCurrentUser";
 function App() {
   const { color } = useContext(BackgroundContext);
+  const { currentUser } = useCurrentUser();
+  console.log("currentUser:", currentUser);
   return (
     <>
       <Navbar background={color} />

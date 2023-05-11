@@ -21,6 +21,8 @@ export const User = {
   },
 
   password: String,
+
+  isAdmin: { type: Boolean, default: false },
 };
 
 export const userSchema = new mongoose.Schema(User, { timestamps: true });

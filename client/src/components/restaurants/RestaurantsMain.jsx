@@ -175,7 +175,7 @@ export default function RestaurantsMain() {
           </div>
           {/* restaurant img */}
 
-          <div className="">
+          <div>
             <img
               src="https://bslthemes.com/html/quickeat/assets/img/photo-11.png"
               alt=""

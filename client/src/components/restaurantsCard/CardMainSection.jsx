@@ -33,20 +33,20 @@ export default function CardMainSection() {
           {/* restaurant about */}
           <div>
             {/* breadcrumb */}
-            <ol class="inline-flex items-center ">
-              <li class="inline-flex items-center">
+            <ol className="inline-flex items-center ">
+              <li className="inline-flex items-center">
                 <Link
                   to="/"
-                  class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-amber-500 "
+                  className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-amber-500 "
                 >
                   Home
                 </Link>
               </li>
               <li>
-                <div class="flex items-center">
+                <div className="flex items-center">
                   <svg
                     aria-hidden="true"
-                    class="w-6 h-6 text-gray-400"
+                    className="w-6 h-6 text-gray-400"
                     fill="#ffa500"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,17 +59,17 @@ export default function CardMainSection() {
                   </svg>
                   <Link
                     to="/restaurants"
-                    class="ml-1 text-sm font-medium text-gray-700 hover:text-amber-500 md:ml-2 "
+                    className="ml-1 text-sm font-medium text-gray-700 hover:text-amber-500 md:ml-2 "
                   >
                     Restaurants
                   </Link>
                 </div>
               </li>
               <li aria-current="page">
-                <div class="flex items-center">
+                <div className="flex items-center">
                   <svg
                     aria-hidden="true"
-                    class="w-6 h-6 text-gray-400"
+                    className="w-6 h-6 text-gray-400"
                     fill="#ffa500"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export default function CardMainSection() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
+                  <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
                     Kennington Lane Cafe
                   </span>
                 </div>

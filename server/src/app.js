@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use(authRouter);
 app.use("/api/users", usersRouter);
-app.use("/api/login", authRouter);
+app.use("/api/signIn", authRouter);
 app.use("/api/userRoles", userRolesRouter);
 app.use("/api/files", filesRouter);
 app.use("/api/orders", ordersRouter);
