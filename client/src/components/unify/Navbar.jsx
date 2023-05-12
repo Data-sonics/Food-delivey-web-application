@@ -7,7 +7,7 @@ import LoginModal from "../login/Modal";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useCurrentUser from "../../hooks/useCurrentUser";
-import Profile from "../login/Profile";
+import DropDownProfile from "../login/DropDownProfile";
 
 function FoodList({ foods }) {
   const [quantity, setQuantity] = useState(1);
@@ -189,7 +189,7 @@ export default function Navbar({ background }) {
           </div>
 
           <div className="flex p-2 w-[450px] items-center justify-around">
-            <div>{!currentUser ? <LoginModal /> : <Profile />}</div>
+            <div>{!currentUser ? <LoginModal /> : <DropDownProfile />}</div>
 
             <span>
               <div>

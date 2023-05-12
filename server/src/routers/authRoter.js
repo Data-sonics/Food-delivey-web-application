@@ -4,7 +4,7 @@ import verifyToken from "../middlewares/verifyToken";
 const authRouter = Router();
 
 authRouter.post("/api/register", async (req, res) => {
-  const { email, password, repassword } = req.body;
+  const { email, password, repassword, phone, name } = req.body;
 
   if (password !== repassword) {
     return res
@@ -12,7 +12,7 @@ authRouter.post("/api/register", async (req, res) => {
       .json({ success: false, message: "Password таарахгүй байнав" });
   }
   try {
-    await registerUser({ email, password });
+    await registerUser({ email, password, phone, name });
   } catch (error) {
     console.log(error);
     return res.status(500).json(error);

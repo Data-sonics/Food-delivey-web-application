@@ -5,6 +5,10 @@ export const User = {
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    unique: true,
+  },
 
   email: {
     type: String,
