@@ -28,9 +28,9 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "Foods Category",
+    name: "Restaurants",
     layout: "/admin",
-    path: "foodCategory",
+    path: "restaurants",
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,
     component: <NFTMarketplace />,
     secondary: true,
