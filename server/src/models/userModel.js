@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
 export const User = {
+  imageUrl: String,
+
   name: {
     type: String,
     required: true,

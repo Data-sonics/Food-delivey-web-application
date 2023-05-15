@@ -29,7 +29,6 @@ authRouter.post("/api/signIn", async (req, res) => {
 });
 
 authRouter.get("/api/currentUser", verifyToken, async (req, res) => {
-  console.log(req.user);
   return await res.status(200).json(req.user);
 });
 

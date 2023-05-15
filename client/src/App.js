@@ -16,6 +16,7 @@ import { BackgroundContext } from "./contexts/BackgroundProvider";
 import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
 import useCurrentUser from "./hooks/useCurrentUser";
+import UserProfile from "./pages/UserProfile";
 function App() {
   const { color } = useContext(BackgroundContext);
   const { currentUser } = useCurrentUser();
@@ -28,7 +29,8 @@ function App() {
         <Route exact path="/restaurants" element={<Restaurants />} />
         <Route exact path="/restaurantscard" element={<RestaurantsCard />} />
         <Route exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/contactus" element={<Contacts />} />
+        <Route exact path="/contactUs" element={<Contacts />} />
+        <Route exact path="/userProfile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </>

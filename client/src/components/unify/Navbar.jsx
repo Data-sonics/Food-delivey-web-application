@@ -130,7 +130,7 @@ function Sidebar({ isSidebarVisible, closeSidebar }) {
 
 export default function Navbar({ background }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  const { currentUser, setCurrentUser } = useCurrentUser();
+  const { currentUser } = useCurrentUser();
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
