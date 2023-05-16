@@ -53,6 +53,7 @@ const Restaurant = () => {
                 type="text"
                 className="out outline- mr-2 flex-1 rounded border border-gray-400 p-2"
                 value={category.name}
+                onClick={() => updateItem()}
               />
               <button
                 className="rounded bg-red-500 px-4 py-2 text-white"

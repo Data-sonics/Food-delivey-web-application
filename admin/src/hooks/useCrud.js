@@ -1,8 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useCrud = (path) => {
   const [items, setItems] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:8080/" + path).then((res) => {
+      setItems(res.data);
+    });
+  }, [path]);
 
   const deleteItem = (id) => {
     axios
@@ -37,5 +42,6 @@ export const useCrud = (path) => {
         console.log(err);
       });
   };
+  console.log(items);
   return { createItem, updateItem, deleteItem, items };
 };
