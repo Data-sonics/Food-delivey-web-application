@@ -113,8 +113,7 @@ function UserProfile() {
                     <label for="state">State / province</label>
                     <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                       <input
-                        name="state"
-                        id="state"
+                        type=""
                         placeholder="State"
                         className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                         value=""
@@ -128,7 +127,7 @@ function UserProfile() {
                     </div>
                   </div>
                   <div>
-                    <label for="full_name">Password</label>
+                    <label for="password">Password</label>
                     <input
                       type="Password"
                       className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
