@@ -1,11 +1,12 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { CurrentUserContext } from "../contexts/currentUserProvider";
 
 const useCurrentUser = () => {
+  const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const signOut = () => {
-    // localStorage.removeItem("currentUser");
     localStorage.removeItem("token");
     setCurrentUser(undefined);
     toast.success("🦄Баяртай ;)", {
@@ -18,6 +19,7 @@ const useCurrentUser = () => {
       progress: undefined,
       theme: "light",
     });
+    navigate("/");
   };
   return { currentUser, setCurrentUser, signOut };
 };

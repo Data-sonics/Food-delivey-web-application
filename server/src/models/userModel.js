@@ -9,9 +9,19 @@ export const User = {
   },
   phone: {
     type: String,
-    unique: true,
   },
-
+  address: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  country: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
   email: {
     type: String,
     unique: true,

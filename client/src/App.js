@@ -26,11 +26,11 @@ function App() {
       <Navbar background={color} />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/restaurants" element={<Restaurants />} />
-        <Route exact path="/restaurantscard" element={<RestaurantsCard />} />
-        <Route exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/contactUs" element={<Contacts />} />
-        <Route exact path="/userProfile" element={<UserProfile />} />
+        <Route path="/restaurants" element={<Restaurants />} />
+        <Route path="/restaurantscard" element={<RestaurantsCard />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contactUs" element={<Contacts />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </>

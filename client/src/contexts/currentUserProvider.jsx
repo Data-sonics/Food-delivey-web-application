@@ -17,7 +17,7 @@ const CurrentUserProvider = ({ children }) => {
       .then((res) => {
         setCurrentUser(res.data);
 
-        console.log(res.data);
+        console.log("currentuserprovider", res.data);
       })
       .catch((err) => {
         console.log("Not signed in");

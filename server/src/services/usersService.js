@@ -6,7 +6,8 @@ export const getUsers = async () => {
 };
 
 export const getUserById = async (id) => {
-  return await userModel.findById(id).populate(["role", "roles"]);
+  const user = await userModel.findById(id).populate(["role", "roles"]);
+  return user;
 };
 
 export const createUser = async (user) => {
