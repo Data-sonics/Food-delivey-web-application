@@ -3,12 +3,13 @@ import jwt from "jsonwebtoken";
 import { createUser } from "./usersService";
 import { userModel } from "../models/userModel";
 
-export const registerUser = async ({ email, password }) => {
+export const registerUser = async ({ email, password, phone, name }) => {
   const hashed_password = await bcrypt.hash(password, 10);
   const user = await createUser({
     email,
     password: hashed_password,
-    name: email.split("@")[0],
+    name,
+    phone,
   });
   return user;
 };

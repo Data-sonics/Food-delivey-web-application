@@ -3,12 +3,14 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 function SignUp({ setType }) {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
 
   const submitRegister = () => {
-    const body = { email, password, repassword };
+    const body = { email, password, repassword, phone, name };
     axios.post("/api/register", body).then(() => {
       toast.success("🦄Амжилттай бүртгэлээ.", {
         position: "bottom-right",
@@ -20,6 +22,7 @@ function SignUp({ setType }) {
         progress: undefined,
         theme: "light",
       });
+      setType("signIn");
     });
   };
 
@@ -37,6 +40,38 @@ function SignUp({ setType }) {
           for="email"
           className="block mb-2 text-sm font-medium text-gray-900 "
         >
+          Name:
+        </label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+          placeholder="Your name"
+          required={true}
+        />
+      </div>
+      <div>
+        <label
+          for="email"
+          className="block mb-2 text-sm font-medium text-gray-900 "
+        >
+          Phone:
+        </label>
+        <input
+          type="number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+          placeholder="Your Phone Number"
+          required={true}
+        />
+      </div>
+      <div>
+        <label
+          for="email"
+          className="block mb-2 text-sm font-medium text-gray-900 "
+        >
           Your email:
         </label>
         <input
@@ -44,7 +79,7 @@ function SignUp({ setType }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-          placeholder="name@company.com"
+          placeholder="name@mail.com"
           required={true}
         />
       </div>

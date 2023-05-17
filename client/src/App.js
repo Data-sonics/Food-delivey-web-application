@@ -16,6 +16,7 @@ import { BackgroundContext } from "./contexts/BackgroundProvider";
 import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
 import useCurrentUser from "./hooks/useCurrentUser";
+import UserProfile from "./pages/UserProfile";
 function App() {
   const { color } = useContext(BackgroundContext);
   const { currentUser } = useCurrentUser();
@@ -25,10 +26,11 @@ function App() {
       <Navbar background={color} />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/restaurants" element={<Restaurants />} />
-        <Route exact path="/restaurantscard" element={<RestaurantsCard />} />
-        <Route exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/contactus" element={<Contacts />} />
+        <Route path="/restaurants" element={<Restaurants />} />
+        <Route path="/restaurantscard" element={<RestaurantsCard />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contactUs" element={<Contacts />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </>

@@ -12,7 +12,6 @@ function SignIn({ setType }) {
   const submitSignIn = () => {
     axios.post("/api/signIn", { email, password }).then((res) => {
       const { body } = res.data;
-      console.log(body);
       localStorage.setItem("token", body.token);
       setCurrentUser(body.user);
       toast.success("🦄Амжилттай нэвтэрлээ", {

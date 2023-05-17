@@ -25,6 +25,7 @@ usersRouter.get("/:id", async (req, res) => {
 
 usersRouter.post("/", async (req, res) => {
   const user = req.body;
+  console.log(user);
   res.json(await createUser(user));
 });
 
