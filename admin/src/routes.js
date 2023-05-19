@@ -30,7 +30,7 @@ const routes = [
   {
     name: "Restaurants",
     layout: "/admin",
-    path: "restaurants",
+    path: "restaurants/home",
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,
     component: <NFTMarketplace />,
     secondary: true,

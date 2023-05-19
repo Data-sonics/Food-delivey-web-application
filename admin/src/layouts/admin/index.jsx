@@ -5,6 +5,7 @@ import {
   Navigate,
   useLocation,
   useNavigate,
+  Outlet,
 } from "react-router-dom";
 import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
@@ -97,6 +98,7 @@ export default function Admin(props) {
                   element={<Navigate to="/admin/default" replace />}
                 />
               </Routes>
+              <Outlet />
             </div>
             <div className="p-3">
               <Footer />

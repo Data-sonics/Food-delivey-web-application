@@ -1,41 +1,31 @@
 import express from "express";
-import bodyParser from "body-parser";
+import { restaurantsModel } from "../models/restaurantsModel.js";
+
 import {
-  getAllRestaurants,
-  addRestaurant,
   deleteRestaurant,
   updateRestaurant,
+  getRestaurantById,
 } from "../services/restaurantService.js";
-
 const router = express.Router();
 
-router.use(bodyParser.json());
-
-// Get all restaurants
-router.get("/", async (req, res) => {
-  try {
-    const restaurants = await getAllRestaurants();
-    res.json(restaurants);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
-  }
+router.get("/", async (request, response) => {
+  const myRestaurants = await restaurantsModel.find();
+  response.json({
+    data: myRestaurants,
+  });
 });
 
-// Add a new restaurant
-router.post("/", async (req, res) => {
-  const { name } = req.body;
-  console.log(name);
-  try {
-    const restaurant = await addRestaurant(name);
-    res.json(restaurant);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
-  }
+router.post("", async (request, response) => {
+  const body = request.body;
+  const newRestaurant = new restaurantsModel(body);
+  const result = await newRestaurant.save();
+  response.json({
+    data: result,
+  });
 });
 
-// Delete a restaurant
+router.get("/:id", getRestaurantById);
+
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -46,13 +36,14 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
-// Update a restaurant
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  const body = req.body;
   try {
-    const restaurant = await updateRestaurant(id, name);
+    const restaurant = await updateRestaurant({
+      id,
+      ...body,
+    });
     res.json(restaurant);
   } catch (err) {
     console.error(err);
