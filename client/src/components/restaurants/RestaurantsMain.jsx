@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
 import Aos from "aos";
+import ChevronRight from "../icon/ChevronRight";
 
 const people = [
   { id: 1, name: "Choose a Restaurant" },
@@ -66,22 +67,10 @@ export default function RestaurantsMain() {
                 </li>
                 <li>
                   <div className="flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="w-6 h-6 text-gray-400"
-                      fill="#ffa500"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    <ChevronRight />
                     <Link
                       to="/restaurants"
-                      className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400 "
+                      className=" text-sm font-medium text-gray-500  dark:text-gray-400 "
                     >
                       Restaurants
                     </Link>
@@ -92,7 +81,7 @@ export default function RestaurantsMain() {
               {/* restaurant text */}
             </div>
             <div className="my-5 grid gap-8  w-[30rem] ">
-              <p className="text-6xl font-bold ">Restaurants</p>
+              <p className="text-6xl text-amber-500 font-bold ">Restaurants</p>
               <p className="text-gray-600  text-xl ">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
                 asperiores rem expedita?
