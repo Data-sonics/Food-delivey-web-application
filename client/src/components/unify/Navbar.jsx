@@ -10,7 +10,7 @@ import useCurrentUser from "../../hooks/useCurrentUser";
 import DropDownProfile from "../login/DropDownProfile";
 import Sidebar from "../home/Sidebar";
 
-export default function Navbar({ background }) {
+export default function Navbar({ background, cartCount = 2 }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { currentUser } = useCurrentUser();
 
@@ -75,11 +75,18 @@ export default function Navbar({ background }) {
 
             <span>
               <div>
-                <FaShoppingBag
-                  onClick={toggleSidebar}
-                  size="20"
-                  className="text-amber-500"
-                />
+                <div className="relative">
+                  <FaShoppingBag
+                    onClick={toggleSidebar}
+                    size="20"
+                    className="text-amber-500"
+                  />
+                  {cartCount > 0 && (
+                    <span className="absolute -right-3 -top-3 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full">
+                      {cartCount}
+                    </span>
+                  )}
+                </div>
 
                 <div className="relative flex-none">
                   <Sidebar

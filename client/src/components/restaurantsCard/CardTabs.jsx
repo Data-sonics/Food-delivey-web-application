@@ -6,6 +6,7 @@ import {
   AiOutlineInfoCircle,
   AiOutlineClose,
 } from "react-icons/ai";
+import { useBasket } from "../../hooks/useBasket";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -13,6 +14,8 @@ function classNames(...classes) {
 
 function CardTabs() {
   const [info, setInfo] = useState(false);
+  const { addToBasket } = useBasket();
+  const [quantity, setQuantity] = useState(1);
 
   let [FoodCategory] = useState({
     Breakfast: [
@@ -240,19 +243,25 @@ function CardTabs() {
                             {food.price}
                           </p>
                           <div className="flex gap-2 ">
-                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                            <button
+                              className="flex items-center justify-center  border p-1 text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
+                              onClick={() => updateProductCount(-1)}
+                            >
                               <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                                 -
                               </span>
                             </button>
                             <input
                               className="  rounded-lg  w-20 text-center  border-gray-200 border "
-                              defaultValue="1"
                               type="number"
-                              min="0"
+                              value={quantity}
+                              readOnly={true}
                             />
 
-                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                            <button
+                              className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
+                              onClick={() => updateProductCount(1)}
+                            >
                               <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                                 +
                               </span>
@@ -262,7 +271,7 @@ function CardTabs() {
 
                         <p>
                           <button
-                            href="/"
+                            onClick={() => addToBasket(quantity)}
                             className="bg-amber-500 rounded-lg w-full text-white p-2  hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-300 hover:bg-transparent"
                           >
                             {food.button}
