@@ -4,15 +4,18 @@ import Button from "./Button";
 
 import LoginModal from "../login/Modal";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useCurrentUser from "../../hooks/useCurrentUser";
 import DropDownProfile from "../login/DropDownProfile";
 import Sidebar from "../home/Sidebar";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-export default function Navbar({ background, cartCount = 2 }) {
+export default function Navbar({ background, cartCount = 0 }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { currentUser } = useCurrentUser();
+  const [navTitle, setNavTitle] = useState([]);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -22,33 +25,16 @@ export default function Navbar({ background, cartCount = 2 }) {
     setIsSidebarVisible(false);
   };
 
-  const topchoices = [
-    {
-      id: "1",
-      to: "/",
-      title: "Home",
-    },
-    {
-      id: "2",
-      to: "/restaurants",
-      title: "Restaurants",
-    },
-    {
-      id: "3",
-      to: "/restaurantsCard",
-      title: "Restaurants Card",
-    },
-    {
-      id: "4",
-      to: "/contactus",
-      title: "Contacts",
-    },
-    {
-      id: "5",
-      to: "/checkout",
-      title: "Checkout",
-    },
-  ];
+  useEffect(() => {
+    axios
+      .get("/api/navtitle", navTitle)
+      .then((res) => {
+        setNavTitle(res.data);
+      })
+      .catch((e) => {
+        toast.error("huselt yvuulhad aldaa ", e);
+      });
+  });
 
   return (
     <nav className={background}>
@@ -57,11 +43,11 @@ export default function Navbar({ background, cartCount = 2 }) {
           <Logo />
           <div className="items-center flex justify-between w-full">
             <ul className="flex ms-16 font-thin p-4 md:p-0rounded-lg  mt-0 border-0 space-x-8 text-xl ">
-              {topchoices.map((item) => (
-                <li key={item.id}>
+              {navTitle.map((item, index) => (
+                <li key={index}>
                   <Link
                     to={item.to}
-                    className="hover:text-amber-500 duration-300"
+                    className="hover:text-amber-500 duration-300  font-medium hover:border-bottom"
                   >
                     {item.title}
                   </Link>

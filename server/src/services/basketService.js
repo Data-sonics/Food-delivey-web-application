@@ -1,8 +1,8 @@
 import { basketModel } from "../models/basketModel";
 
 export const getBasket = async () => {
-  const users = await basketModel.find({});
-  return users;
+  const basket = await basketModel.find({});
+  return basket;
 };
 
 export const getBasketById = async (id) => {
