@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import GenresButton from "../unify/Genresbutton";
 import {
   AiFillHeart,
   AiOutlineInfoCircle,
@@ -223,7 +222,6 @@ function CardTabs() {
                         </h5>
 
                         <div className="flex justify-between gap-2 items-center  my-5">
-                          <GenresButton />
                           <button>
                             <AiOutlineInfoCircle
                               className=" fill-amber-500 "
@@ -285,7 +283,6 @@ function CardTabs() {
                         </h5>
 
                         <div className="   my-5">
-                          <GenresButton />
                         </div>
                         <div className="text-lg ">
                           <p className="text-gray-400 my-2 ">

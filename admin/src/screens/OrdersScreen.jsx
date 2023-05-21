@@ -5,7 +5,6 @@ import InputGroup from "components/buttonLink";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useRef } from "react";
 L.Icon.Default.imagePath =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/images/";
 
@@ -14,8 +13,7 @@ export const OrdersScreen = () => {
 
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
-  const [position, setPosition] = useState([47.9148155, 106.9108148]);
-  const markerRef = useRef(null);
+  const [position ] = useState([47.9148155, 106.9108148]);
 
   useEffect(() => {
     console.log("position:", position);

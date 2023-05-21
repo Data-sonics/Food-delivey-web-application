@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useCrud } from "hooks/useCrud";
+import React from "react";
 import Header from "./components/Header";
 
 const Restaurant = () => {

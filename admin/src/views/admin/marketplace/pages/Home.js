@@ -24,7 +24,7 @@ const Home = () => {
       )
     );
     const response = await axios
-      .delete("/api/restaurant/" + id)
+      .delete("/api/restaurants/" + id)
       .then(() => {
         setData(data.filter((item) => item.id !== id));
       })
@@ -75,7 +75,7 @@ const Home = () => {
                     >
                       Delete
                     </button>
-                    <Link to={`/view/${item.id}`}>
+                    <Link to={`http://localhost:3333/admin/restaurants/view/${item.id}`}>
                       <button className="btn btn-view">View</button>
                     </Link>
                   </td>

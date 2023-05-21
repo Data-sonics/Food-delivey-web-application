@@ -1,12 +1,21 @@
 // rating stars
 import RatingStars from "react-rating-stars-component";
-// /components/unify/genresbutton
-import GenresButton from "../unify/Genresbutton";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Aos from "aos";
 
-export default function CardMainSection() {
+
+export default async function CardMainSection({data}) {
+  const { id } = useParams();
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/restaurants/${id}`)
+      .then(response => response.json())
+      .then(data => setRestaurant(data))
+      .catch(error => console.log(error));
+  }, [id]);
+
   useEffect(() => {
     Aos.init({
       disable: false,
@@ -107,10 +116,8 @@ export default function CardMainSection() {
                 activeColor="#ffa500"
               />
             </div>
-            {/* Genresbutton */}
             <div className="my-5">
               <p className="text-gray-600 uppercase ">Cuisines:</p>
-              <GenresButton />
             </div>
             {/* restaurant text */}
             <div className="my-5">
