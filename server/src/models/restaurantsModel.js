@@ -14,10 +14,13 @@ const RestaurantSchema = new mongoose.Schema({
   rating: {
     type: Number,
   },
-  img: {
+  logo: {
     type: String,
   },
   type: {
+    type: String,
+  },
+  coverimg: {
     type: String,
   },
 });

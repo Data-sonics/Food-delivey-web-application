@@ -36,10 +36,10 @@ const routes = [
     secondary: true,
   },
   {
-    name: "Data Tables",
+    name: "Foods Management",
     layout: "/admin",
     icon: <MdBarChart className="h-6 w-6" />,
-    path: "data-tables",
+    path: "foods-management/home",
     component: <DataTables />,
   },
   {

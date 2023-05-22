@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "./AddEdit.css";
+import "./FoodAddEdit.css";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
+import Header from "./components/Header";
 
 const initialState = {
   name: "",
   description: "",
-  rating: "",
-  img: "",
-  type: "",
+  price: "",
+  foodimg: "",
+  restaurantId: "",
 };
 
 const AddEdit = () => {
@@ -20,23 +20,23 @@ const AddEdit = () => {
 
   useEffect(() => {
     if (id) {
-      getSingleRestaurant();
+      getSingleFood();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  const addRestaurant = async (data) => {
-    const response = await axios.post("/api/restaurants", data);
+  const addFood = async (data) => {
+    const response = await axios.post("/api/foods", data);
     if (response.status === 200) {
-      toast.success("Added restaurant successfully");
+      toast.success("Хоолоо амжилттай нэмлээ");
     }
   };
-  const updateRestaurant = async (data, id) => {
+  const updateFood = async (data, id) => {
     axios
-      .put("/api/restaurants/" + id, data)
+      .put("/api/foods/" + id, data)
       .then((res) => {
         console.log(res);
-        toast.success("amjilttai zaslaa!");
+        toast.success("Амжилттай заслаа");
         navigate("/");
       })
       .catch((err) => {
@@ -47,16 +47,14 @@ const AddEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!id) {
-      addRestaurant(state);
+      addFood(state);
     } else {
-      updateRestaurant(state, id);
+      updateFood(state, id);
     }
   };
 
-  const getSingleRestaurant = async () => {
-    const response = await axios.get(
-      `http://localhost:8080/api/restaurants/${id}`
-    );
+  const getSingleFood = async () => {
+    const response = await axios.get(`/api/foods/${id}`);
     if (response.status === 200) {
       setState({ ...response.data });
     }
@@ -96,41 +94,32 @@ const AddEdit = () => {
           onChange={handleInputChange}
           value={state.description}
         />
-        <label htmlFor="rating">Rating</label>
+        <label htmlFor="price">Price</label>
         <input
           type="number"
-          id="rating"
-          name="rating"
-          placeholder="Review your star ..."
+          id="price"
+          name="price"
+          placeholder="Enter your price ..."
           onChange={handleInputChange}
-          value={state.rating}
+          value={state.price}
         />
         <label htmlFor="image">image</label>
         <input
           type="text"
-          id="img"
-          name="img"
-          placeholder="Enter image ..."
+          id="foodimg"
+          name="foodimg"
+          placeholder="Enter food image ..."
           onChange={handleInputChange}
-          value={state.logo}
+          value={state.foodimg}
         />
-        <label htmlFor="cover">Cover</label>
+        <label htmlFor="restaurantId">restaurantId</label>
         <input
           type="text"
-          id="cover"
-          name="cover"
-          placeholder="Enter cover image ..."
-          onChange={handleInputChange}
-          value={state.coverimg}
-        />
-        <label htmlFor="type">Type</label>
-        <input
-          type="text"
-          id="type"
-          name="type"
+          id="restaurantId"
+          name="restaurantId"
           placeholder="Enter type ..."
           onChange={handleInputChange}
-          value={state.type}
+          value={state.restaurantId}
         />
         <input type="submit" value={id ? "Update" : "Add"} />
       </form>

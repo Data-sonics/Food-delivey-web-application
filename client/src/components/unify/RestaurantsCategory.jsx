@@ -1,8 +1,8 @@
 import Aos from "aos";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import RatingStars from "react-rating-stars-component";
-import axios from "axios"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 // const resCategory = [
 //   {
@@ -38,16 +38,17 @@ import {Link} from "react-router-dom"
 export default function RestaurantsCategory() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:8080/api/restaurants')
-      .then(response => {
-        const dataArray = Object.values(response.data)
+    axios
+      .get("http://localhost:8080/api/restaurants")
+      .then((response) => {
+        const dataArray = Object.values(response.data);
         setData(dataArray[0]);
-        console.log(dataArray)
+        console.log(dataArray);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
-  }, []);;
+  }, []);
   useEffect(() => {
     Aos.init({
       disable: false,
@@ -78,17 +79,11 @@ export default function RestaurantsCategory() {
               data-aos="flip-down"
             >
               <div className="">
-                <img
-                  src={item.img}
-                  alt=""
-                  className="rounded-lg w-52  "
-                />
+                <img src={item.logo} alt="" className="rounded-lg w-52  " />
               </div>
               <div className="mx-7">
-                <a href={`/restaurantsCard/${item.id}`} >
-                  <h1 className="text-3xl">
-                    {item.name}
-                  </h1>
+                <a href={`/restaurantsCard/${item.id}`}>
+                  <h1 className="text-3xl">{item.name}</h1>
                 </a>
                 <RatingStars
                   count={5}
@@ -98,9 +93,9 @@ export default function RestaurantsCategory() {
                 />
                 <div className="grid gap-5 ">
                   <div>
-                  <p className="border border-amber-500 inline-block px-2 py-1 mr-2 rounded-lg text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer font-thin mt-1">
-                    {item.type}
-                  </p>
+                    <p className="border border-amber-500 inline-block px-2 py-1 mr-2 rounded-lg text-amber-500 hover:bg-amber-500 hover:text-white cursor-pointer font-thin mt-1">
+                      {item.type}
+                    </p>
                   </div>
                   <p className="font-thin  ">{item.description}</p>
                 </div>

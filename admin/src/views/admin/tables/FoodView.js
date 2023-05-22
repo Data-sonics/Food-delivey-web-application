@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import "./View.css";
+import "./FoodView.css";
 
 const View = () => {
-  const [restaurant, setRestaurant] = useState(null);
+  const [data, setData] = useState(null);
 
   const { id } = useParams();
 
   useEffect(() => {
     if (id) {
-      getSingleRestaurant(id);
+      getSingleFood(id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   console.log("restaurant", id);
 
-  const getSingleRestaurant = async () => {
-    const response = await axios.get(
-      `http://localhost:8080/api/restaurants/${id}`
-    );
+  const getSingleFood = async () => {
+    const response = await axios.get(`http://localhost:8080/api/foods/${id}`);
     console.log("response", response);
     if (response.status === 200) {
-      setRestaurant({ ...response.data });
+      setData({ ...response.data });
     }
   };
   return (
@@ -32,7 +30,7 @@ const View = () => {
           <p>Restaurant Record Detail</p>
         </div>
         <div className="container">
-          <img src={restaurant && restaurant.logo} alt={restaurant} />
+          <img src={data && data.logo} alt={data} />
           <br />
           <br />
           <strong>ID:</strong>
@@ -40,19 +38,19 @@ const View = () => {
           <br />
           <br />
           <strong>Name:</strong>
-          <span>{restaurant && restaurant.name}</span>
+          <span>{data && data.name}</span>
           <br />
           <br />
           <strong>Description:</strong>
-          <span>{restaurant && restaurant.description}</span>
+          <span>{data && data.description}</span>
           <br />
           <br />
-          <strong>Rating:</strong>
-          <span>{restaurant && restaurant.rating}</span>
+          <strong>Price:</strong>
+          <span>{data && data.price}</span>
           <br />
           <br />
-          <strong>Type:</strong>
-          <span>{restaurant && restaurant.type}</span>
+          <strong>RestaurantId</strong>
+          <span>{data && data.restaurantId}</span>
           <br />
           <br />
           <Link to="/">
