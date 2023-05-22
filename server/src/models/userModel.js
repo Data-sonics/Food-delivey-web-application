@@ -1,11 +1,28 @@
 import mongoose from "mongoose";
 
 export const User = {
+  imageUrl: String,
+
   name: {
     type: String,
     required: true,
   },
-
+  phone: {
+    type: String,
+    unique: true,
+  },
+  address: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  country: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
   email: {
     type: String,
     unique: true,
@@ -21,6 +38,8 @@ export const User = {
   },
 
   password: String,
+
+  isAdmin: { type: Boolean, default: false },
 };
 
 export const userSchema = new mongoose.Schema(User, { timestamps: true });

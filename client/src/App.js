@@ -15,17 +15,25 @@ import { useContext } from "react";
 import { BackgroundContext } from "./contexts/BackgroundProvider";
 import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
+import useCurrentUser from "./hooks/useCurrentUser";
+import UserProfile from "./pages/UserProfile";
+import { NotFoundScreen } from "./pages/NotFoundScreen";
 function App() {
   const { color } = useContext(BackgroundContext);
+  const { currentUser } = useCurrentUser();
+  console.log("currentUser:", currentUser);
+
   return (
     <>
       <Navbar background={color} />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/restaurants" element={<Restaurants />} />
-        <Route path="/restaurantsCard/:id" element={<RestaurantsCard/>} />
-        <Route exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/contactus" element={<Contacts />} />
+        <Route path="/restaurantsCard/:id" element={<RestaurantsCard />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contactUs" element={<Contacts />} />
+        {currentUser && <Route path="/userProfile" element={<UserProfile />} />}
+        <Route path="*" element={<NotFoundScreen />} />
       </Routes>
       <Footer />
     </>

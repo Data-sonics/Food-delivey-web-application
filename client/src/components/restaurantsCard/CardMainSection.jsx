@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import axios from "axios";
+import ChevronRight from "../icon/ChevronRight";
 
 export default function CardMainSection() {
   const { id } = useParams();
@@ -44,54 +45,30 @@ export default function CardMainSection() {
           {/* restaurant about */}
           <div>
             {/* breadcrumb */}
-            <ol class="inline-flex items-center ">
-              <li class="inline-flex items-center">
+            <ol className="inline-flex items-center ">
+              <li className="inline-flex items-center">
                 <Link
                   to="/"
-                  class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-amber-500 "
+                  className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-amber-500 "
                 >
                   Home
                 </Link>
               </li>
               <li>
-                <div class="flex items-center">
-                  <svg
-                    aria-hidden="true"
-                    class="w-6 h-6 text-gray-400"
-                    fill="#ffa500"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
+                <div className="flex items-center">
+                  <ChevronRight />
                   <Link
                     to="/restaurants"
-                    class="ml-1 text-sm font-medium text-gray-700 hover:text-amber-500 md:ml-2 "
+                    className=" text-sm font-medium text-gray-700 hover:text-amber-500  "
                   >
                     Restaurants
                   </Link>
                 </div>
               </li>
               <li aria-current="page">
-                <div class="flex items-center">
-                  <svg
-                    aria-hidden="true"
-                    class="w-6 h-6 text-gray-400"
-                    fill="#ffa500"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
+                <div className="flex items-center">
+                  <ChevronRight />
+                  <span className=" text-sm font-medium text-gray-500  dark:text-gray-400">
                     {restaurant.name}
                   </span>
                 </div>
