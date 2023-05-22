@@ -88,16 +88,19 @@ export default function Checkout() {
                   <input
                     type="text"
                     placeholder="Full Name"
+                    readOnly={true}
                     className="w-full border h-14 ps-2 rounded-lg font-thin mt-4 focus:outline-0 border-gray-400"
                   />
                   <div className="flex mt-5 gap-10  ">
                     <input
                       type="text"
+                      readOnly={true}
                       placeholder="E-mail"
                       className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
                     />
                     <input
                       type="number"
+                      readOnly={true}
                       placeholder="Phone"
                       className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
                     />
@@ -109,17 +112,20 @@ export default function Checkout() {
                   <input
                     type="text"
                     placeholder="Street"
+                    readOnly={true}
                     className="rounded-lg font-thin focus:outline-0 border ps-2 border-gray-400 w-full h-14 mt-4"
                   />
                   <div className="flex mt-5 gap-10  ">
                     <input
                       type="text"
                       placeholder="House number"
+                      readOnly={true}
                       className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
                     />
                     <input
                       type="text"
                       placeholder="Apartment number"
+                      readOnly={true}
                       className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
                     />
                   </div>
@@ -150,18 +156,21 @@ export default function Checkout() {
                         <Banks />
                         <input
                           type="number"
+                          readOnly={true}
                           placeholder="Card number"
                           className="rounded-lg font-thin focus:outline-0 border ps-2 w-full mt-2 h-14 border-gray-400"
                         />
                         <div className="flex mt-5 gap-10  ">
                           <input
                             type="number"
+                            readOnly={true}
                             placeholder="Expiration Date"
                             className="rounded-lg font-thin focus:outline-0 border ps-2 w-80 h-14 border-gray-400"
                           />
                           <input
                             type="number"
                             placeholder="CVV"
+                            readOnly={true}
                             className="rounded-lg font-thin focus:outline-0 border ps-2 w-72 h-14 border-gray-400"
                           />
                         </div>

@@ -6,7 +6,7 @@ import Aos from "aos";
 import ChevronRight from "../icon/ChevronRight";
 
 const people = [
-  { id: 1, name: "Choose a Restaurant" },
+  { id: 1, name: "make" },
   { id: 2, name: "Arlene Mccoy" },
   { id: 3, name: "Devon Webb" },
   { id: 4, name: "Tom Cook" },
@@ -83,84 +83,13 @@ export default function RestaurantsMain() {
             <div className="my-5 grid gap-8  w-[30rem] ">
               <p className="text-6xl text-amber-500 font-bold ">Restaurants</p>
               <p className="text-gray-600  text-xl ">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-                asperiores rem expedita?
+                Pretium lectus quam id leo in vitae turpis massa sed. Lorem
+                donec massa sapien faucibus et molestie. Vitae elementum
+                curabitur vitae nunc.
               </p>
             </div>
 
             {/* select restaurant */}
-            <div className="w-full">
-              <Combobox value={selected} onChange={setSelected}>
-                <div className="relative mt-1">
-                  <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
-                    <Combobox.Input
-                      className="w-full border-none p-3 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:outline-none"
-                      displayValue={(person) => person.name}
-                      onChange={(event) => setQuery(event.target.value)}
-                    />
-                    <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                      <FaChevronDown
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                      />
-                    </Combobox.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    leave="transition ease-in duration-100"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                    afterLeave={() => setQuery("")}
-                  >
-                    <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                      {filteredPeople.length === 0 && query !== "" ? (
-                        <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                          Nothing found.
-                        </div>
-                      ) : (
-                        filteredPeople.map((person) => (
-                          <Combobox.Option
-                            key={person.id}
-                            className={({ active }) =>
-                              `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                                active
-                                  ? "bg-amber-500 text-white"
-                                  : "text-gray-900"
-                              }`
-                            }
-                            value={person}
-                          >
-                            {({ selected, active }) => (
-                              <>
-                                <span
-                                  className={`block truncate ${
-                                    selected ? "font-medium" : "font-normal"
-                                  }`}
-                                >
-                                  {person.name}
-                                </span>
-                                {selected ? (
-                                  <span
-                                    className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                                      active ? "text-white" : "text-amber-500"
-                                    }`}
-                                  >
-                                    <FaCheck
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  </span>
-                                ) : null}
-                              </>
-                            )}
-                          </Combobox.Option>
-                        ))
-                      )}
-                    </Combobox.Options>
-                  </Transition>
-                </div>
-              </Combobox>
-            </div>
           </div>
           {/* restaurant img */}
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import useCurrentUser from "../../hooks/useCurrentUser";
 
 function DropDownProfile() {
@@ -64,12 +63,12 @@ function DropDownProfile() {
         </div>
         <ul className="py-2" aria-labelledby="user-menu-button">
           <li>
-            <Link
-              to="/userProfile"
+            <a
+              href="/userProfile"
               className="block w-full text-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
               Settings
-            </Link>
+            </a>
           </li>
           <li>
             <button

@@ -1,3 +1,4 @@
+import foods from "./foodCategory.json";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import GenresButton from "../unify/Genresbutton";
@@ -6,6 +7,8 @@ import {
   AiOutlineInfoCircle,
   AiOutlineClose,
 } from "react-icons/ai";
+import { useBasket } from "../../hooks/useBasket";
+import { toast } from "react-toastify";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -13,169 +16,29 @@ function classNames(...classes) {
 
 function CardTabs() {
   const [info, setInfo] = useState(false);
+  const { addToBasket } = useBasket();
+  const [quantity, setQuantity] = useState(1);
+  const updateProductCount = (count) => {
+    if (count < 0 && quantity === 1) {
+      toast.warning("1 ээс бага бараа сагслах боломжгүй");
+      return;
+    }
+    if (count > 0 && quantity === 10) {
+      toast.warning("10 аас их бараа сагслах боломжгүй");
+      return;
+    }
+    setQuantity(quantity + count);
+  };
 
-  let [FoodCategory] = useState({
-    Breakfast: [
-      {
-        id: 1,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
-        imgAlt: "food",
-        title: "Egg, kiwi and sauce chilli",
-        price: "599$",
-        button: "Add to cart",
-      },
-      {
-        id: 2,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Potatoes with pork and dried fruits",
-        imgAlt: "food",
-        price: "99$",
-        button: "Add to cart",
-      },
-      {
-        id: 3,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Rice with shrimps and kiwi",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-      {
-        id: 4,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Spaghetti with mushrooms and...",
-        imgAlt: "food",
-        price: "923$",
-        button: "Add to cart",
-      },
-      {
-        id: 5,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Sliced pork, avocado and...",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-      {
-        id: 6,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Veal meat, tomatoes and...",
-        imgAlt: "food",
-        price: "923$",
-        button: "Add to cart",
-      },
-    ],
-    Lunch: [
-      {
-        id: 1,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
-        imgAlt: "food",
-        title: "Egg, kiwi and sauce chilli",
-        price: "599$",
-        button: "Add to cart",
-      },
-      {
-        id: 2,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Potatoes with pork and dried fruits",
-        imgAlt: "food",
-        price: "99$",
-        button: "Add to cart",
-      },
-      {
-        id: 3,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Rice with shrimps and kiwi",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-      {
-        id: 4,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Spaghetti with mushrooms and...",
-        imgAlt: "food",
-        price: "923$",
-        button: "Add to cart",
-      },
-      {
-        id: 5,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Sliced pork, avocado and...",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-    ],
-    Dinner: [
-      {
-        id: 1,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
-        imgAlt: "food",
-        title: "Egg, kiwi and sauce chilli",
-        price: "599$",
-        button: "Add to cart",
-      },
-      {
-        id: 2,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Potatoes with pork and dried fruits",
-        imgAlt: "food",
-        price: "99$",
-        button: "Add to cart",
-      },
-      {
-        id: 3,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Rice with shrimps and kiwi",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-      {
-        id: 4,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Spaghetti with mushrooms and...",
-        imgAlt: "food",
-        price: "923$",
-        button: "Add to cart",
-      },
-    ],
-    StreetFood: [
-      {
-        id: 1,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
-        imgAlt: "food",
-        title: "Egg, kiwi and sauce chilli",
-        price: "599$",
-        button: "Add to cart",
-      },
-      {
-        id: 2,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-        title: "Potatoes with pork and dried fruits",
-        imgAlt: "food",
-        price: "99$",
-        button: "Add to cart",
-      },
-      {
-        id: 3,
-        imageUrl: "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-        title: "Rice with shrimps and kiwi",
-        imgAlt: "food",
-        price: "911$",
-        button: "Add to cart",
-      },
-    ],
-  });
+  let [FoodCategory] = useState(foods);
 
   return (
     <div className="w-full container mx-auto my-20 ">
       <Tab.Group>
         <Tab.List className="flex gap-4 shadow-xl ">
-          {Object.keys(FoodCategory).map((genres) => (
+          {Object.keys(FoodCategory).map((genres, index) => (
             <Tab
-              key={genres.id}
+              key={index}
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5  font-medium     duration-300   text-amber-500   ",
@@ -240,19 +103,26 @@ function CardTabs() {
                             {food.price}
                           </p>
                           <div className="flex gap-2 ">
-                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                            <button
+                              className="flex items-center justify-center  border p-1 text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
+                              onClick={() => updateProductCount(-1)}
+                            >
                               <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                                 -
                               </span>
                             </button>
                             <input
                               className="  rounded-lg  w-20 text-center  border-gray-200 border "
-                              defaultValue="1"
                               type="number"
-                              min="0"
+                              name="quantity"
+                              value={quantity}
+                              readOnly={true}
                             />
 
-                            <button className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     ">
+                            <button
+                              className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white"
+                              onClick={() => updateProductCount(1)}
+                            >
                               <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
                                 +
                               </span>
@@ -262,7 +132,7 @@ function CardTabs() {
 
                         <p>
                           <button
-                            href="/"
+                            onClick={() => addToBasket(quantity)}
                             className="bg-amber-500 rounded-lg w-full text-white p-2  hover:bg-white hover:text-amber-500 hover:border-amber-500 hover:border-2 duration-300 hover:bg-transparent"
                           >
                             {food.button}

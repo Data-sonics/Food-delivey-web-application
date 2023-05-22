@@ -22,6 +22,7 @@ export default function Banks() {
           type="radio"
           className="hidden"
           value="option1"
+          readOnly={true}
           checked={selectedOption === "option1"}
           onChange={handleOptionChange}
         />
@@ -36,6 +37,7 @@ export default function Banks() {
           type="radio"
           className="hidden"
           value="option2"
+          readOnly={true}
           checked={selectedOption === "option2"}
           onChange={handleOptionChange}
         />
@@ -50,6 +52,7 @@ export default function Banks() {
           type="radio"
           className="hidden"
           value="option3"
+          readOnly={true}
           checked={selectedOption === "option3"}
           onChange={handleOptionChange}
         />
@@ -64,6 +67,7 @@ export default function Banks() {
           type="radio"
           className="hidden"
           value="option4"
+          readOnly={true}
           checked={selectedOption === "option4"}
           onChange={handleOptionChange}
         />

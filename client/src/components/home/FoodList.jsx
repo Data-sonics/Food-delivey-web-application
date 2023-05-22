@@ -39,8 +39,8 @@ function FoodList({ foods }) {
               <input
                 className="  rounded-lg  w-20 text-center  border-gray-200 border "
                 type="number"
-                min="0"
                 value={quantity}
+                readOnly={true}
               />
 
               <button
