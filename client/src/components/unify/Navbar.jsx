@@ -27,30 +27,34 @@ export default function Navbar({ background, cartCount = 0 }) {
 
   useEffect(() => {
     axios
-      .get("/api/navtitle", navTitle)
+      .get("/api/navtitle")
       .then((res) => {
         setNavTitle(res.data);
       })
       .catch((e) => {
         toast.error("huselt yvuulhad aldaa ", e);
       });
-  });
+  }, []);
 
   return (
     <nav className={background}>
       <div className="container mx-auto py-4">
-        <div className="flex justify-evenly cursor-pointer ">
-          <Logo />
+        <div className="flex justify-evenly  ">
+          <a href="/">
+            <Logo />
+          </a>
           <div className="items-center flex justify-between w-full">
-            <ul className="flex ms-16 font-thin p-4 md:p-0rounded-lg  mt-0 border-0 space-x-8 text-xl ">
+            <ul className="flex mx-10 font-thin p-4  mt-0 border-0 space-x-8 text-xl  ">
               {navTitle.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    to={item.to}
-                    className="hover:text-amber-500 duration-300  font-medium hover:border-bottom"
-                  >
-                    {item.title}
-                  </Link>
+                <li key={index} className="">
+                  <button className="">
+                    <Link
+                      to={item.to}
+                      className="hover:text-amber-500 duration-300  font-medium  border-b-4 hover:border-b-amber-500 border-b-transparent"
+                    >
+                      {item.title}
+                    </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -61,19 +65,17 @@ export default function Navbar({ background, cartCount = 0 }) {
 
             <span>
               <div>
-                <div className="relative">
-                  <FaShoppingBag
-                    onClick={toggleSidebar}
-                    size="20"
-                    className="text-amber-500"
-                  />
+                <button
+                  onClick={toggleSidebar}
+                  className="relative shadow-xl bg-white p-2 rounded-xl border-2 border-amber-500    "
+                >
+                  <FaShoppingBag size="20" className="fill-amber-500  " />
                   {cartCount > 0 && (
                     <span className="absolute -right-3 -top-3 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full">
                       {cartCount}
                     </span>
                   )}
-                </div>
-
+                </button>
                 <div className="relative flex-none">
                   <Sidebar
                     isSidebarVisible={isSidebarVisible}

@@ -36,9 +36,9 @@ function CardTabs() {
     <div className="w-full container mx-auto my-20 ">
       <Tab.Group>
         <Tab.List className="flex gap-4 shadow-xl ">
-          {Object.keys(FoodCategory).map((genres) => (
+          {Object.keys(FoodCategory).map((genres, index) => (
             <Tab
-              key={genres.id}
+              key={index}
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5  font-medium     duration-300   text-amber-500   ",

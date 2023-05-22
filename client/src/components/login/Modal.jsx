@@ -19,9 +19,12 @@ export default function LoginModal() {
   }
   return (
     <>
-      <div className=" inset-0 flex items-center justify-center">
-        <FaUserAlt fill="#ffa500" size="20" onClick={openModal} />
-      </div>
+      <button
+        className=" p-2 bg-white shadow-xl rounded-xl border-2  border-amber-500  "
+        onClick={openModal}
+      >
+        <FaUserAlt fill="#ffa500" size="20" />
+      </button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>

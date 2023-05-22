@@ -24,6 +24,7 @@ function UserProfile() {
         });
     }
   }, [currentUser]);
+
   const save = () => {
     axios
       .put(`/api/users/${currentUser._id}`, userDetail)
@@ -80,6 +81,7 @@ function UserProfile() {
                     <img
                       src={userDetail.imageUrl}
                       alt="url"
+                      htmlFor="image"
                       className="w-full h-full object-cover"
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null;
@@ -89,6 +91,7 @@ function UserProfile() {
                     />
                     <input
                       disabled={!isEditMode}
+                      id="image"
                       type="file"
                       name="file"
                       className="absolute left-0 right-0 top-0 bottom-0 opacity-0 cursor-pointer"
@@ -98,9 +101,10 @@ function UserProfile() {
                 </div>
                 {/* Full name  */}
                 <div>
-                  <label for="full_name">Full Name</label>
+                  <label htmlFor="full_name">Full Name</label>
                   <input
                     disabled={!isEditMode}
+                    id="full_name"
                     type="text"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     placeholder="New name"
@@ -112,10 +116,11 @@ function UserProfile() {
                 </div>
                 {/* email */}
                 <div>
-                  <label for="email">Email Address</label>
+                  <label htmlFor="email">Email Address</label>
                   <input
                     disabled={!isEditMode}
                     type="text"
+                    id="email"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     value={userDetail.email}
                     onChange={(e) =>
@@ -126,10 +131,11 @@ function UserProfile() {
                 </div>
                 {/* Phone number */}
                 <div>
-                  <label for="email">Phone Number</label>
+                  <label htmlFor="phone">Phone Number</label>
                   <input
                     disabled={!isEditMode}
                     type="text"
+                    id="phone"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     value={userDetail.phone}
                     onChange={(e) =>
@@ -140,11 +146,12 @@ function UserProfile() {
                 </div>
                 {/* country */}
                 <div>
-                  <label for="country">Country / region</label>
+                  <label htmlFor="country">Country / region</label>
                   <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                     <input
                       disabled={!isEditMode}
                       value={userDetail.country}
+                      id="country"
                       placeholder="Your country"
                       className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                       onChange={(e) =>
@@ -154,11 +161,14 @@ function UserProfile() {
                         })
                       }
                     />
-                    <button className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
+                    <button
+                      id="country"
+                      className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
+                    >
                       <Close />
                     </button>
                     <button
-                      for="show_more"
+                      id="country"
                       className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
                     >
                       <ChevronTop />
@@ -167,10 +177,11 @@ function UserProfile() {
                 </div>
                 {/* city */}
                 <div>
-                  <label for="city">City</label>
+                  <label htmlFor="city">City</label>
                   <input
                     disabled={!isEditMode}
                     type="text"
+                    id="city"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     value={userDetail.city}
                     onChange={(e) =>
@@ -181,11 +192,12 @@ function UserProfile() {
                 </div>
                 {/* state */}
                 <div>
-                  <label for="state">State / province</label>
+                  <label htmlFor="state">State / province</label>
                   <div className="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                     <input
                       disabled={!isEditMode}
                       placeholder="Your state"
+                      id="state"
                       className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                       value={userDetail.state}
                       onChange={(e) =>
@@ -195,20 +207,27 @@ function UserProfile() {
                         })
                       }
                     />
-                    <button className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600">
+                    <button
+                      id="state"
+                      className="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
+                    >
                       <Close />
                     </button>
-                    <button className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600">
+                    <button
+                      id="state"
+                      className="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
+                    >
                       <ChevronTop />
                     </button>
                   </div>
                 </div>
                 {/* address */}
                 <div>
-                  <label for="address">Address / Street</label>
+                  <label htmlFor="address">Address / Street</label>
                   <input
                     disabled={!isEditMode}
                     type="text"
+                    id="address"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     value={userDetail.address}
                     onChange={(e) =>
@@ -223,10 +242,11 @@ function UserProfile() {
 
                 {/* password */}
                 <div>
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     disabled={!isEditMode}
                     type="Password"
+                    id="password"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     onChange={(e) =>
                       setUserDetail({
@@ -247,7 +267,7 @@ function UserProfile() {
                       {isEditMode ? "Disable Edit" : "Enable Edit"}
                     </button>
                     <button
-                      className="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      className="bg-yellow-500 hover:bg-amber-600  text-white font-bold py-2 px-4 rounded"
                       onClick={() => save()}
                     >
                       Save

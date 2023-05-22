@@ -17,10 +17,12 @@ import Footer from "./components/unify/Footer";
 import Contacts from "./pages/Contacts";
 import useCurrentUser from "./hooks/useCurrentUser";
 import UserProfile from "./pages/UserProfile";
+import { NotFoundScreen } from "./pages/NotFoundScreen";
 function App() {
   const { color } = useContext(BackgroundContext);
   const { currentUser } = useCurrentUser();
   console.log("currentUser:", currentUser);
+
   return (
     <>
       <Navbar background={color} />
@@ -30,7 +32,8 @@ function App() {
         <Route path="/restaurantscard" element={<RestaurantsCard />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contactUs" element={<Contacts />} />
-        <Route path="/userProfile" element={<UserProfile />} />
+        {currentUser && <Route path="/userProfile" element={<UserProfile />} />}
+        <Route path="*" element={<NotFoundScreen />} />
       </Routes>
       <Footer />
     </>

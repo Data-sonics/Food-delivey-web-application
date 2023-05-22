@@ -48,8 +48,8 @@ function FoodList() {
   };
   return (
     <div>
-      {foods.map((food) => (
-        <div className="my-2">
+      {foods.map((food, index) => (
+        <div className="my-2" key={index}>
           <div className="flex align-middle">
             <img src={food.respic} alt="" className="rounded-xl mb-5" />
             <h1 className="font-bold  text-xl p-3">{food.resname}</h1>
@@ -77,6 +77,7 @@ function FoodList() {
                 className="  rounded-lg  w-20 text-center  border-gray-200 border "
                 type="number"
                 min="0"
+                readOnly={true}
                 value={quantity}
               />
 
