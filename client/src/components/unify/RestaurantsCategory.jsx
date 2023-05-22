@@ -2,7 +2,6 @@ import Aos from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import RatingStars from "react-rating-stars-component";
-import { Link } from "react-router-dom";
 
 // const resCategory = [
 //   {
