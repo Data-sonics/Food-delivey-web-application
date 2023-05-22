@@ -1,32 +1,9 @@
 import { Link } from "react-router-dom";
-import { Fragment, useEffect, useState } from "react";
-import { Combobox, Transition } from "@headlessui/react";
-import { FaChevronDown, FaCheck } from "react-icons/fa";
+import { useEffect } from "react";
 import Aos from "aos";
 import ChevronRight from "../icon/ChevronRight";
 
-const people = [
-  { id: 1, name: "make" },
-  { id: 2, name: "Arlene Mccoy" },
-  { id: 3, name: "Devon Webb" },
-  { id: 4, name: "Tom Cook" },
-  { id: 5, name: "Tanya Fox" },
-  { id: 6, name: "Hellen Schmidt" },
-];
-
 export default function RestaurantsMain() {
-  const [selected, setSelected] = useState(people[0]);
-  const [query, setQuery] = useState("");
-
-  const filteredPeople =
-    query === ""
-      ? people
-      : people.filter((person) =>
-          person.name
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
-        );
   useEffect(() => {
     Aos.init({
       disable: false,
