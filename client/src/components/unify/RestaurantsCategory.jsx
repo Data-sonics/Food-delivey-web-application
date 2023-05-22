@@ -3,37 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import RatingStars from "react-rating-stars-component";
 
-// const resCategory = [
-//   {
-//     id: "1",
-//     imageUrl: "https://bslthemes.com/html/quickeat/assets/img/logos-2.jpg",
-//     imageAlt: "",
-//     title: "Kennington Lane Cafe",
-//     text: "Non enim praesent elementum facilisis leo vel fringilla. Lectus proin nibh nisl condimentum id. Quis varius quam quisque id diam vel.",
-//   },
-//   {
-//     id: "2",
-//     imageUrl: "https://bslthemes.com/html/quickeat/assets/img/logos-1.jpg",
-//     imageAlt: "",
-//     title: "The Wilmington",
-//     text: "Vulputate enim nulla aliquet porttitor lacus luctus. Suscipit adipiscing bibendum est ultricies integer. Sed adipiscing diam donec adipiscing tristique.",
-//   },
-//   {
-//     id: "3",
-//     imageUrl: "https://bslthemes.com/html/quickeat/assets/img/logos-3.jpg",
-//     imageAlt: "",
-//     title: " Kings Arms",
-//     text: "Tortor at risus viverra adipiscing at in tellus. Cras semper auctor neque vitae tempus. Dui accumsan sit amet nulla facilisi. Sed adipiscing diam donec adipiscing tristique.",
-//   },
-//   {
-//     id: "4",
-//     imageUrl: "https://bslthemes.com/html/quickeat/assets/img/logos-4.jpg",
-//     imageAlt: "",
-//     title: "The Victoria",
-//     text: "Non enim praesent elementum facilisis leo vel fringilla. Lectus proin nibh nisl condimentum id. Quis varius quam quisque id diam vel.",
-//   },
-// ];
-
 export default function RestaurantsCategory() {
   const [data, setData] = useState([]);
   useEffect(() => {
