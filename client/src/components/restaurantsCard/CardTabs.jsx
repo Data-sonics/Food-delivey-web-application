@@ -7,6 +7,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { useBasket } from "../../hooks/useBasket";
+import { toast } from "react-toastify";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -16,6 +17,17 @@ function CardTabs() {
   const [info, setInfo] = useState(false);
   const { addToBasket } = useBasket();
   const [quantity, setQuantity] = useState(1);
+  const updateProductCount = (count) => {
+    if (count < 0 && quantity === 1) {
+      toast.warning("1 ээс бага бараа сагслах боломжгүй");
+      return;
+    }
+    if (count > 0 && quantity === 10) {
+      toast.warning("10 аас их бараа сагслах боломжгүй");
+      return;
+    }
+    setQuantity(quantity + count);
+  };
 
   let [FoodCategory] = useState({
     Breakfast: [

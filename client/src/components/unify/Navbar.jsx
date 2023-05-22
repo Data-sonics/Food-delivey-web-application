@@ -10,7 +10,7 @@ import useCurrentUser from "../../hooks/useCurrentUser";
 import DropDownProfile from "../login/DropDownProfile";
 import Sidebar from "../home/Sidebar";
 
-export default function Navbar({ background, cartCount = 2 }) {
+export default function Navbar({ background, cartCount = 0 }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { currentUser } = useCurrentUser();
 

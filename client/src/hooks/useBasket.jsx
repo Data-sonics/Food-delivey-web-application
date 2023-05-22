@@ -58,7 +58,7 @@ export const useBasket = () => {
       }
       return newBasket;
     }
-    const response = await axios.post("/baskets/add", {
+    const response = await axios.post("/api/basket", {
       productId,
       quantity,
     });
