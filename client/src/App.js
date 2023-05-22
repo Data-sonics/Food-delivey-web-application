@@ -28,8 +28,8 @@ function App() {
       <Navbar background={color} />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/restaurants" element={<Restaurants />} />
-        <Route path="/restaurantscard" element={<RestaurantsCard />} />
+        <Route exact path="/restaurants" element={<Restaurants />} />
+        <Route path="/restaurantsCard/:id" element={<RestaurantsCard />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contactUs" element={<Contacts />} />
         {currentUser && <Route path="/userProfile" element={<UserProfile />} />}

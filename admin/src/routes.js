@@ -28,18 +28,18 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "Foods Category",
+    name: "Restaurants",
     layout: "/admin",
-    path: "foodCategory",
+    path: "restaurants/home",
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,
     component: <NFTMarketplace />,
     secondary: true,
   },
   {
-    name: "Data Tables",
+    name: "Foods Management",
     layout: "/admin",
     icon: <MdBarChart className="h-6 w-6" />,
-    path: "data-tables",
+    path: "foods-management/home",
     component: <DataTables />,
   },
   {

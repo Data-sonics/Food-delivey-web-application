@@ -11,7 +11,7 @@ const Footer = () => {
           <li>
             <a
               target="blank"
-              href="#"
+              href="/"
               className="text-base font-medium text-gray-600 hover:text-gray-600"
             >
               Support
@@ -20,7 +20,7 @@ const Footer = () => {
           <li>
             <a
               target="blank"
-              href="#"
+              href="/"
               className="text-base font-medium text-gray-600 hover:text-gray-600"
             >
               License
@@ -29,7 +29,7 @@ const Footer = () => {
           <li>
             <a
               target="blank"
-              href="#"
+              href="/"
               className="text-base font-medium text-gray-600 hover:text-gray-600"
             >
               Terms of Use
@@ -38,7 +38,7 @@ const Footer = () => {
           <li>
             <a
               target="blank"
-              href="#"
+              href="/"
               className="text-base font-medium text-gray-600 hover:text-gray-600"
             >
               Blog
