@@ -1,49 +1,52 @@
-import { basketModel } from "../models/basketModel";
+const Basket = require("./entities/basket.entity");
+import {foodService} from "./foodService"
 
-export const getBasket = async () => {
-  const basket = await basketModel.find({}).populate(["userId", "foods"]);
-  return basket;
-};
+class BasketsService {
+  baskets = [];
+ foodService = new foodService();
 
-export const getBasketById = async (id) => {
-  return await basketModel.findById(id);
-};
-
-export const createBasket = async (basket) => {
-  // console.log(basket);
-  const userId = basket.userId;
-  console.log("basket");
-  if (userId) {
-    const userBasket = await basketModel.findOne({ userId: userId });
-    if (userBasket) {
-      // console.log("user:", userBasket);
-      let foods = [
-        ...userBasket.foods,
-        { foodsId: basket.productId, quantity: basket.quantity },
-      ];
-      console.log({
-        ...userBasket,
-        foods: foods,
-      });
-      return await basketModel.findOneAndUpdate(
-        { userId: userId },
-        {
-          userId: userId,
-          foods: foods,
-        }
-      );
+  findMain = async (userId) => {
+    let mainBasket = this.baskets.find(
+      (basket) => basket.userId === userId && basket.isMain
+    );
+    if (!mainBasket) {
+      mainBasket = await this.createNewMain(userId);
     }
-  }
-  console.log("no user");
-  return await basketModel.create({
-    userId: userId,
-    foods: [{ foodsId: basket.productId, quantity: basket.quantity }],
-  });
-};
-// export const updateBasket = async (id, basket) => {
-//   return await basketModel.findByIdAndUpdate(id, basket, { new: true });
-// };
+    return mainBasket;
+  };
 
-export const deleteBasket = async (id) => {
-  return await basketModel.findByIdAndDelete(id);
-};
+  createNewMain = async (userId) => {
+    const newBasket = new Basket(userId, true);
+    this.baskets.push(newBasket);
+    return newBasket;
+  };
+
+  addProduct = async (userId, productId, quantity) => {
+    const mainBasket = await this.findMain(userId);
+    const product = this foodService.findOne(productId);
+    if (!product) {
+      throw new BadRequestException("Product not found!");
+    }
+
+    let updatedQuantity = false;
+
+    if (!mainBasket.items) {
+      mainBasket.items = [{ productId, quantity }];
+    } else {
+      mainBasket.items = mainBasket.items.map((item) => {
+        if (item.productId === productId) {
+          item.quantity += quantity;
+          updatedQuantity = true;
+        }
+        return item;
+      });
+      if (!updatedQuantity) {
+        mainBasket.items.push({ productId, quantity });
+      }
+    }
+
+    return mainBasket;
+  };
+}
+
+module.exports = BasketsService;

@@ -10,18 +10,20 @@ import {
 const basketRouter = express.Router();
 
 basketRouter.get("/", async (req, res) => {
-  res.json(await getBasket());
+  const user = req.currentUser;
+  const result = await findOne(user);
+  res.json(result);
 });
 
-// basketRouter.get("/:id", async (req, res) => {
-//   const { id } = req.params;
-//   res.json(await getBasketById(id));
-// });
-
 basketRouter.post("/", async (req, res) => {
-  const basket = req.body;
-  console.log("basket", basket);
-  res.json(await createBasket(basket));
+  const user = req.currentUser;
+  const { productId, quantity } = req.body;
+  const result = addProduct(user, productId, quantity);
+  res.json(await result);
+});
+
+basketRouter.get("/", async (req, res) => {
+  res.json(await getBasket());
 });
 
 // basketRouter.put("/:id", async (req, res) => {
