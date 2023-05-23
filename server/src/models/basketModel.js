@@ -2,12 +2,13 @@ import mongoose from "mongoose";
 
 export const basket = {
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
   },
-  products: [
+
+  foods: [
     {
-      productId: String,
+      foodsId: { type: String, ref: "Food" },
+      Image: String,
       quantity: Number,
       name: String,
       price: String,
@@ -15,5 +16,16 @@ export const basket = {
   ],
 };
 
-export const basketSchema = new mongoose.Schema(basket, { timestamps: true });
+export const basketSchema = new mongoose.Schema(
+  basket,
+  { timestamps: true },
+  { toObject: { virtuals: true }, toJSON: { virtuals: true } }
+);
+basketSchema.virtual("users", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "id",
+  justOne: true,
+});
+
 export const basketModel = mongoose.model("basket", basketSchema);

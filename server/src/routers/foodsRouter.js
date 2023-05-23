@@ -11,7 +11,7 @@ const router = express.Router();
 router.get("/", async (request, response) => {
   let myfoods = await foodsModel.find().populate("restaurant");
   let mytypes = await foodsModel.find().distinct("type");
-  console.log("types:", mytypes);
+  // console.log("types:", mytypes);
   response.json({
     data: myfoods,
     types: mytypes,

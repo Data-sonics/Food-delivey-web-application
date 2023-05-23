@@ -20,6 +20,7 @@ basketRouter.get("/", async (req, res) => {
 
 basketRouter.post("/", async (req, res) => {
   const basket = req.body;
+  console.log("basket", basket);
   res.json(await createBasket(basket));
 });
 
