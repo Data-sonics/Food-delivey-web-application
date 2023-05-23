@@ -124,31 +124,5 @@
       "price": "923$",
       "button": "Add to cart"
     }
-  ],
-  "StreetFood": [
-    {
-      "id": 1,
-      "imageUrl": "https://bslthemes.com/html/quickeat/assets/img/dish-13.png",
-      "imgAlt": "food",
-      "title": "Egg, kiwi and sauce chilli",
-      "price": "599$",
-      "button": "Add to cart"
-    },
-    {
-      "id": 2,
-      "imageUrl": "https://bslthemes.com/html/quickeat/assets/img/dish-2.png",
-      "title": "Potatoes with pork and dried fruits",
-      "imgAlt": "food",
-      "price": "99$",
-      "button": "Add to cart"
-    },
-    {
-      "id": 3,
-      "imageUrl": "https://bslthemes.com/html/quickeat/assets/img/dish-3.png",
-      "title": "Rice with shrimps and kiwi",
-      "imgAlt": "food",
-      "price": "911$",
-      "button": "Add to cart"
-    }
   ]
 }

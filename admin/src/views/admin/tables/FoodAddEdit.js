@@ -121,6 +121,15 @@ const AddEdit = () => {
           onChange={handleInputChange}
           value={state.restaurantId}
         />
+        <label htmlFor="type">type</label>
+        <input
+          type="text"
+          id="type"
+          name="type"
+          placeholder="Enter type ..."
+          onChange={handleInputChange}
+          value={state.type}
+        />
         <input type="submit" value={id ? "Update" : "Add"} />
       </form>
     </div>

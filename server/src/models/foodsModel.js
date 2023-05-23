@@ -21,6 +21,9 @@ const FoodSchema = new mongoose.Schema(
     restaurantId: {
       type: String,
     },
+    type: {
+      type: String,
+    },
   },
   { toObject: { virtuals: true }, toJSON: { virtuals: true } }
 );
