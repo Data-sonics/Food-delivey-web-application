@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
 import { toast } from "react-toastify";
@@ -6,9 +5,6 @@ import { toast } from "react-toastify";
 export const Card = ({ food, addToBasket }) => {
   const [info, setInfo] = useState(false);
 
-  useEffect(() => {
-    console.log("food:", food);
-  }, []);
   const [quantity, setQuantity] = useState(1);
   const updateProductCount = (count) => {
     if (count < 0 && quantity === 1) {
