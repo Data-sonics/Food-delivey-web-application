@@ -8,7 +8,7 @@ import { Card } from "./Card";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-function CardTabs() {
+function CardTabs({ id }) {
   const { addToBasket } = useBasket();
   const [quantity, setQuantity] = useState(1);
   const [foods, setFoods] = useState([]);
@@ -17,36 +17,34 @@ function CardTabs() {
   const handleAddQuantity = () => {
     setQuantity(quantity + 1);
   };
+  const types = ["breakfast", "lunch", "dinner"];
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/restaurants/:id/foods`)
+      .get(`http://localhost:8080/api/restaurants/${id}/foods`)
       .then((response) => {
         setFoods(response.data);
-        setSelectedFoods(
-          response.data.data.filter((d) => d.type === response.data.types[0])
-        );
         setIsLoad(false);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  const selectTabs = (types) => {
-    // console.log("types", types);
-    // console.log("foods datas", foods.data);
-    const selected = foods.data.filter((food) => food.type == types);
-    // console.log("sel", selected);
+  useEffect(() => {
+    if (foods.length > 0) {
+      setSelectedFoods(foods.filter((food) => food.type === types[0]));
+    }
+  }, [foods]);
+
+  const selectTabs = (type) => {
+    const selected = foods.filter((food) => food.type === type);
     setSelectedFoods(selected);
   };
-
-  // console.log("types:", foods);
-
   return (
     !isLoad && (
       <div className="w-full container mx-auto my-20 ">
         <Tab.Group>
           <Tab.List className="flex gap-4 shadow-xl ">
-            {foods.types.map((genres, index) => (
+            {types.map((genres, index) => (
               <Tab
                 key={index}
                 onClick={() => selectTabs(genres)}
@@ -65,7 +63,7 @@ function CardTabs() {
             ))}
           </Tab.List>
           <Tab.Panels className="mt-2 p-10">
-            {foods.types.map((type, idx) => (
+            {types.map((type, idx) => (
               <Tab.Panel
                 key={idx}
                 className={classNames(
@@ -74,7 +72,7 @@ function CardTabs() {
                 )}
               >
                 <ul className="flex gap-10 flex-wrap focus:outline-0 ">
-                  {selectedFoods.map((food) => {
+                  {selectedFoods?.map((food) => {
                     return (
                       <li key={food.id}>
                         <Card addToBasket={addToBasket} food={food} />
