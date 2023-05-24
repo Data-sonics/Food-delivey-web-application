@@ -20,7 +20,7 @@ function CardTabs() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/foods`)
+      .get(`http://localhost:8080/api/restaurants/:id/foods`)
       .then((response) => {
         setFoods(response.data);
         setSelectedFoods(

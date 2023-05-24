@@ -19,6 +19,9 @@ export async function deletefood(id) {
   const result = await foodsModel.findOneAndDelete({ id });
   return id;
 }
+export async function getFoodsByRestaurantId(restaurantId) {
+  return await foodsModel.find({ restaurantId });
+}
 
 export async function updatefood(food) {
   console.log("food:", food);

@@ -1,5 +1,6 @@
 import express from "express";
 import { restaurantsModel } from "../models/restaurantsModel.js";
+import { getFoodsByRestaurantId } from "../services/foodService.js";
 
 import {
   deleteRestaurant,
@@ -22,6 +23,10 @@ router.post("", async (request, response) => {
   response.json({
     data: result,
   });
+});
+router.get("/:id/foods", async (request, response) => {
+  const { id } = request.params;
+  response.json(await getFoodsByRestaurantId(id));
 });
 
 router.get("/:id", getRestaurantById);
