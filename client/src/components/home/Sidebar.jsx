@@ -3,7 +3,7 @@ import { FaClosedCaptioning } from "react-icons/fa";
 
 function Sidebar({ toggleSidebar, closeSidebar }) {
   return (
-    <div>
+    <div className="relative">
       <div
         id="hs-overlay-right"
         className={`hs-overlay hs-overlay-open:translate-x-0  ${

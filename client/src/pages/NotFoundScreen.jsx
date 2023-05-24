@@ -32,7 +32,7 @@ export const NotFoundScreen = () => {
                 data-aos-duration="700"
                 className="aos-init aos-animate text-2xl my-2"
               >
-                Уучлаарай хуудас олдсонгүй.
+                Sorry not found screen.
               </p>
             </div>
           </div>

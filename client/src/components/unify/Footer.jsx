@@ -23,10 +23,10 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-[#363636]">
-        <div className="mx-auto w-full  ">
-          <div className="flex gap-8 px-4 py-20 justify-between container mx-auto   ">
-            <div className="w-[403px]">
-              <a href="/">
+        <div className="mx-auto w-full">
+          <div className="lg:flex lg:gap-8 lg:px-4 lg:py-20 lg:justify-between lg:container lg:mx-auto  md:flex-wrap md:text-center lg:text-left">
+            <div className="lg:w-[403px] md:w-full">
+              <a href="/" className="md:flex md:justify-center lg:block">
                 <Flogo />
               </a>
               <p className="text-6xl text-white font-bold  py-10">
@@ -38,7 +38,7 @@ export default function Footer() {
                 risus pretium quam.
               </p>
             </div>
-            <div>
+            <div className="md:hidden lg:block">
               <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
                 Menu
               </h2>
@@ -57,7 +57,7 @@ export default function Footer() {
                 })}
               </ul>
             </div>
-            <div className="w-[420px]">
+            <div className="lg:w-[420px] md:mt-3 md:mx-auto lg:mx-0">
               <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
                 Contacts
               </h2>
@@ -86,7 +86,7 @@ export default function Footer() {
             </div>
           </div>
           <hr />
-          <div className="px-40  py-6 md:flex md:items-center md:justify-between    ">
+          <div className=" container mx-auto  py-6 md:flex md:items-center md:justify-between    ">
             <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
               {new Date().getFullYear()} &copy; All Rights Reserved.
             </span>

@@ -37,8 +37,8 @@ export default function RestaurantsCategory() {
     });
   }, []);
   return (
-    <div className="grid gap-8 py-10 bg-gray-100">
-      <section className="mx-auto container flex gap-16 flex-wrap  pt-16">
+    <div className="grid gap-8 py-20 bg-gray-100">
+      <section className="mx-auto container flex gap-16 flex-wrap  ">
         {data.map((item) => {
           return (
             <div

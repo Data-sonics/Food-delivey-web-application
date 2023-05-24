@@ -20,7 +20,7 @@ export default function LoginModal() {
   return (
     <>
       <button
-        className=" p-2 bg-white shadow-xl rounded-xl border-2  border-amber-500  "
+        className=" p-3  bg-white shadow-xl rounded-xl border-2  border-amber-500  "
         onClick={openModal}
       >
         <FaUserAlt fill="#ffa500" size="20" />
