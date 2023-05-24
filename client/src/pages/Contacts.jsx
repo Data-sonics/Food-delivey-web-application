@@ -55,12 +55,14 @@ export default function Contacts() {
               </div>
             </li>
           </ol>
-          <h1 className="text-5xl font-bold mt-5">Contact us</h1>
-          <p className="text-gray-600 font-thin text-lg w-[35%] mt-8">
-            Egestas sed tempus urna et pharetra pharetra massa. Fermentum
-            posuere urna nec tincidunt praesent semper.
-          </p>
-          <div className="mt-10 flex gap-8">
+          <div className="sm:text-center mx-auto text-center lg:text-left">
+            <h1 className="text-5xl font-bold mt-5">Contact us</h1>
+            <p className="text-gray-600 font-thin text-lg w-full mt-8 md:w-full sm:w-[35%] lg:w-[35%]">
+              Egestas sed tempus urna et pharetra pharetra massa. Fermentum
+              posuere urna nec tincidunt praesent semper.
+            </p>
+          </div>
+          <div className="mt-10 flex gap-8 flex-wrap md:justify-center lg:justify-start sm:justify-start justify-center">
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoLocationSharp className="text-amber-500 text-5xl" />
               <p className="my-2 leading-9">
@@ -87,7 +89,7 @@ export default function Contacts() {
             </div>
           </div>
         </div>
-        <div className="mt-[2%]" data-aos="fade-up">
+        <div className="mt-[2%] hidden md:hidden lg:block sm:block" data-aos="fade-up">
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/contacts-1.png"
             alt="callme"
@@ -96,10 +98,10 @@ export default function Contacts() {
         </div>
       </div>
       <div
-        className="flex gap-16 my-10 shadow-2xl p-8 rounded-lg"
+        className="flex gap-16 my-10 shadow-2xl p-8 rounded-lg flex-wrap"
         data-aos="fade-up"
       >
-        <div className="w-[50%]">
+        <div className="w-[100%] md:w-[75%] sm:w-[100%] md:mx-auto lg:w-[50%]">
           <h1 className="text-4xl font-bold my-2">Get in touch with us</h1>
           <p className="text-gray-400 font-thin text-lg my-8">
             Magna sit amet purus gravida quis blandit turpis cursus. Venenatis
@@ -122,18 +124,16 @@ export default function Contacts() {
             <IoMdMail className="absolute top-0 left-0 mt-9 ml-3 text-gray-400" />
           </div>
           <textarea
-            name="text"
-            id=""
-            cols="91"
             rows="10"
-            className="border rounded-lg ps-9 pt-5 focus:outline-0 font-thin"
+            type="text"
+            className="w-full resize-none border rounded-lg ps-2 pt-5 focus:outline-0 font-thin"
             placeholder="Enter your message"
           ></textarea>
           <button className="text-center duration-500 bg-amber-500 w-full h-14 rounded-lg text-white hover:text-amber-500 hover:bg-transparent hover:border-amber-500 border-2 font-thin my-5 ">
             Submit Application
           </button>
         </div>
-        <div className="mt-6">
+        <div className="mx-auto">
           <iframe
             title="locationFrame"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d666.8676028654205!2d106.93400347248576!3d47.92397649373824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDfCsDU1JzI2LjgiTiAxMDbCsDU2JzAzLjYiRQ!5e0!3m2!1smn!2smn!4v1683012245725!5m2!1smn!2smn"
@@ -141,7 +141,7 @@ export default function Contacts() {
           ></iframe>
         </div>
       </div>
-      <EmailMenu className="my-10" />
+      <EmailMenu />
     </section>
   );
 }
