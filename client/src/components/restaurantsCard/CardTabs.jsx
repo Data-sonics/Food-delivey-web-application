@@ -10,13 +10,10 @@ function classNames(...classes) {
 }
 function CardTabs({ id }) {
   const { addToBasket } = useBasket();
-  const [quantity, setQuantity] = useState(1);
   const [foods, setFoods] = useState([]);
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [isLoad, setIsLoad] = useState(true);
-  const handleAddQuantity = () => {
-    setQuantity(quantity + 1);
-  };
+
   const types = ["breakfast", "lunch", "dinner"];
 
   useEffect(() => {
@@ -27,12 +24,14 @@ function CardTabs({ id }) {
         setIsLoad(false);
       })
       .catch((error) => console.log(error));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (foods.length > 0) {
       setSelectedFoods(foods.filter((food) => food.type === types[0]));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [foods]);
 
   const selectTabs = (type) => {
