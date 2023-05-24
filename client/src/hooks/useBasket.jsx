@@ -14,7 +14,7 @@ export const useBasket = () => {
 
   const { currentUser } = useCurrentUser();
 
-  const addToBasket = async (productId, quantity) => {
+  const addToBasket = async (foodId, quantity) => {
     if (quantity > 10) {
       toast.warn("Та 10 аас дээш бараа сагслаж болохгүй");
       return;
@@ -24,17 +24,16 @@ export const useBasket = () => {
       return;
     }
 
-    const basket = await updateBasket(productId, quantity);
+    const basket = await updateBasket(foodId, quantity);
     setBasket(basket);
-    console.log("basketaaa:", basket);
     toast.success("Барааг амжилттай сагсаллаа");
   };
 
-  const updateBasket = async (productId, quantity) => {
+  const updateBasket = async (foodId, quantity) => {
     if (!currentUser) {
       if (!basket) {
         console.log("basket is empty so created");
-        return { items: [{ productId, quantity }] };
+        return { items: [{ foodId, quantity }] };
       }
       console.log("current:", currentUser);
 
@@ -42,30 +41,26 @@ export const useBasket = () => {
       let { items } = basket;
       items = [...items];
       let updatedQuantity = false;
-      console.log("items:", items);
       newBasket.items = items.map((item, index) => {
-        if (item.productId === productId) {
+        if (item.foodId.toString() === foodId) {
           const newQuantity = item.quantity + quantity;
           updatedQuantity = true;
           return {
-            productId: productId,
+            foodId: foodId,
             quantity: newQuantity,
           };
         }
-        console.log("itemuud:", items);
         return item;
       });
-      console.log("newBasket:", newBasket);
       if (!updatedQuantity) {
-        newBasket.items.push({ productId, quantity });
+        newBasket.items.push({ foodId, quantity });
       }
       return newBasket;
     }
 
     const response = await axios.post("/api/basket", {
-      productId,
+      foodId,
       quantity,
-      userId: currentUser._id,
     });
     console.log("response is:", response);
     return response.data;

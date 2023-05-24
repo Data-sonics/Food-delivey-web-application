@@ -1,7 +1,13 @@
 import { basketModel } from "../models/basketModel";
 
-export const getBasket = async () => {
-  const basket = await basketModel.find({}).populate(["userId", "foods"]);
+export const getBasketByUserId = async (userId, populate) => {
+  let basket = await basketModel.findOne({ userId });
+  if (basket && populate) {
+    await basket.populate(["userId", "foods.foodId"]);
+  }
+  if (!basket) {
+    basket = await basketModel.create({ userId });
+  }
   return basket;
 };
 
@@ -9,40 +15,28 @@ export const getBasketById = async (id) => {
   return await basketModel.findById(id);
 };
 
-export const createBasket = async (basket) => {
-  // console.log(basket);
-  const userId = basket.userId;
-  console.log("basket");
-  if (userId) {
-    const userBasket = await basketModel.findOne({ userId: userId });
-    if (userBasket) {
-      // console.log("user:", userBasket);
-      let foods = [
-        ...userBasket.foods,
-        { foodsId: basket.productId, quantity: basket.quantity },
-      ];
-      console.log({
-        ...userBasket,
-        foods: foods,
-      });
-      return await basketModel.findOneAndUpdate(
-        { userId: userId },
-        {
-          userId: userId,
-          foods: foods,
-        }
-      );
+export const implementBasketItem = async (userId, foodId, quantity) => {
+  let basket = await getBasketByUserId(userId);
+  let { foods } = basket;
+  // herev baigaa hooliig sagslah geed baival toog ni l nemne
+  let updated = false;
+  foods = foods.map((food) => {
+    if (food.foodId.toString() === foodId) {
+      food.quantity += quantity;
+      updated = true;
     }
-  }
-  console.log("no user");
-  return await basketModel.create({
-    userId: userId,
-    foods: [{ foodsId: basket.productId, quantity: basket.quantity }],
+    return food;
   });
+  if (!updated) {
+    foods.push({ foodId, quantity });
+  }
+  basket = await basketModel.findOneAndUpdate(
+    { _id: basket._id },
+    { userId, foods }
+  );
+
+  return await getBasketByUserId(userId, true);
 };
-// export const updateBasket = async (id, basket) => {
-//   return await basketModel.findByIdAndUpdate(id, basket, { new: true });
-// };
 
 export const deleteBasket = async (id) => {
   return await basketModel.findByIdAndDelete(id);

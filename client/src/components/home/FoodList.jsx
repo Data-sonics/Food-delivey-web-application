@@ -10,20 +10,18 @@ function FoodList({ foods }) {
     setQuantity(quantity - 1);
   };
   return (
-    <div className="px-[40px]">
+    <div>
       {foods.map((food) => (
-        <div className="my-2" key={food.id}>
-          <div className="flex align-middle">
-            <img src={food.respic} alt="" className="rounded-xl" />
-            <h1 className="font-bold  text-xl p-3">{food.resname}</h1>
-          </div>
+        <div className="my-2 grid gap-3 " key={food.id}>
           <div className="flex">
             <img src={food.foodpic} alt="" className="mt-5" />
-            <h1 className="font-bold text-xl pt-8 w-[220px] ms-4">
-              {food.foodname}
-            </h1>
+            <h1 className="font-bold text-xl pt-8  ms-4">{food.foodname}</h1>
           </div>
-          <div className="flex mt-5 justify-between">
+          <div className="flex justify-between text-gray-400 font-thin">
+            <p>Price</p>
+            <p>Quantity</p>
+          </div>
+          <div className="flex  justify-between">
             <div className="text-4xl font-bold text-amber-500">
               {food.price}
             </div>
@@ -53,11 +51,8 @@ function FoodList({ foods }) {
               </button>
             </div>
           </div>
-          <div className="flex justify-between text-gray-400 font-thin">
-            <p>Price</p>
-            <p>Quantity</p>
-          </div>
-          <hr className="mt-2" />
+
+          <hr />
         </div>
       ))}
       <div className="flex justify-between mt-5">
