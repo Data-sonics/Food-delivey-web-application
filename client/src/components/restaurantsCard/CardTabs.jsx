@@ -18,7 +18,7 @@ function CardTabs({ id }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/restaurants/${id}/foods`)
+      .get(`${process.env.REACT_APP_API_URL}/api/restaurants/${id}/foods`)
       .then((response) => {
         setFoods(response.data);
         setIsLoad(false);

@@ -12,7 +12,7 @@ export default function CardMainSection() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/restaurants/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/restaurants/${id}`)
       .then((response) => {
         setRestaurant(response.data);
       })

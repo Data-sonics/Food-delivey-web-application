@@ -55,7 +55,7 @@ const AddEdit = () => {
 
   const getSingleRestaurant = async () => {
     const response = await axios.get(
-      `http://localhost:8080/api/restaurants/${id}`
+      `${process.env.REACT_APP_API_URL}/api/restaurants/${id}`
     );
     if (response.status === 200) {
       setState({ ...response.data });

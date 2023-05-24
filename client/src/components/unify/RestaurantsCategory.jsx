@@ -7,7 +7,7 @@ export default function RestaurantsCategory() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/restaurants")
+      .get(`${process.env.REACT_APP_API_URL}/api/restaurants`)
       .then((response) => {
         const dataArray = Object.values(response.data);
         setData(dataArray[0]);
