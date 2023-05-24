@@ -1,54 +1,58 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
-function FoodList({ foods }) {
-  const [quantity, setQuantity] = useState(1);
+function FoodList(cartCount) {
+  const [foods, setFoods] = useState([]);
 
-  const handleAdd = () => {
-    setQuantity(quantity + 1);
-  };
-  const handleSubstract = () => {
-    setQuantity(quantity - 1);
-  };
+  useEffect(() => {
+    axios
+      .get("/api/basket")
+      .then((res) => {
+        const { foods } = res.data;
+        console.log("res", foods);
+        setFoods(foods);
+      })
+      .catch((e) => {
+        toast.error("Aldaa garlaa ", e);
+      });
+  }, []);
+  console.log("foods is: ", foods);
+  const totalPriceArray = foods.map((food) => {
+    let totalPrice = 0;
+
+    totalPrice += Number(food.foodId.price);
+    return totalPrice;
+  });
+
+  // Calculate the sum of all the individual total prices
+  const totalSum = totalPriceArray.reduce((acc, curr) => acc + curr, 0);
+
   return (
     <div>
       {foods.map((food) => (
-        <div className="my-2 grid gap-3 " key={food.id}>
-          <div className="flex">
-            <img src={food.foodpic} alt="" className="mt-5" />
-            <h1 className="font-bold text-xl pt-8  ms-4">{food.foodname}</h1>
+        <div className="my-5 grid gap-3 " key={food.foodId.id}>
+          <div className="flex items-center gap-5">
+            <img
+              src={food.foodId.foodimg}
+              alt=""
+              className="w-32 rounded-lg cover "
+            />
+            <p className="font-bold text-2xl   ">{food.foodId.name}</p>
           </div>
           <div className="flex justify-between text-gray-400 font-thin">
             <p>Price</p>
             <p>Quantity</p>
           </div>
           <div className="flex  justify-between">
-            <div className="text-4xl font-bold text-amber-500">
-              {food.price}
-            </div>
+            <div className="text-4xl font-bold">₮ {food.foodId.price}</div>
             <div className="flex gap-2 ">
-              <button
-                onClick={handleSubstract}
-                className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     "
-              >
-                <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
-                  -
-                </span>
-              </button>
               <input
-                className="  rounded-lg  w-20 text-center  border-gray-200 border "
+                className="  rounded-lg  w-20 text-center  border-amber-500 focus:outline-none border "
                 type="number"
-                value={quantity}
+                value={food.quantity}
                 readOnly={true}
               />
-
-              <button
-                onClick={handleAdd}
-                className=" flex items-center justify-center  border p-1       text-amber-500 rounded-lg  group bg-amber-500  hover:text-white     "
-              >
-                <span className="relative px-5 py-2.5   duration-300 bg-white  rounded-md group-hover:bg-opacity-0">
-                  +
-                </span>
-              </button>
             </div>
           </div>
 
@@ -57,11 +61,11 @@ function FoodList({ foods }) {
       ))}
       <div className="flex justify-between mt-5">
         <p className="text-gray-400 font-thin pt-1">Total order:</p>
-        <p className="text-3xl font-bold">$25</p>
+        <p className="text-3xl font-bold">${totalSum}</p>
       </div>
       <div className="flex justify-between mt-5">
         <p className="text-gray-400 font-thin pt-1">To pay</p>
-        <p className="text-5xl text-amber-500 font-bold">$25</p>
+        <p className="text-5xl text-amber-500 font-bold">{totalSum}</p>
       </div>
       <div className="flex justify-center mt-5">
         <button className="bg-amber-500 rounded-xl w-[100%] h-12 text-white font-thin">
