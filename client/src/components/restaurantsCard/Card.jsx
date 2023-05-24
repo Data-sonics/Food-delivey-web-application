@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 
 export const Card = ({ food, addToBasket }) => {
   const [info, setInfo] = useState(false);
-
   const [quantity, setQuantity] = useState(1);
+
   const updateProductCount = (count) => {
     if (count < 0 && quantity === 1) {
       toast.warning("1 ээс бага бараа сагслах боломжгүй");
@@ -22,7 +22,11 @@ export const Card = ({ food, addToBasket }) => {
       className="w-full  max-w-md  rounded-lg border border-gray-200 bg-white shadow"
       data-aos="flip-up"
     >
-      <img className="rounded-t-lg p-8" src={food.foodimg} alt="" />
+      <img
+        className=" rounded-3xl object-cover w-full h-full p-8 "
+        src={food.foodimg}
+        alt=""
+      />
 
       {/* front */}
       <div

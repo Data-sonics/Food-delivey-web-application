@@ -3,7 +3,7 @@ import { FaShoppingBag, FaBars } from "react-icons/fa";
 
 import LoginModal from "../login/Modal";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useCurrentUser from "../../hooks/useCurrentUser";
 import DropDownProfile from "../login/DropDownProfile";
@@ -11,12 +11,15 @@ import Sidebar from "../home/Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { AiOutlineClose } from "react-icons/ai";
+import { basketContext } from "../../contexts/BasketProvider";
 
-export default function Navbar({ background, cartCount = 0 }) {
+export default function Navbar({ background }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { currentUser } = useCurrentUser();
   const [navTitle, setNavTitle] = useState([]);
   const [open, setOpen] = useState(false);
+  const { basketQuantity } = useContext(basketContext);
+  console.log("basketQuantity", basketQuantity);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -80,9 +83,9 @@ export default function Navbar({ background, cartCount = 0 }) {
                     className="relative shadow-xl bg-white p-3   rounded-xl border-2 border-amber-500    "
                   >
                     <FaShoppingBag size="20" className="fill-amber-500  " />
-                    {cartCount > 0 && (
+                    {basketQuantity > 0 && (
                       <span className="absolute -right-3 -top-3 inline-flex items-center justify-center px-2 py-1 text-xs font-bold  leading-none text-white bg-red-500 rounded-full">
-                        {cartCount}
+                        {basketQuantity}
                       </span>
                     )}
                   </button>
