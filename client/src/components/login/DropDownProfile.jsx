@@ -14,7 +14,7 @@ function DropDownProfile() {
       axios
         .get(`/api/users/${currentUser._id}`)
         .then((res) => {
-          console.log("drop:", res.data);
+          // console.log("drop:", res.data);
           setUser(res.data);
         })
         .catch((e) => {

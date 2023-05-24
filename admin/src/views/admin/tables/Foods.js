@@ -46,6 +46,7 @@ const Foods = () => {
             <th style={{ textAlign: "center" }}>Food Image</th>
             <th style={{ textAlign: "center" }}>Price</th>
             <th style={{ textAlign: "center" }}>RestaurantId</th>
+            <th style={{ textAlign: "center" }}>Type</th>
             <th style={{ textAlign: "center" }}>Actions</th>
           </tr>
         </thead>
@@ -62,6 +63,7 @@ const Foods = () => {
                   </td>
                   <td>{item.price}</td>
                   <td>{item.restaurantId}</td>
+                  <td>{item.type}</td>
                   <td>
                     <Link
                       to={`http://localhost:3333/admin/foods-management/update/${item.id}`}

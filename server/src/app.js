@@ -7,8 +7,8 @@ import filesRouter from "./routers/filesRouter";
 import ordersRouter from "./routers/ordersRouter";
 import restaurantsRouter from "./routers/restaurantsRouter";
 import foodsRouter from "./routers/foodsRouter";
-import basketRouter from "./routers/basketRouter";
 import navTitleRouter from "./routers/NavTitleRouter";
+import basketRouter from "./routers/basketRouter";
 
 export const app = express();
 app.use(json());
