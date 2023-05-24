@@ -3,7 +3,6 @@ import {
   getNavTitle,
   getNavTitleById,
   createNavTitle,
-  updateNavTitle,
   deleteNavTitle,
 } from "../services/navTitleService";
 
@@ -22,12 +21,6 @@ navTitleRouter.post("/", async (req, res) => {
   const basket = req.body;
   res.json(await createNavTitle(basket));
 });
-
-// navTitleRouter.put("/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const basket = req.body;
-//   res.json(await updateNavTitle(id, basket));
-// });
 
 navTitleRouter.delete("/:id", async (req, res) => {
   const { id } = req.params;
