@@ -86,12 +86,10 @@ export default function Navbar({ background, cartCount = 0 }) {
                       </span>
                     )}
                   </button>
-                  <div className="relative flex-none">
-                    <Sidebar
-                      isSidebarVisible={isSidebarVisible}
-                      closeSidebar={closeSidebar}
-                    />
-                  </div>
+                  <Sidebar
+                    isSidebarVisible={isSidebarVisible}
+                    closeSidebar={closeSidebar}
+                  />
                 </div>
               </span>
               <button
