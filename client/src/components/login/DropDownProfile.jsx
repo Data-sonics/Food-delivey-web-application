@@ -14,7 +14,7 @@ function DropDownProfile() {
       axios
         .get(`/api/users/${currentUser._id}`)
         .then((res) => {
-          console.log("drop:", res.data);
+          // console.log("drop:", res.data);
           setUser(res.data);
         })
         .catch((e) => {
@@ -34,9 +34,8 @@ function DropDownProfile() {
         data-dropdown-placement="bottom"
         onClick={toggleProfile}
       >
-        <span className="sr-only">Open user menu</span>
         <img
-          className="w-8 h-8 rounded-full object-cover"
+          className="w-10 h-10 rounded-full object-cover"
           alt="userPhoto"
           src={user.imageUrl}
           onError={({ currentTarget }) => {

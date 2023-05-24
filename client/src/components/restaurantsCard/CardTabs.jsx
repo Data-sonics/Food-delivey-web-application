@@ -32,14 +32,14 @@ function CardTabs() {
   }, []);
 
   const selectTabs = (types) => {
-    console.log("types", types);
-    console.log("foods datas", foods.data);
+    // console.log("types", types);
+    // console.log("foods datas", foods.data);
     const selected = foods.data.filter((food) => food.type == types);
-    console.log("sel", selected);
+    // console.log("sel", selected);
     setSelectedFoods(selected);
   };
 
-  console.log("types:", foods);
+  // console.log("types:", foods);
 
   return (
     !isLoad && (

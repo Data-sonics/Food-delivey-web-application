@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import {
-  AiFillHeart,
-  AiOutlineClose,
-  AiOutlineInfoCircle,
-} from "react-icons/ai";
+import { AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 export const Card = ({ food, addToBasket }) => {
@@ -81,7 +77,7 @@ export const Card = ({ food, addToBasket }) => {
 
         <p>
           <button
-            onClick={() => addToBasket(quantity)}
+            onClick={() => addToBasket(food._id, quantity)}
             className="hover:bg-transparent w-full rounded-lg bg-amber-500 p-2  text-white duration-300 hover:border-2 hover:border-amber-500 hover:bg-white hover:text-amber-500"
           >
             purchase
