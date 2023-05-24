@@ -7,7 +7,7 @@ import filesRouter from "./routers/filesRouter";
 import ordersRouter from "./routers/ordersRouter";
 import restaurantsRouter from "./routers/restaurantsRouter";
 import foodsRouter from "./routers/foodsRouter";
-import navTitleRouter from "./routers/navTitleRoutergity ";
+import navTitleRouter from "./routers/navTitleRouter";
 import basketRouter from "./routers/basketRouter";
 
 export const app = express();
