@@ -23,7 +23,7 @@ export default function EmailMenu() {
   }, []);
   return (
     <section className="flex justify-evenly container mx-auto   py-16">
-      <div data-aos="flip-up">
+      <div data-aos="flip-up" className="hidden sm:block md:block">
         <img
           src="https://bslthemes.com/html/quickeat/assets/img/illustration-4.png"
           alt=""

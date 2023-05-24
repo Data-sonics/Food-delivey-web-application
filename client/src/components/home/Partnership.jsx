@@ -41,7 +41,7 @@ export default function Partnership() {
         <h1 className="text-white text-5xl text-center">
           Want to Join Partnership?
         </h1>
-        <div className="flex justify-around">
+        <div className="flex lg:justify-around flex-wrap gap-5 lg:gap-0">
           {ship.map((partner) => {
             return (
               <div
