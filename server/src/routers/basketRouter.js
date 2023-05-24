@@ -1,43 +1,25 @@
-import { basketModel } from "../models/basketModel";
+import express from "express";
+import {
+  getBasketByUserId,
+  implementBasketItem,
+  deleteBasket,
+} from "../services/basketService";
+import verifyToken from "../middlewares/verifyToken";
 
-export const getBasketByUserId = async (userId, populate) => {
-  let basket = await basketModel.findOne({ userId });
-  if (basket && populate) {
-    await basket.populate(["userId", "foods.foodId"]);
-  }
-  if (!basket) {
-    basket = await basketModel.create({ userId });
-  }
-  return basket;
-};
+const basketRouter = express.Router();
 
-export const getBasketById = async (id) => {
-  return await basketModel.findById(id);
-};
+basketRouter.get("/", verifyToken, async (req, res) => {
+  res.json(await getBasketByUserId(req.user._id, true));
+});
 
-export const implementBasketItem = async (userId, foodId, quantity) => {
-  let basket = await getBasketByUserId(userId);
-  let { foods } = basket;
-  // herev baigaa hooliig sagslah geed baival toog ni l nemne
-  let updated = false;
-  foods = foods.map((food) => {
-    if (food.foodId.toString() === foodId) {
-      food.quantity += quantity;
-      updated = true;
-    }
-    return food;
-  });
-  if (!updated) {
-    foods.push({ foodId, quantity });
-  }
-  basket = await basketModel.findOneAndUpdate(
-    { _id: basket._id },
-    { userId, foods }
-  );
+basketRouter.post("/", verifyToken, async (req, res) => {
+  const { foodId, quantity } = req.body;
+  res.json(await implementBasketItem(req.user._id, foodId, quantity));
+});
 
-  return await getBasketByUserId(userId, true);
-};
+basketRouter.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  res.json(await deleteBasket(id));
+});
 
-export const deleteBasket = async (id) => {
-  return await basketModel.findByIdAndDelete(id);
-};
+export default basketRouter;
