@@ -55,7 +55,7 @@ export default function Checkout() {
         </p>
       </div>
       <div className="container mx-auto">
-        <div className="flex justify-center gap-[10%]">
+        <div className="flex justify-center gap-[10%] flex-wrap">
           <div className="w-[500px]" data-aos="flip-down">
             <div className="flex justify-between my-10">
               <h1 className="text-5xl font-bold">Your order</h1>

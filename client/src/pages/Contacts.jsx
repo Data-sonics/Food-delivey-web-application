@@ -32,7 +32,7 @@ export default function Contacts() {
   }, []);
   return (
     <section className="container mx-auto">
-      <div className="flex">
+      <div className="flex justify-between">
         <div className="my-16" data-aos="fade-up">
           <ol className="flex items-center my-9">
             <li className="inline-flex items-center">
@@ -58,7 +58,7 @@ export default function Contacts() {
           <div className="sm:text-center mx-auto text-center lg:text-left">
             <h1 className="text-5xl font-bold mt-5">Contact us</h1>
           </div>
-          <div className="mt-10 flex gap-8 flex-wrap md:justify-center lg:justify-start sm:justify-start justify-center">
+          <div className="mt-10 flex gap-8 md:justify-center lg:justify-start sm:justify-start justify-center flex-wrap">
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoLocationSharp className="text-amber-500 text-5xl" />
               <p className="my-2 leading-9">
@@ -89,7 +89,7 @@ export default function Contacts() {
           <img
             src="https://bslthemes.com/html/quickeat/assets/img/contacts-1.png"
             alt="callme"
-            className="w-[60rem]"
+            className="w-[50rem]"
           />
         </div>
       </div>

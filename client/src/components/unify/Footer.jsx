@@ -26,14 +26,14 @@ export default function Footer() {
         <div className="mx-auto w-full">
           <div className="lg:flex lg:gap-8 lg:px-4 lg:py-20 lg:justify-between lg:container lg:mx-auto  md:flex-wrap md:text-center lg:text-left">
             <div className="lg:w-[403px] md:w-full">
-              <a href="/" className="md:flex md:justify-center lg:block">
+              <a href="/" className="flex md:justify-center lg:block sm:justify-center justify-center lg:justify-start">
                 <Flogo />
               </a>
-              <p className="text-6xl text-white font-bold  py-10">
+              <p className="text-6xl text-white font-bold  py-10 text-center sm:text-center md:text-center lg:text-left">
                 The Best Restaurants in Your Home
               </p>
             </div>
-            <div className="md:hidden lg:block">
+            <div className="hidden sm:hidden md:hidden lg:block mt-3">
               <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
                 Menu
               </h2>
@@ -81,11 +81,11 @@ export default function Footer() {
             </div>
           </div>
           <hr />
-          <div className=" container mx-auto  py-6 md:flex md:items-center md:justify-between    ">
-            <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <div className=" container mx-auto  py-6 md:flex md:items-center md:justify-between sm:text-center">
+            <span className="text-sm text-gray-500 dark:text-gray-300 block text-center md:text-center lg:text-left">
               {new Date().getFullYear()} &copy; All Rights Reserved.
             </span>
-            <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+            <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0 justify-center">
               <button className="p-2 bg-white border-2 rounded-full hover:bg-amber-500 hover:border-amber-500 duration-300 hover:text-white text-[#363636] ">
                 <a href="https://Facebook.com" target="blank">
                   <FaFacebook size={25} />
