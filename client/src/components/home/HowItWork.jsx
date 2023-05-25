@@ -26,8 +26,7 @@ export default function Howitworks() {
       <div className="text-center grid gap-5 ">
         <h1 className="text-5xl font-bold">How it works</h1>
         <p className=" mx-auto text-gray-600  font-medium">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-          dignissimos earum autem vel eveniet nisi dolorem doloribus?
+            How Quick Eat really works?  Is there any instructions
         </p>
         <div className="grid justify-center items-center  gap-20 md:flex md:justify-between">
           <div data-aos="flip-up" className="w-full max-w-sm">
@@ -41,9 +40,7 @@ export default function Howitworks() {
               Select Restaurant
             </p>
             <p className=" text-center text-gray-500 pt-5">
-              Non enim praesent elementum facilisis leo vel fringilla. Lectus
-              proin nibh nisl condimentum id. Quis varius quam quisque id diam
-              vel.
+              Select your restaurants from quick eat
             </p>
           </div>
           <div data-aos="flip-up" className="w-full max-w-sm">
@@ -54,12 +51,10 @@ export default function Howitworks() {
             />
             <p className="text-2xl text-center ">
               <span className="text-5xl  text-gray-400">02</span>
-              Select Restaurant
+              Select Menu
             </p>
             <p className=" text-center text-gray-500 pt-5">
-              Non enim praesent elementum facilisis leo vel fringilla. Lectus
-              proin nibh nisl condimentum id. Quis varius quam quisque id diam
-              vel.
+            Select your menu from their restaurant and take from breakfast , lunch etc whatever
             </p>
           </div>
           <div data-aos="flip-up" className="w-full max-w-sm">
@@ -70,12 +65,10 @@ export default function Howitworks() {
             />
             <p className="text-2xl text-center ">
               <span className="text-5xl  text-gray-400">03</span>
-              Select Restaurant
+              Wait for delivery
             </p>
             <p className=" text-center text-gray-500 pt-5">
-              Non enim praesent elementum facilisis leo vel fringilla. Lectus
-              proin nibh nisl condimentum id. Quis varius quam quisque id diam
-              vel.
+              After selected your meal all you need is wait for your delivery
             </p>
           </div>
         </div>
