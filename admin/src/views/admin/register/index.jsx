@@ -14,12 +14,10 @@ const RegisterScreen = () => {
 
   const submitRegister = () => {
     const body = { email, password, repassword };
-    axios
-      .post(`${process.env.REACT_APP_API_URL}/api/register`, body)
-      .then(() => {
-        toast.success("Бүртгэл амжилттай");
-        navigate("/signIn");
-      });
+    axios.post(`/api/register`, body).then(() => {
+      toast.success("Бүртгэл амжилттай");
+      navigate("/signIn");
+    });
   };
 
   return (
