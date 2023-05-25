@@ -5,7 +5,6 @@ export const User = {
 
   name: {
     type: String,
-    required: true,
   },
   phone: {
     type: String,
