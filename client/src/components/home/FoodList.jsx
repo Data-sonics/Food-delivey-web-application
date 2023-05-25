@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function FoodList() {
   const [foods, setFoods] = useState([]);
@@ -68,7 +69,7 @@ function FoodList() {
       </div>
       <div className="flex justify-center mt-5">
         <button className="bg-amber-500 rounded-xl w-[100%] h-12 text-white font-thin">
-          <a href="/checkout">Checkout</a>
+          <Link to="/checkout">Checkout</Link>
         </button>
       </div>
     </div>
