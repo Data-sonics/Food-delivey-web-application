@@ -17,9 +17,7 @@ const View = () => {
   console.log("restaurant", id);
 
   const getSingleFood = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/foods/${id}`
-    );
+    const response = await axios.get(`/api/foods/${id}`);
     console.log("response", response);
     if (response.status === 200) {
       setData({ ...response.data });

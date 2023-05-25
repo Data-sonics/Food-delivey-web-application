@@ -11,9 +11,7 @@ const Foods = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getFoods = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/foods`
-    );
+    const response = await axios.get(`/api/foods`);
     if (response.status === 200) {
       console.log(data);
       setData(response.data.data);
@@ -24,7 +22,7 @@ const Foods = () => {
       window.confirm("Are you sure that you wanted to delete that food record")
     );
     const response = await axios
-      .delete(`${process.env.REACT_APP_API_URL}/api/foods/` + id)
+      .delete(`/api/foods/` + id)
       .then(() => {
         setData(data.filter((item) => item.id !== id));
       })

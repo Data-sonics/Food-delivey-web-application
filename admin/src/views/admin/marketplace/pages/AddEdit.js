@@ -26,17 +26,14 @@ const AddEdit = () => {
   }, [id]);
 
   const addRestaurant = async (data) => {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/api/restaurants`,
-      data
-    );
+    const response = await axios.post(`/api/restaurants`, data);
     if (response.status === 200) {
       toast.success("Added restaurant successfully");
     }
   };
   const updateRestaurant = async (data, id) => {
     axios
-      .put(`${process.env.REACT_APP_API_URL}/api/restaurants/` + id, data)
+      .put(`/pi/restaurants/` + id, data)
       .then((res) => {
         console.log(res);
         toast.success("amjilttai zaslaa!");
@@ -57,9 +54,7 @@ const AddEdit = () => {
   };
 
   const getSingleRestaurant = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/ api/restaurants/${id}`
-    );
+    const response = await axios.get(`/api/restaurants/${id}`);
     if (response.status === 200) {
       setState({ ...response.data });
     }
