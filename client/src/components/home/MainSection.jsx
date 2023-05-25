@@ -62,8 +62,7 @@ export default function MainSection() {
                 The Best Restaurants In Your Home
               </h1>
               <p className="text-gray-600 ">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-                asperiores rem expedita?
+                You can choose your favorite restaurant and take your favorite meals from home
               </p>
               <div className=" w-full">
                 <Combobox value={selected} onChange={setSelected}>

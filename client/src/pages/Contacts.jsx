@@ -57,35 +57,31 @@ export default function Contacts() {
           </ol>
           <div className="sm:text-center mx-auto text-center lg:text-left">
             <h1 className="text-5xl font-bold mt-5">Contact us</h1>
-            <p className="text-gray-600 font-thin text-lg w-full mt-8 md:w-full sm:w-[35%] lg:w-[35%]">
-              Egestas sed tempus urna et pharetra pharetra massa. Fermentum
-              posuere urna nec tincidunt praesent semper.
-            </p>
           </div>
           <div className="mt-10 flex gap-8 flex-wrap md:justify-center lg:justify-start sm:justify-start justify-center">
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoLocationSharp className="text-amber-500 text-5xl" />
               <p className="my-2 leading-9">
-                1717 Harrison St, San Francisco, CA 94103, United States
+                Baynzurkh duureg , Seoul bussiness center 
               </p>
             </div>
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoIosMail className="text-amber-500 text-5xl" />
               <p className="mt-5">quick.info@mail.net</p>
               <p className="text-gray-400 text-sm font-thin">
-                Lorem ipsum dolor sit.
+                Mail me for new company and projects
               </p>
-              <p className="mt-2">quick.info@mail.net</p>
+              <p className="mt-2">quick.res@mail.net</p>
               <p className="text-gray-400 text-sm font-thin">
-                Lorem ipsum dolor sit.
+                Mail me for review foods and restaurants
               </p>
             </div>
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoCall className="text-amber-500 text-5xl" />
-              <p className="mt-5">+9769320501</p>
-              <p className="text-xs font-thin">Et netus et malesuada</p>
+              <p className="mt-5">+9769321239</p>
+              <p className="text-xs font-thin">Contact our sales manager</p>
               <p className="mt-2">+9769320501</p>
-              <p className="text-xs font-thin">Et netus et malesuada</p>
+              <p className="text-xs font-thin">Contact our marketing manager</p>
             </div>
           </div>
         </div>
@@ -102,11 +98,7 @@ export default function Contacts() {
         data-aos="fade-up"
       >
         <div className="w-[100%] md:w-[75%] sm:w-[100%] md:mx-auto lg:w-[50%]">
-          <h1 className="text-4xl font-bold my-2">Get in touch with us</h1>
-          <p className="text-gray-400 font-thin text-lg my-8">
-            Magna sit amet purus gravida quis blandit turpis cursus. Venenatis
-            tellus in metus vulputate eu scelerisque felis.
-          </p>
+          <h1 className="text-4xl font-bold my-10">Get in touch with us</h1>
           <div className="relative">
             <input
               type="text"

@@ -60,9 +60,7 @@ export default function RestaurantsMain() {
             <div className="my-5 grid gap-8  w-[30rem] ">
               <p className="text-6xl text-amber-500 font-bold ">Restaurants</p>
               <p className="text-gray-600  text-xl ">
-                Pretium lectus quam id leo in vitae turpis massa sed. Lorem
-                donec massa sapien faucibus et molestie. Vitae elementum
-                curabitur vitae nunc.
+                On this page you need to select your restaurant review our food menu , take if you like it
               </p>
             </div>
 
