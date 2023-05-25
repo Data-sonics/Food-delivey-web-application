@@ -8,7 +8,6 @@ export const User = {
   },
   phone: {
     type: String,
-    unique: true,
   },
   address: {
     type: String,
