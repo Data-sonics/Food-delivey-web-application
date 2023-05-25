@@ -13,8 +13,7 @@ const RegisterScreen = () => {
   const navigate = useNavigate();
 
   const submitRegister = () => {
-    const body = { email, password, repassword };
-    axios.post(`/api/register`, body).then(() => {
+    axios.post(`/api/register`, { email, password, repassword }).then(() => {
       toast.success("Бүртгэл амжилттай");
       navigate("/signIn");
     });
