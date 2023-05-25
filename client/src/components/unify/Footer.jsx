@@ -32,11 +32,6 @@ export default function Footer() {
               <p className="text-6xl text-white font-bold  py-10">
                 The Best Restaurants in Your Home
               </p>
-              <p className="text-[#cfcfcf]">
-                Vitae congue mauris rhoncus aenean. Enim nulla aliquet porttitor
-                lacus luctus accumsan tortor posuere. Tempus egestas sed sed
-                risus pretium quam.
-              </p>
             </div>
             <div className="md:hidden lg:block">
               <h2 className="text-2xl mb-6  font-semibold text-[#787878] uppercase">
