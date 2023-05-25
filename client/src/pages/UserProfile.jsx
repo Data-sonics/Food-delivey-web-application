@@ -14,7 +14,7 @@ function UserProfile() {
   useEffect(() => {
     if (currentUser) {
       axios
-        .get(`/api/users/${currentUser._id}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/users/${currentUser._id}`)
         .then((res) => {
           console.log("Data:", res.data);
           setUserDetail(res.data);
@@ -27,7 +27,10 @@ function UserProfile() {
 
   const save = () => {
     axios
-      .put(`/api/users/${currentUser._id}`, userDetail)
+      .put(
+        `${process.env.REACT_APP_API_URL}/api/users/${currentUser._id}`,
+        userDetail
+      )
       .then((res) => {
         console.log(res.data);
         toast.success("🦄Амжилттай заслаа", {
@@ -51,7 +54,7 @@ function UserProfile() {
     const fd = new FormData();
     fd.append("file", e.target.files[0]);
     axios
-      .post("/api/files", fd, {
+      .post(`${process.env.REACT_APP_API_URL}/api/files`, fd, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

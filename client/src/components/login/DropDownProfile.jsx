@@ -12,7 +12,7 @@ function DropDownProfile() {
   useEffect(() => {
     if (currentUser) {
       axios
-        .get(`/api/users/${currentUser._id}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/users/${currentUser._id}`)
         .then((res) => {
           // console.log("drop:", res.data);
           setUser(res.data);

@@ -5,11 +5,10 @@ import { BackgroundContext } from "../contexts/BackgroundProvider";
 import { Tab } from "@headlessui/react";
 import Banks from "../components/icon/Banks";
 import ChevronRight from "../components/icon/ChevronRight";
-import FoodList from "../components/checkout/checkFoodList";
 import Disctrict from "../components/checkout/Disctrict";
+import FoodList from "../components/home/FoodList";
 
 export default function Checkout() {
-  const Number = 2;
   const { setColor } = useContext(BackgroundContext);
   setColor("bg-transparent");
   return (
@@ -39,17 +38,6 @@ export default function Checkout() {
             <div className="flex items-center">
               <ChevronRight />
               <Link
-                to="/restaurantsCard"
-                className=" text-sm font-medium text-gray-700 "
-              >
-                Restaurants Card
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div className="flex items-center">
-              <ChevronRight />
-              <Link
                 to="/restaurants"
                 className=" text-sm font-medium text-gray-500  dark:text-gray-400 "
               >
@@ -70,8 +58,7 @@ export default function Checkout() {
         <div className="flex justify-center gap-[10%]">
           <div className="w-[500px]" data-aos="flip-down">
             <div className="flex justify-between my-10">
-              <h1 className="text-5xl font-bold">Your order:</h1>
-              <p className="text-amber-500 text-5xl font-bold">{Number}</p>
+              <h1 className="text-5xl font-bold">Your order</h1>
             </div>
             <div className="mb-16">
               <FoodList />
