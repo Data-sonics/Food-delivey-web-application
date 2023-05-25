@@ -9,7 +9,7 @@ const BasketProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("/api/basket")
+      .get(`${process.env.REACT_APP_API_URL}/api/basket`)
       .then((res) => {
         let quantity = 0;
         const totalPriceArray = res.data.foods.map((food) => {

@@ -11,7 +11,9 @@ const Foods = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getFoods = async () => {
-    const response = await axios.get("/api/foods");
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/foods`
+    );
     if (response.status === 200) {
       console.log(data);
       setData(response.data.data);

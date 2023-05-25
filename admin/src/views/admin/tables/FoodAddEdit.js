@@ -54,7 +54,9 @@ const AddEdit = () => {
   };
 
   const getSingleFood = async () => {
-    const response = await axios.get(`/api/foods/${id}`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/foods/${id}`
+    );
     if (response.status === 200) {
       setState({ ...response.data });
     }

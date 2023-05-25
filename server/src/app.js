@@ -23,6 +23,6 @@ app.use("/api/orders", ordersRouter);
 app.use("/api/restaurants", restaurantsRouter);
 app.use("/api/foods", foodsRouter);
 app.use("/api/basket", basketRouter);
-app.use("/api/navTitle", navTitleRouter);
+app.use("/api/navtitle", navTitleRouter);
 
 export default app;

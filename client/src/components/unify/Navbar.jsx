@@ -31,7 +31,7 @@ export default function Navbar({ background }) {
 
   useEffect(() => {
     axios
-      .get("/api/navtitle")
+      .get(`${process.env.REACT_APP_API_URL}/api/navtitle`)
       .then((res) => {
         setNavTitle(res.data);
       })

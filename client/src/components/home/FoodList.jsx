@@ -7,7 +7,7 @@ function FoodList(cartCount) {
 
   useEffect(() => {
     axios
-      .get("/api/basket")
+      .get(`${process.env.REACT_APP_API_URL}/api/basket`)
       .then((res) => {
         const { foods } = res.data;
         console.log("res", foods);

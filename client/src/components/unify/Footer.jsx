@@ -12,7 +12,7 @@ export default function Footer() {
   const [navTitle, setNavTitle] = useState([]);
   useEffect(() => {
     axios
-      .get("/api/navtitle")
+      .get(`${process.env.REACT_APP_API_URL}/api/navtitle`)
       .then((res) => {
         setNavTitle(res.data);
       })
