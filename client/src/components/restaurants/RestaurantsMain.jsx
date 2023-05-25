@@ -68,7 +68,7 @@ export default function RestaurantsMain() {
           </div>
           {/* restaurant img */}
 
-          <div>
+          <div className="hidden sm:hidden md:hidden lg:block">
             <img
               src="https://bslthemes.com/html/quickeat/assets/img/photo-11.png"
               alt=""
