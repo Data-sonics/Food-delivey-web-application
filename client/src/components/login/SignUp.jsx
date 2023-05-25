@@ -11,19 +11,21 @@ function SignUp({ setType }) {
 
   const submitRegister = () => {
     const body = { email, password, repassword, phone, name };
-    axios.post("/api/register", body).then(() => {
-      toast.success("🦄Амжилттай бүртгэлээ.", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/register`, body)
+      .then(() => {
+        toast.success("🦄Амжилттай бүртгэлээ.", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setType("signIn");
       });
-      setType("signIn");
-    });
   };
 
   return (

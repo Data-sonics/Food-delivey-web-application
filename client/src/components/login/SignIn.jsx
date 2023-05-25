@@ -10,21 +10,23 @@ function SignIn({ setType }) {
   const [password, setPassword] = useState("");
   const { setCurrentUser } = useCurrentUser();
   const submitSignIn = () => {
-    axios.post("/api/signIn", { email, password }).then((res) => {
-      const { body } = res.data;
-      localStorage.setItem("token", body.token);
-      setCurrentUser(body.user);
-      toast.success("🦄Амжилттай нэвтэрлээ", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/signIn`, { email, password })
+      .then((res) => {
+        const { body } = res.data;
+        localStorage.setItem("token", body.token);
+        setCurrentUser(body.user);
+        toast.success("🦄Амжилттай нэвтэрлээ", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
-    });
   };
 
   return (

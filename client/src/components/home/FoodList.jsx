@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 
-function FoodList(cartCount) {
+function FoodList() {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ function FoodList(cartCount) {
         setFoods(foods);
       })
       .catch((e) => {
-        toast.error("Aldaa garlaa ", e);
+        console.log("error", e);
       });
   }, []);
   console.log("foods is: ", foods);
