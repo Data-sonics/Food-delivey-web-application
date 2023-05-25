@@ -9,7 +9,7 @@ const CurrentUserProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("/api/currentUser", {
+      .get(`${process.env.REACT_APP_API_URL}/api/currentUser`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
