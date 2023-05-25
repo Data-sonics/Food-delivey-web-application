@@ -14,14 +14,16 @@ const SignInScreen = () => {
   const { setCurrentUser } = useCurrentUser();
 
   const submitSignIn = () => {
-    axios.post("/api/signIn", { email, password }).then((res) => {
-      const { body } = res.data;
-      console.log("submitSignIn:", body);
-      localStorage.setItem("token", body.token);
-      setCurrentUser(body.user);
-      toast.success("Амжилттай нэвтэрлээ");
-      navigate("/");
-    });
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/signIn`, { email, password })
+      .then((res) => {
+        const { body } = res.data;
+        console.log("submitSignIn:", body);
+        localStorage.setItem("token", body.token);
+        setCurrentUser(body.user);
+        toast.success("Амжилттай нэвтэрлээ");
+        navigate("/");
+      });
   };
 
   return (

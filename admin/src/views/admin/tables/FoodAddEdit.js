@@ -26,14 +26,17 @@ const AddEdit = () => {
   }, [id]);
 
   const addFood = async (data) => {
-    const response = await axios.post("/api/foods", data);
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/api/foods`,
+      data
+    );
     if (response.status === 200) {
       toast.success("Хоолоо амжилттай нэмлээ");
     }
   };
   const updateFood = async (data, id) => {
     axios
-      .put("/api/foods/" + id, data)
+      .put(`${process.env.REACT_APP_API_URL}/api/foods/` + id, data)
       .then((res) => {
         console.log(res);
         toast.success("Амжилттай заслаа");

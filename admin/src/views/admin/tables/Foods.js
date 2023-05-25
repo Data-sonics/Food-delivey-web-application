@@ -24,7 +24,7 @@ const Foods = () => {
       window.confirm("Are you sure that you wanted to delete that food record")
     );
     const response = await axios
-      .delete("/api/foods/" + id)
+      .delete(`${process.env.REACT_APP_API_URL}/api/foods/` + id)
       .then(() => {
         setData(data.filter((item) => item.id !== id));
       })

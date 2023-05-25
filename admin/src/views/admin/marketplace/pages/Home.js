@@ -26,7 +26,7 @@ const Home = () => {
       )
     );
     const response = await axios
-      .delete("/api/restaurants/" + id)
+      .delete(`${process.env.REACT_APP_API_URL}/api/restaurants/` + id)
       .then(() => {
         setData(data.filter((item) => item.id !== id));
       })
