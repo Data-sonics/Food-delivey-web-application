@@ -54,7 +54,7 @@ function UserProfile() {
     const fd = new FormData();
     fd.append("file", e.target.files[0]);
     axios
-      .post(`${process.env.REACT_APP_API_URL}/api/files`, fd, {
+      .post(`/api/files`, fd, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

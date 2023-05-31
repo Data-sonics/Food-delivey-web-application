@@ -69,7 +69,7 @@ const Home = () => {
                   <td>{item.type}</td>
                   <td>
                     <Link
-                      to={`http://localhost:3333/admin/restaurants/update/${item.id}`}
+                      to={`https://data-sonics-project-admin.vercel.app/admin/restaurants/update/${item.id}`}
                     >
                       <button className="btn btn-edit">Edit</button>
                     </Link>
@@ -80,7 +80,7 @@ const Home = () => {
                       Delete
                     </button>
                     <Link
-                      to={`http://localhost:3333/admin/restaurants/view/${item.id}`}
+                      to={`https://data-sonics-project-admin.vercel.app/admin/view/${item.id}`}
                     >
                       <button className="btn btn-view">View</button>
                     </Link>

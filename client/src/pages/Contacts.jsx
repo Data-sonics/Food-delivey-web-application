@@ -78,7 +78,7 @@ export default function Contacts() {
             </div>
             <div className="w-48 rounded-xl shadow-2xl p-5 hover:bg-black/80 duration-300 hover:text-white">
               <IoCall className="text-amber-500 text-5xl" />
-              <p className="mt-5">+9769321239</p>
+              <p className="mt-5">+97695349924</p>
               <p className="text-xs font-thin">Contact our sales manager</p>
               <p className="mt-2">+9769320501</p>
               <p className="text-xs font-thin">Contact our marketing manager</p>
