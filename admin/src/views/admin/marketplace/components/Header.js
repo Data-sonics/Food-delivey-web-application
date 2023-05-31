@@ -16,7 +16,7 @@ const Header = () => {
     <div className="header">
       <p className="logo">Restaurant Management System</p>
       <div className="header-right">
-        <Link to="https://data-sonics-project-admin.vercel.app//admin/restaurants/home">
+        <Link to="https://data-sonics-project-admin.vercel.app/admin/restaurants/home">
           <p
             className={`${activeTab === "Home" ? "active" : ""}`}
             onClick={() => setActiveTab("Home")}

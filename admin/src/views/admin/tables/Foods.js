@@ -66,7 +66,7 @@ const Foods = () => {
                   <td>{item.type}</td>
                   <td>
                     <Link
-                      to={`http://localhost:3333/admin/foods-management/update/${item.id}`}
+                      to={`https://data-sonics-project-admin.vercel.app/admin/foods-management/update/${item.id}`}
                     >
                       <button className="btn btn-edit">Edit</button>
                     </Link>
@@ -77,7 +77,7 @@ const Foods = () => {
                       Delete
                     </button>
                     <Link
-                      to={`http://localhost:3333/admin/foods-management/FoodView/${item.id}`}
+                      to={`https://data-sonics-project-admin.vercel.app/admin/foods-management/FoodView/${item.id}`}
                     >
                       <button className="btn btn-view">View</button>
                     </Link>
