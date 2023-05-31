@@ -33,7 +33,7 @@ const AddEdit = () => {
   };
   const updateRestaurant = async (data, id) => {
     axios
-      .put(`/pi/restaurants/` + id, data)
+      .put(`/api/restaurants/` + id, data)
       .then((res) => {
         console.log(res);
         toast.success("amjilttai zaslaa!");
